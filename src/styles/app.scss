@@ -1,0 +1,46 @@
+@font-face {
+  font-family: 'Oswald-Bold';
+  src: url('../fonts/Oswald-Bold.eot');
+  src: url('../fonts/Oswald-Bold.eot?#iefix') format('embedded-opentype'),
+       url('../fonts/Oswald-Bold.woff2') format('woff2'),
+       url('../fonts/Oswald-Bold.woff') format('woff'),
+       url('../fonts/Oswald-Bold.ttf')  format('truetype'),
+       url('../fonts/Oswald-Bold.svg#FontName') format('svg');
+}
+
+@font-face {
+  font-family: 'TitilliumWeb-SemiBold';
+  src: url('../fonts/TitilliumWeb-SemiBold.eot');
+  src: url('../fonts/TitilliumWeb-SemiBold.eot?#iefix') format('embedded-opentype'),
+       url('../fonts/TitilliumWeb-SemiBold.woff2') format('woff2'),
+       url('../fonts/TitilliumWeb-SemiBold.woff') format('woff'),
+       url('../fonts/TitilliumWeb-SemiBold.ttf')  format('truetype'),
+       url('../fonts/TitilliumWeb-SemiBold.svg#FontName') format('svg');
+}
+
+@font-face {
+  font-family: 'TitilliumWeb-Bold';
+  src: url('../fonts/TitilliumWeb-Bold.eot');
+  src: url('../fonts/TitilliumWeb-Bold.eot?#iefix') format('embedded-opentype'),
+       url('../fonts/TitilliumWeb-Bold.woff2') format('woff2'),
+       url('../fonts/TitilliumWeb-Bold.woff') format('woff'),
+       url('../fonts/TitilliumWeb-Bold.ttf')  format('truetype'),
+       url('../fonts/TitilliumWeb-Bold.svg#FontName') format('svg');
+}
+
+:root {
+  --color-bg: #f1f1f1;
+  --color-text: #f1f1f1;
+  --color-text-btn: #000;
+  --color-primary: #FF7F00;
+  --color-secondary: rgba(255, 128, 0, 0.6);
+  --color-thirdly: #4A0000;
+  --color-nonActif: #666666;
+  --color-aVenir: #AFAFAF;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
