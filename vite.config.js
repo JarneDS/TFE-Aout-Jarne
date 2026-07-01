@@ -11,7 +11,7 @@ export default defineConfig({
     rollupOptions: {
       input: {
         index: resolve(__dirname, 'src/index.html'),
-        chassis: resolve(__dirname, 'src/chassis.html'),
+        /*chassis: resolve(__dirname, 'src/chassis.html'),
         diagnostiques: resolve(__dirname, 'src/diagnostiques.html'),
         entretien: resolve(__dirname, 'src/entretien.html'),
         friens: resolve(__dirname, 'src/freins.html'),
@@ -21,7 +21,7 @@ export default defineConfig({
         roues: resolve(__dirname, 'src/roues.html'),
         suspension: resolve(__dirname, 'src/suspension.html'),
         temoins: resolve(__dirname, 'src/temoins.html'),
-        mesVoitures: resolve(__dirname, 'src/mesVoitures.html')
+        mesVoitures: resolve(__dirname, 'src/mesVoitures.html')*/
       }
     }
   },
