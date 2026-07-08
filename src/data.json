@@ -3,70 +3,70 @@
     "name": "Abarth",
     "slug": "abarth",
     "image": {
-      "src": "./optimized/abarth.png"
+      "src": "./optimized/abarth.webp"
     }
   },
   {
     "name": "Aixam",
     "slug": "aixam",
     "image": {
-      "src": "./optimized/aixam.png"
+      "src": "./optimized/aixam.webp"
     }
   },
   {
     "name": "Alfa Romeo",
     "slug": "alfa-romeo",
     "image": {
-      "src": "./optimized/alfa-romeo.png"
+      "src": "./optimized/alfa-romeo.webp"
     }
   },
   {
     "name": "Alpine",
     "slug": "alpine",
     "image": {
-      "src": "./optimized/alpine.png"
+      "src": "./optimized/alpine.webp"
     }
   },
   {
     "name": "Aston Martin",
     "slug": "aston-martin",
     "image": {
-      "src": "./optimized/aston-martin.png"
+      "src": "./optimized/aston-martin.webp"
     }
   },
   {
     "name": "Audi",
     "slug": "audi",
     "image": {
-      "src": "./optimized/audi.png"
+      "src": "./optimized/audi.webp"
     }
   },
   {
     "name": "Bentley",
     "slug": "bentley",
     "image": {
-      "src": "./optimized/bentley.png"
+      "src": "./optimized/bentley.webp"
     }
   }, 
   {
     "name": "BMW",
     "slug": "bmw",
     "image": {
-      "src": "./optimized/bmw.png"
+      "src": "./optimized/bmw.webp"
     }
   },
   {
     "name": "Bugatti",
     "slug": "bugatti",
     "image": {
-      "src": "./optimized/bugatti.png"
+      "src": "./optimized/bugatti.webp"
     }
   },
   {
     "name": "BYD",
     "slug": "byd",
     "image": {
-      "src": "./optimized/byd.png"
+      "src": "./optimized/byd.webp"
     }
   },
 
@@ -74,490 +74,490 @@
     "name": "Cadillac",
     "slug": "cadillac",
     "image": {
-      "src": "./optimized/cadillac.png"
+      "src": "./optimized/cadillac.webp"
     }
   },
   {
     "name": "Chevrolet",
     "slug": "chevrolet",
     "image": {
-      "src": "./optimized/chevrolet.png"
+      "src": "./optimized/chevrolet.webp"
     }
   },
   {
     "name": "Chrysler",
     "slug": "chrysler",
     "image": {
-      "src": "./optimized/chrysler.png"
+      "src": "./optimized/chrysler.webp"
     }
   },
   {
     "name": "Citroën",
     "slug": "citroen",
     "image": {
-      "src": "./optimized/citroen.png"
+      "src": "./optimized/citroen.webp"
     }
   },
   {
     "name": "Cupra",
     "slug": "cupra",
     "image": {
-      "src": "./optimized/cupra.png"
+      "src": "./optimized/cupra.webp"
     }
   },
   {
     "name": "Dacia",
     "slug": "dacia",
     "image": {
-      "src": "./optimized/dacia.png"
+      "src": "./optimized/dacia.webp"
     }
   },
   {
     "name": "DAF",
     "slug": "daf",
     "image": {
-      "src": "./optimized/daf.png"
+      "src": "./optimized/daf.webp"
     }
   },
   {
     "name": "Dodge",
     "slug": "dodge",
     "image": {
-      "src": "./optimized/dodge.png"
+      "src": "./optimized/dodge.webp"
     }
   },
   {
     "name": "DS",
     "slug": "ds",
     "image": {
-      "src": "./optimized/ds.png"
+      "src": "./optimized/ds.webp"
     }
   },
   {
     "name": "Ferrari",
     "slug": "ferrari",
     "image": {
-      "src": "./optimized/ferrari.png"
+      "src": "./optimized/ferrari.webp"
     }
   },
   {
     "name": "Fiat",
     "slug": "fiat",
     "image": {
-      "src": "./optimized/fiat.png"
+      "src": "./optimized/fiat.webp"
     }
   },
   {
     "name": "Ford",
     "slug": "ford",
     "image": {
-      "src": "./optimized/ford.png"
+      "src": "./optimized/ford.webp"
     }
   },
   {
     "name": "Gillet",
     "slug": "gillet",
     "image": {
-      "src": "./optimized/gillet.png"
+      "src": "./optimized/gillet.webp"
     }
   },
   {
     "name": "GMC",
     "slug": "gmc",
     "image": {
-      "src": "./optimized/gmc.png"
+      "src": "./optimized/gmc.webp"
     }
   },
   {
     "name": "Honda",
     "slug": "honda",
     "image": {
-      "src": "./optimized/honda.png"
+      "src": "./optimized/honda.webp"
     }
   },  
   {
     "name": "Hummer",
     "slug": "hummer",
     "image": {
-      "src": "./optimized/hummer.png"
+      "src": "./optimized/hummer.webp"
     }
   },
   {
     "name": "Hyundai",
     "slug": "hyundai",
     "image": {
-      "src": "./optimized/hyundai.png"
+      "src": "./optimized/hyundai.webp"
     }
   },
   {
     "name": "Infiniti",
     "slug": "infiniti",
     "image": {
-      "src": "./optimized/infiniti.png"
+      "src": "./optimized/infiniti.webp"
     }
   },
   {
     "name": "Isuzu",
     "slug": "isuzu",
     "image": {
-      "src": "./optimized/isuzu.png"
+      "src": "./optimized/isuzu.webp"
     }
   },
   {
     "name": "Iveco",
     "slug": "iveco",
     "image": {
-      "src": "./optimized/iveco.png"
+      "src": "./optimized/iveco.webp"
     }
   },
   {
     "name": "Jaguar",
     "slug": "jaguar",
     "image": {
-      "src": "./optimized/jaguar.png"
+      "src": "./optimized/jaguar.webp"
     }
   },
   {
     "name": "Jeep",
     "slug": "jeep",
     "image": {
-      "src": "./optimized/jeep.png"
+      "src": "./optimized/jeep.webp"
     }
   },  
   {
     "name": "Kia",
     "slug": "kia",
     "image": {
-      "src": "./optimized/kia.png"
+      "src": "./optimized/kia.webp"
     }
   },
   {
     "name": "Koenigsegg",
     "slug": "koenigsegg",
     "image": {
-      "src": "./optimized/koenigsegg.png"
+      "src": "./optimized/koenigsegg.webp"
     }
   },
   {
     "name": "KTM",
     "slug": "ktm",
     "image": {
-      "src": "./optimized/ktm.png"
+      "src": "./optimized/ktm.webp"
     }
   },
   {
     "name": "Lada",
     "slug": "lada",
     "image": {
-      "src": "./optimized/lada.png"
+      "src": "./optimized/lada.webp"
     }
   },
   {
     "name": "Lamborghini",
     "slug": "lamborghini",
     "image": {
-      "src": "./optimized/lamborghini.png"
+      "src": "./optimized/lamborghini.webp"
     }
   },
   {
     "name": "Land Rover",
     "slug": "land-rover",
     "image": {
-      "src": "./optimized/land-rover.png"
+      "src": "./optimized/land-rover.webp"
     }
   },
   {
     "name": "Leapmotor",
     "slug": "leapmotor",
     "image": {
-      "src": "./optimized/leapmotor.png"
+      "src": "./optimized/leapmotor.webp"
     }
   },
   {
     "name": "Lexus",
     "slug": "lexus",
     "image": {
-      "src": "./optimized/lexus.png"
+      "src": "./optimized/lexus.webp"
     }
   },
   {
     "name": "Ligier",
     "slug": "ligier",
     "image": {
-      "src": "./optimized/ligier.png"
+      "src": "./optimized/ligier.webp"
     }
   },
   {
     "name": "Lotus",
     "slug": "lotus",
     "image": {
-      "src": "./optimized/lotus.png"
+      "src": "./optimized/lotus.webp"
     }
   },
   {
     "name": "Lynk & Co",
     "slug": "lynk-and-co",
     "image": {
-      "src": "./optimized/lynk-and-co.png"
+      "src": "./optimized/lynk-and-co.webp"
     }
   },
   {
     "name": "Mack",
     "slug": "mack",
     "image": {
-      "src": "./optimized/mack.png"
+      "src": "./optimized/mack.webp"
     }
   },
   {
     "name": "MAN",
     "slug": "man",
     "image": {
-      "src": "./optimized/man.png"
+      "src": "./optimized/man.webp"
     }
   },
   {
     "name": "Maserati",
     "slug": "maserati",
     "image": {
-      "src": "./optimized/maserati.png"
+      "src": "./optimized/maserati.webp"
     }
   },
   {
     "name": "Maxus",
     "slug": "maxus",
     "image": {
-      "src": "./optimized/maxus.png"
+      "src": "./optimized/maxus.webp"
     }
   },
   {
     "name": "Maybach",
     "slug": "maybach",
     "image": {
-      "src": "./optimized/maybach.png"
+      "src": "./optimized/maybach.webp"
     }
   },
   {
     "name": "Mazda",
     "slug": "mazda",
     "image": {
-      "src": "./optimized/mazda.png"
+      "src": "./optimized/mazda.webp"
     }
   },
   {
     "name": "McLaren",
     "slug": "mclaren",
     "image": {
-      "src": "./optimized/mclaren.png"
+      "src": "./optimized/mclaren.webp"
     }
   },
   {
     "name": "Mercedes-Benz",
     "slug": "mercedes-benz",
     "image": {
-      "src": "./optimized/mercedes-benz.png"
+      "src": "./optimized/mercedes-benz.webp"
     }
   },
   {
     "name": "MG",
     "slug": "mg",
     "image": {
-      "src": "./optimized/mg.png"
+      "src": "./optimized/mg.webp"
     }
   },
   {
     "name": "Microcar",
     "slug": "microcar",
     "image": {
-      "src": "./optimized/microcar.png"
+      "src": "./optimized/microcar.webp"
     }
   },
   {
     "name": "Mini",
     "slug": "mini",
     "image": {
-      "src": "./optimized/mini.png"
+      "src": "./optimized/mini.webp"
     }
   },
   {
     "name": "Mitsubishi",
     "slug": "mitsubishi",
     "image": {
-      "src": "./optimized/mitsubishi.png"
+      "src": "./optimized/mitsubishi.webp"
     }
   },
   {
     "name": "NIO",
     "slug": "nio",
     "image": {
-      "src": "./optimized/nio.png"
+      "src": "./optimized/nio.webp"
     }
   },
   {
     "name": "Nissan",
     "slug": "nissan",
     "image": {
-      "src": "./optimized/nissan.png"
+      "src": "./optimized/nissan.webp"
     }
   },
   {
     "name": "Opel",
     "slug": "opel",
     "image": {
-      "src": "./optimized/opel.png"
+      "src": "./optimized/opel.webp"
     }
   },
   {
     "name": "Pagani",
     "slug": "pagani",
     "image": {
-      "src": "./optimized/pagani.png"
+      "src": "./optimized/pagani.webp"
     }
   },
   {
     "name": "Peugeot",
     "slug": "peugeot",
     "image": {
-      "src": "./optimized/peugeot.png"
+      "src": "./optimized/peugeot.webp"
     }
   },
   {
     "name": "Polestar",
     "slug": "polestar",
     "image": {
-      "src": "./optimized/polestar.png"
+      "src": "./optimized/polestar.webp"
     }
   },
   {
     "name": "Pontiac",
     "slug": "pontiac",
     "image": {
-      "src": "./optimized/pontiac.png"
+      "src": "./optimized/pontiac.webp"
     }
   },
   {
     "name": "Porsche",
     "slug": "porsche",
     "image": {
-      "src": "./optimized/porsche.png"
+      "src": "./optimized/porsche.webp"
     }
   },
   {
     "name": "RAM",
     "slug": "ram",
     "image": {
-      "src": "./optimized/ram.png"
+      "src": "./optimized/ram.webp"
     }
   },
   {
     "name": "Renault",
     "slug": "renault",
     "image": {
-      "src": "./optimized/renault.png"
+      "src": "./optimized/renault.webp"
     }
   },
   {
     "name": "Rolls-Royce",
     "slug": "rolls-royce",
     "image": {
-      "src": "./optimized/rolls-royce.png"
+      "src": "./optimized/rolls-royce.webp"
     }
   },
   {
     "name": "Scania",
     "slug": "scania",
     "image": {
-      "src": "./optimized/scania.png"
+      "src": "./optimized/scania.webp"
     }
   },
   {
     "name": "SEAT",
     "slug": "seat",
     "image": {
-      "src": "./optimized/seat.png"
+      "src": "./optimized/seat.webp"
     }
   },
   {
     "name": "Škoda",
     "slug": "skoda",
     "image": {
-      "src": "./optimized/skoda.png"
+      "src": "./optimized/skoda.webp"
     }
   },
   {
     "name": "Smart",
     "slug": "smart",
     "image": {
-      "src": "./optimized/smart.png"
+      "src": "./optimized/smart.webp"
     }
   },
   {
     "name": "SsangYong",
     "slug": "ssangyong",
     "image": {
-      "src": "./optimized/ssangyong.png"
+      "src": "./optimized/ssangyong.webp"
     }
   },
   {
     "name": "Subaru",
     "slug": "subaru",
     "image": {
-      "src": "./optimized/subaru.png"
+      "src": "./optimized/subaru.webp"
     }
   },
   {
     "name": "Suzuki",
     "slug": "suzuki",
     "image": {
-      "src": "./optimized/suzuki.png"
+      "src": "./optimized/suzuki.webp"
     }
   },
   {
     "name": "Tesla",
     "slug": "tesla",
     "image": {
-      "src": "./optimized/tesla.png"
+      "src": "./optimized/tesla.webp"
     }
   },
   {
     "name": "Toyota",
     "slug": "toyota",
     "image": {
-      "src": "./optimized/toyota.png"
+      "src": "./optimized/toyota.webp"
     }
   },
   {
     "name": "Volkswagen",
     "slug": "volkswagen",
     "image": {
-      "src": "./optimized/volkswagen.png"
+      "src": "./optimized/volkswagen.webp"
     }
   },
   {
     "name": "Volvo",
     "slug": "volvo",
     "image": {
-      "src": "./optimized/volvo.png"
+      "src": "./optimized/volvo.webp"
     }
   },
   {
     "name": "WEY",
     "slug": "wey",
     "image": {
-      "src": "./optimized/wey.png"
+      "src": "./optimized/wey.webp"
     }
   },
   {
     "name": "XPeng",
     "slug": "xpeng",
     "image": {
-      "src": "./optimized/xpeng.png"
+      "src": "./optimized/xpeng.webp"
     }
   },
   {
     "name": "Zeekr",
     "slug": "zeekr",
     "image": {
-      "src": "./optimized/zeekr.png"
+      "src": "./optimized/zeekr.webp"
     }
   }
 ]
