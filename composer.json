@@ -1,0 +1,15 @@
+{
+    "name": "desch/tfe-aout-jarne",
+    "autoload": {
+        "psr-4": {
+            "Desch\\TfeAoutJarne\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Jarne",
+            "email": "descheerderjarne@gmail.com"
+        }
+    ],
+    "require": {}
+}
