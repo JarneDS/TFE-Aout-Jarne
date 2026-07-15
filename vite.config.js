@@ -3,7 +3,7 @@ import { resolve } from 'path';
 
 export default defineConfig({
   root: 'src',
-  base: '/projets/tfe-application/',
+  base: '/projets/tfe-aout/',
   publicDir: '../public',
   build: {
     outDir: '../dist',
