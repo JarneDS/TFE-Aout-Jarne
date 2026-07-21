@@ -16,6 +16,6 @@ form.addEventListener('submit', async (e) => {
   alert(json.message);
 
   if (json.message === "Connexion réussie") {
-    window.location.href = "/dashboard.html";
+    window.location.href = "/mesVoitures.html";
   }
 });

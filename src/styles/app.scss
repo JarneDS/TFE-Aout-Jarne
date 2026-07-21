@@ -47,3 +47,108 @@ html, body {
   overflow-x: hidden;
   background-color: var(--color-bg);
 }
+
+h1, h2, h3, h4, p {
+  color: var(--color-textWhite);
+}
+
+h1, h2, h3 {
+  font-family: 'Oswald-Bold';
+}
+
+h4, p, .legend {
+  font-family: 'TitilliumWeb-SemiBold';
+}
+
+strong, b {
+  font-family: 'TitilliumWeb-Bold';
+}
+
+/* NAV */
+
+@media (min-width: 701px) {
+  /* NAV */
+  nav {
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 31px;
+    background-color: var(--color-form_Nav);
+    transition: all .3s;
+    padding: 20px;
+  }
+
+  nav:hover {
+    width: 170px;
+  }
+
+  .menu__logo {
+    width: 100%;
+  }
+
+  .menu__links {
+    margin-top: 86px;
+    transition: all .3s;
+  }
+
+  .menu__element {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+  }
+
+  .menu__element:hover .menu__title {
+    color: var(--color-actif);
+  }
+
+  .menu__element:hover .menu__img {
+    filter: brightness(100%);
+  }
+
+  .menu__img {
+    width: 25px;
+    height: 25px;
+    filter: brightness(1000%);
+  }
+
+  .menu__title {
+    opacity: 0;
+    transition: all .3s;
+    white-space: nowrap;
+  }
+
+  nav:hover .menu__title {
+    opacity: 1;
+  }
+
+  nav:hover .menu__links {
+    margin-top: 32px;
+  }
+
+  .menu__account {
+    position: absolute;
+    bottom: 20px;
+  }
+
+  .img__profil {
+    width: 25px;
+    height: 25px;
+    border-radius: 100%;
+    background-color: var(--color-secondary);
+  }
+
+  .actif .menu__title {
+    color: var(--color-actif);
+  }
+
+  .actif .menu__img {
+    filter: brightness(100%);
+  }
+}
+
+@media (min-width: 1050px) {
+
+}
