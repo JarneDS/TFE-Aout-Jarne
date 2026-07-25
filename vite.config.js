@@ -21,7 +21,8 @@ export default defineConfig({
         roues: resolve(__dirname, 'src/roues.html'),
         suspension: resolve(__dirname, 'src/suspension.html'),
         temoins: resolve(__dirname, 'src/temoins.html'),*/
-        mesVoitures: resolve(__dirname, 'src/mesVoitures.html')
+        mesVoitures: resolve(__dirname, 'src/mesVoitures.html'),
+        rechercher: resolve(__dirname, 'src/rechercher.html')
       }
     }
   },

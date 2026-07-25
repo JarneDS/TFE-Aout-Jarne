@@ -67,6 +67,10 @@ strong, b {
 /* NAV */
 
 @media (min-width: 701px) {
+  body {
+    margin: 60px 60px 60px 131px;
+  }
+
   /* NAV */
   nav {
     position: fixed;
