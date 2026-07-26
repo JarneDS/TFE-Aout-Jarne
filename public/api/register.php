@@ -24,7 +24,7 @@
         $targetFile = $uploadDir . $fileName;
 
         if (move_uploaded_file($_FILES['image']['tmp_name'], $targetFile)) {
-            $imagePath = '/uploads/' . $fileName;
+            $imagePath = '/projets/tfe-aout/uploads/' . $fileName;
         }
     }
 

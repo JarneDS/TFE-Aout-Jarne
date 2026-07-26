@@ -163,7 +163,7 @@ input {
     text-decoration: none;
   }
 
-  .menu__element:hover .menu__title {
+  .menu__element:hover .menu__title, .menu__element:hover .menu__user {
     color: var(--color-actif);
   }
 
@@ -177,13 +177,13 @@ input {
     filter: brightness(1000%);
   }
 
-  .menu__title {
+  .menu__title, .menu__user {
     opacity: 0;
     transition: all .3s;
     white-space: nowrap;
   }
 
-  nav:hover .menu__title {
+  nav:hover .menu__title, nav:hover .menu__user {
     opacity: 1;
   }
 
@@ -200,10 +200,9 @@ input {
     width: 25px;
     height: 25px;
     border-radius: 100%;
-    background-color: var(--color-secondary);
   }
 
-  .actif .menu__title {
+  .actif .menu__title, .actif .menu__user {
     color: var(--color-actif);
   }
 
