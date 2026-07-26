@@ -7,7 +7,7 @@ class User {
         $this->db = $db;
     }
 
-    public function register(string $username, string $email, string $password): bool {
+    public function register(string $nom, string $prenom, string $email, string $password, ?string $imagePath): bool {
         // Vérifie si email existe
         $stmt = $this->db->prepare("SELECT id FROM users WHERE email = ?");
         $stmt->execute([$email]);
@@ -21,10 +21,11 @@ class User {
 
         // Insert
         $stmt = $this->db->prepare(
-            "INSERT INTO users (username, email, password) VALUES (?, ?, ?)"
+            "INSERT INTO users (nom, prenom, email, password, image) 
+             VALUES (?, ?, ?, ?, ?)"
         );
 
-        return $stmt->execute([$username, $email, $hash]);
+        return $stmt->execute([$nom, $prenom, $email, $hash, $imagePath]);
     }
 
     public function login(string $email, string $password): bool {
@@ -42,8 +43,10 @@ class User {
         // Démarre la session
         $_SESSION['user'] = [
             'id' => $user['id'],
-            'username' => $user['username'],
-            'email' => $user['email']
+            'nom' => $user['nom'],
+            'prenom' => $user['prenom'],
+            'email' => $user['email'],
+            'image' => $user['image']
         ];
 
         return true;
@@ -57,5 +60,4 @@ class User {
         return isset($_SESSION['user']);
     }
 }
-
 ?>

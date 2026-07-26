@@ -22,7 +22,10 @@ export default defineConfig({
         suspension: resolve(__dirname, 'src/suspension.html'),
         temoins: resolve(__dirname, 'src/temoins.html'),*/
         mesVoitures: resolve(__dirname, 'src/mesVoitures.html'),
-        rechercher: resolve(__dirname, 'src/rechercher.html')
+        rechercher: resolve(__dirname, 'src/rechercher.html'),
+        monCompte: resolve(__dirname, 'src/monCompte.html'),
+        creerCompte: resolve(__dirname, 'src/creerCompte.html'),
+        accueil: resolve(__dirname, 'src/accueil.html')
       }
     }
   },

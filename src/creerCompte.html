@@ -19,6 +19,7 @@
 
     <link rel="stylesheet" href="/styles/app.scss">
     <script type="module" src="scripts/app.js" defer></script>
+    <script type="module" src="scripts/compte.js"></script>
 </head>
 
 <body>
@@ -37,65 +38,58 @@
                 <img src="/EntretienIcone.png" alt="icone Entretien" class="menu__img">
                 <h4 class="menu__title">Entretien</h4>
             </a>
-            <a href="#" class="menu__element">
+            <a href="mesVoitures.html" class="menu__element">
                 <img src="/mesVoituresIcone.png" alt="icone Mes voitures" class="menu__img">
                 <h4 class="menu__title">Mes voitures</h4>
             </a>
-            <a href="#" class="menu__element actif">
+            <a href="rechercher.html" class="menu__element">
                 <img src="/rechercheIcone.png" alt="icone Rechercher" class="menu__img">
                 <h4 class="menu__title">Rechercher</h4>
             </a>
         </div>
-        <a href="index.html" class="menu__element menu__account">
+        <a href="#" class="menu__element menu__account actif">
             <img src="/rechercheIcone.png" alt="Photo de profil" class="img__profil">
             <h4 class="menu__title">John</h4>
         </a>
     </nav>
+    <section>
+        <h1>Mon compte</h1>
+        <div class="creerCompte">
+            <img id="previewImage" src="" alt="Photo de profil">
+            <h3 id="userName"></h3>
 
-    <!--
-        https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Global_Objects/Array/filter
-        https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Global_Objects/String/includes
-        https://developer.mozilla.org/fr/docs/Web/API/Element/input_event
-        https://developer.mozilla.org/fr/docs/Web/JavaScript
-    -->
+            <form id="creerCompteForm" enctype="multipart/form-data">
+                <div>
+                    <div class="form__elements">
+                        <label for="image">Photo de profil</label>
+                        <input type="file" name="image" id="image" accept="image/*">
+                    </div>
 
-    <!-- Formulaire de recherche -->
-    <input type="text" id="recherche-input" placeholder="Rechercher une page...">
+                    <div class="form__elements">
+                        <label for="nom">Nom</label>
+                        <input type="text" name="nom" id="nom" required>
+                    </div>
 
-    <!-- Zone d'affichage des résultats -->
-    <ul id="recherche-results"></ul>
+                    <div class="form__elements">
+                        <label for="prenom">Prénom</label>
+                        <input type="text" name="prenom" id="prenom" required>
+                    </div>
+                </div>
 
-    <!-- Chargement de l'index et du script de recherche -->
-    <script type="module" src="scripts/rechercher.js"></script>
-    <script>
-        const rechercheInput = document.getElementById('recherche-input');
-        const rechercheResults = document.getElementById('recherche-results');
+                <div class="form__elements">
+                    <label for="email">Email</label>
+                    <input type="email" name="email" id="email" required>
+                </div>
 
-        rechercheInput.addEventListener('input', function () {
-            const query = this.value.toLowerCase().trim();
-            rechercheResults.innerHTML = ''; // Vide les anciens résultats
+                <div class="form__elements">
+                    <label for="mdp">Mot de passe</label>
+                    <input type="password" name="mdp" id="mdp" required>
+                </div>
 
-            // Si la recherche fait moins de 2 caractères, on n'affiche rien
-            if (query.length < 2) return;
-
-            // Filtration de l'index
-            const matches = rechercheIndex.filter(page => {
-                return page.title.toLowerCase().includes(query) ||
-                    page.content.toLowerCase().includes(query);
-            });
-
-            // Affichage des résultats
-            if (matches.length > 0) {
-                matches.forEach(page => {
-                    const li = document.createElement('li');
-                    li.innerHTML = `<a href="${page.url}"><strong>${page.title}</strong></a>`;
-                    rechercheResults.appendChild(li);
-                });
-            } else {
-                rechercheResults.innerHTML = '<li>Aucun résultat trouvé</li>';
-            }
-        });
-    </script>
+                <button type="submit">Créer mon compte</button>
+            </form>
+        </div>
+    </section>
 </body>
 
 </html>

@@ -48,7 +48,7 @@ html, body {
   background-color: var(--color-bg);
 }
 
-h1, h2, h3, h4, p {
+h1, h2, h3, h4, p, label {
   color: var(--color-textWhite);
 }
 
@@ -56,7 +56,7 @@ h1, h2, h3 {
   font-family: 'Oswald-Bold';
 }
 
-h4, p, .legend {
+h4, p, .legend, label, input, button {
   font-family: 'TitilliumWeb-SemiBold';
 }
 
@@ -64,7 +64,66 @@ strong, b {
   font-family: 'TitilliumWeb-Bold';
 }
 
+h1 {
+  font-size: clamp(3.563rem, 0.432vw + 3.481rem, 4rem);
+  margin: 0 0 46px;
+}
+
+h2 {
+  font-size: clamp(2.5rem, 0.309vw + 2.442rem, 2.813rem);
+  margin: 64px 0 32px;
+}
+
+h3 {
+  font-size: clamp(1.75rem, 0.185vw + 1.715rem, 1.938rem);
+  margin: 44px 0 22px;
+}
+
+h4, label {
+  font-size: clamp(1.188rem, 0.185vw + 1.153rem, 1.375rem);
+  margin: 16px 0;
+}
+
+p, button {
+  font-size: clamp(1rem, 0.123vw + 0.977rem, 1.125rem);
+  margin: 13px 0;
+}
+
+button {
+  background-color: var(--color-primary);
+  color: var(--color-textWhite);
+  padding: 13px;
+  border-radius: 5px;
+  border: var(--color-primary) 2px solid;
+}
+
 /* NAV */
+
+
+/* FORM */
+form {
+  display: flex;
+  flex-direction: column;
+  width: 623px;
+}
+
+.form__elements {
+  display: flex;
+  flex-direction: column;
+}
+
+input {
+  padding: 13px;
+  background-color: var(--color-form_Nav);
+  color: var(--color-textWhite);
+  border: none;
+  border-radius: 5px;
+}
+
+.button__creer {
+  background-color: var(--color-bg);
+  border: var(--color-primary) 2px solid;
+}
 
 @media (min-width: 701px) {
   body {
