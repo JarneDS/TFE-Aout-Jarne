@@ -257,7 +257,7 @@ input {
   z-index: 1;
 }
 
-.modifierImage {
+#modifierImage {
   position: absolute;
   width: 40px;
   z-index: 3;
@@ -265,7 +265,11 @@ input {
   transition: 0.3s;
 }
 
-.image__profil:hover .bgImage, .image__profil:hover .modifierImage {
+.image__profil:hover #modifierImage {
+  opacity: 1;
+}
+
+.image__profil.no-image #modifierImage {
   opacity: 1;
 }
 

@@ -46,9 +46,11 @@ const prenomInput = document.getElementById('prenom');
 const userName = document.getElementById('userName');
 const form2 = document.getElementById('creerCompteForm');
 const container = document.getElementById('imageProfilContainer');
+const crayonImage = document.getElementById('modifierImage');
 
 if (!imgInput.files.length) {
   previewImage.style.display = "none";
+  container.classList.add("no-image");
 }
 
 if (imgInput) {
@@ -57,6 +59,7 @@ if (imgInput) {
     if (file) {
       previewImage.src = URL.createObjectURL(file);
       previewImage.style.display = "block";
+      container.classList.remove("no-image");
     }
   });
 }
