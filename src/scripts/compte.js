@@ -45,13 +45,25 @@ const nomInput = document.getElementById('nom');
 const prenomInput = document.getElementById('prenom');
 const userName = document.getElementById('userName');
 const form2 = document.getElementById('creerCompteForm');
+const container = document.getElementById('imageProfilContainer');
+
+if (!imgInput.files.length) {
+  previewImage.style.display = "none";
+}
 
 if (imgInput) {
   imgInput.addEventListener('change', () => {
     const file = imgInput.files[0];
     if (file) {
       previewImage.src = URL.createObjectURL(file);
+      previewImage.style.display = "block";
     }
+  });
+}
+
+if (container && imgInput) {
+  container.addEventListener('click', () => {
+    imgInput.click();
   });
 }
 

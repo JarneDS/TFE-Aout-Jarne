@@ -59,40 +59,49 @@
   </nav>
     <section>
         <h1>Mon compte</h1>
-        <div class="creerCompte div--flex">
-            <img id="previewImage" src="" alt="Photo de profil">
-            <h3 id="userName"></h3>
+        <div class="div--flex">
+            <div class="creerCompte">
+                <div class="compteInfos">
+                    <div class="image__profil" id="imageProfilContainer">
+                        <img id="previewImage" src="" alt="Photo de profil" class="imageProfil">
 
-            <form id="creerCompteForm" enctype="multipart/form-data">
-                <div>
-                    <div class="form__elements">
-                        <label for="image">Photo de profil</label>
-                        <input type="file" name="image" id="image" accept="image/*">
+                        <div class="bgImage"></div>
+
+                        <img src="/imageProfil_modif.png" 
+                            alt="Un crayon pour modifier la photo du profil" 
+                            class="modifierImage">
+                        
+                        <input type="file" id="image" name="image" accept="image/*" hidden>
+                    </div>
+                    <h3 id="userName"></h3>
+                </div>
+
+                <form id="creerCompteForm" enctype="multipart/form-data">
+                    <div>
+                        <div class="form__elements">
+                            <label for="nom">Nom</label>
+                            <input type="text" name="nom" id="nom" required>
+                        </div>
+
+                        <div class="form__elements">
+                            <label for="prenom">Prénom</label>
+                            <input type="text" name="prenom" id="prenom" required>
+                        </div>
                     </div>
 
                     <div class="form__elements">
-                        <label for="nom">Nom</label>
-                        <input type="text" name="nom" id="nom" required>
+                        <label for="email">Email</label>
+                        <input type="email" name="email" id="email" required>
                     </div>
 
                     <div class="form__elements">
-                        <label for="prenom">Prénom</label>
-                        <input type="text" name="prenom" id="prenom" required>
+                        <label for="mdp">Mot de passe</label>
+                        <input type="password" name="mdp" id="mdp" required>
                     </div>
-                </div>
 
-                <div class="form__elements">
-                    <label for="email">Email</label>
-                    <input type="email" name="email" id="email" required>
-                </div>
-
-                <div class="form__elements">
-                    <label for="mdp">Mot de passe</label>
-                    <input type="password" name="mdp" id="mdp" required>
-                </div>
-
-                <button type="submit">Créer mon compte</button>
-            </form>
+                    <button type="submit">Créer mon compte</button>
+                </form>
+            </div>
         </div>
     </section>
 </body>
