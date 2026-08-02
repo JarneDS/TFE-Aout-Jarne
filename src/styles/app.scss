@@ -191,7 +191,6 @@ nav.actif .menu__allLinks {
 form {
   display: flex;
   flex-direction: column;
-  width: 623px;
 }
 
 .form__elements {
@@ -220,6 +219,10 @@ input {
   .div--flex {
     display: flex;
     justify-content: center;
+  }
+
+  form {
+    width: 623px;
   }
 
   /* NAV */
@@ -271,11 +274,12 @@ input {
     justify-content: left;
     gap: 10px;
     text-decoration: none;
+    width: fit-content;
   }
 
   .menu__img {
-    width: 25px;
-    height: 25px;
+    width: 29px;
+    height: 29px;
   }
 
   .menu__title, .menu__user {
@@ -293,8 +297,8 @@ input {
   }
 
   .img__profil {
-    width: 25px;
-    height: 25px;
+    width: 29px;
+    height: 29px;
     border-radius: 100%;
   }
 
