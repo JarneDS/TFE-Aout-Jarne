@@ -42,10 +42,17 @@
 }
 
 html, body {
-  margin: 0;
   padding: 0;
   overflow-x: hidden;
   background-color: var(--color-bg);
+}
+
+html {
+  margin: 0;
+}
+
+body {
+  margin: 90px 20px 20px;
 }
 
 h1, h2, h3, h4, p, label {
@@ -98,7 +105,87 @@ button {
 }
 
 /* NAV */
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 30px;
+  padding: 20px;
+  background-color: var(--color-form_Nav);
+}
 
+nav.actif .menu__allLinks {
+  transform: translate(-20px);
+}
+
+.menu__allLinks {
+  background-color: var(--color-form_Nav);
+  height: calc(100vh - 90px);
+  width: calc(100vw - 40px);
+  transform: translate(100vw);
+  padding: 20px;
+  position: relative;
+  transition: all .3s;
+}
+
+.menu__element {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  text-decoration: none;
+}
+
+.navBar__alwaysDisplay {
+  display: flex;
+  justify-content: space-between;
+}
+
+.menu__logo {
+  height: 30px;
+}
+
+#menu__btn {
+  background-color: transparent;
+  border: none;
+  margin: 0;
+  padding: 0;
+}
+
+#menu__btn:hover {
+  color: var(--color-actif);
+}
+
+.menu__img, .img__profil {
+  height: 29px;
+}
+
+.menu__img {
+  filter: brightness(1000%);
+}
+
+.menu__account {
+  position: absolute;
+  bottom: 20px;
+}
+
+.menu__element:hover .menu__title, .menu__element:hover .menu__user {
+  color: var(--color-actif);
+}
+
+.menu__element:hover .menu__img {
+  filter: brightness(100%);
+}
+
+.menu__element.actif .menu__title, .menu__element.actif .menu__user {
+  color: var(--color-actif);
+}
+
+.menu__element.actif .menu__img {
+  filter: brightness(100%);
+}
 
 /* FORM */
 form {
@@ -128,6 +215,11 @@ input {
 @media (min-width: 701px) {
   body {
     margin: 60px 60px 60px 131px;
+  }
+
+  .div--flex {
+    display: flex;
+    justify-content: center;
   }
 
   /* NAV */
@@ -163,18 +255,9 @@ input {
     text-decoration: none;
   }
 
-  .menu__element:hover .menu__title, .menu__element:hover .menu__user {
-    color: var(--color-actif);
-  }
-
-  .menu__element:hover .menu__img {
-    filter: brightness(100%);
-  }
-
   .menu__img {
     width: 25px;
     height: 25px;
-    filter: brightness(1000%);
   }
 
   .menu__title, .menu__user {
@@ -200,14 +283,6 @@ input {
     width: 25px;
     height: 25px;
     border-radius: 100%;
-  }
-
-  .actif .menu__title, .actif .menu__user {
-    color: var(--color-actif);
-  }
-
-  .actif .menu__img {
-    filter: brightness(100%);
   }
 }
 

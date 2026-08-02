@@ -21,3 +21,10 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 });
 
+/* NAV */
+const boutonMenu = document.getElementById('menu__btn');
+const menu = document.querySelector('.nav');
+
+boutonMenu.addEventListener('click', () => {
+  menu.classList.toggle('actif');
+});
