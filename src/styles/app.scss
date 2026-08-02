@@ -367,6 +367,17 @@ input {
   .menu__account {
     padding-bottom: 20px;
   }
+
+  /* FORM */
+  .NomPrenom {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .NomPrenomForm {
+    width: 48%;
+  }
 }
 
 @media (min-width: 1050px) {
