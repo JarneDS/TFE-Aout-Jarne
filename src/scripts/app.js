@@ -48,3 +48,20 @@ const menu = document.querySelector('.nav');
 boutonMenu.addEventListener('click', () => {
   menu.classList.toggle('actif');
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+  const menuAccount = document.querySelector('.menu__account');
+
+  if (!menuAccount) return;
+
+  fetch('/projets/tfe-aout/api/moi.php')
+    .then(res => res.json())
+    .then(json => {
+
+      if (json.logged) {
+        menuAccount.href = "monCompte.html";
+      } else {
+        menuAccount.href = "index.html"; 
+      }
+    });
+});
