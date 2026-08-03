@@ -59,6 +59,46 @@ function updateName() {
 nomInput.addEventListener('input', updateName);
 prenomInput.addEventListener('input', updateName);
 
+// Désactiver le bouton au départ
+const btnEnregistrer = document.getElementById("enregistrer");
+btnEnregistrer.disabled = true;
+btnEnregistrer.style.cursor = "default";
+btnEnregistrer.style.opacity = .5;
+
+// Stocker les valeurs initiales après chargement
+let initialData = {};
+
+document.addEventListener("DOMContentLoaded", () => {
+  initialData = {
+    nom: nomInput.value,
+    prenom: prenomInput.value,
+    email: emailInput.value,
+    mdp: "",
+    image: null
+  };
+});
+
+// Vérifier si quelque chose a changé
+function checkChanges() {
+  const hasChanged =
+    nomInput.value !== initialData.nom ||
+    prenomInput.value !== initialData.prenom ||
+    emailInput.value !== initialData.email ||
+    mdpInput.value.length > 0 ||
+    imgInput.files.length > 0;
+
+  btnEnregistrer.disabled = !hasChanged;
+  btnEnregistrer.style.cursor = "pointer";
+  btnEnregistrer.style.opacity = 1;
+}
+
+// Écouter les changements
+nomInput.addEventListener("input", checkChanges);
+prenomInput.addEventListener("input", checkChanges);
+emailInput.addEventListener("input", checkChanges);
+mdpInput.addEventListener("input", checkChanges);
+imgInput.addEventListener("change", checkChanges);
+
 // Enregistrer les modifications
 document.getElementById("enregistrer").addEventListener('click', async (e) => {
   e.preventDefault();

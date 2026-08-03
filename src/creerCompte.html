@@ -2,28 +2,28 @@
 <html lang="fr">
 
 <head>
-    <title>TFE - De Scheerder Jarne</title>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta property="og:site_name" content="TFE De Scheerder Jarne">
-    <meta property="og:title" content="Les secrets de la voiture">
-    <meta property="og:description" content="TFE De Scheerder Jarne">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://jarnedescheerder.be/projets/tfe">
-    <meta property="og:image" content="https://jarnedescheerder.be/projets/tfe/public/favico.ico">
-    <meta property="og:image:width" content="1800">
-    <meta property="og:image:height" content="945">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>TFE - De Scheerder Jarne</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta property="og:site_name" content="TFE De Scheerder Jarne">
+  <meta property="og:title" content="Les secrets de la voiture">
+  <meta property="og:description" content="TFE De Scheerder Jarne">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://jarnedescheerder.be/projets/tfe">
+  <meta property="og:image" content="https://jarnedescheerder.be/projets/tfe/public/favico.ico">
+  <meta property="og:image:width" content="1800">
+  <meta property="og:image:height" content="945">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
 
-    <link rel="stylesheet" href="/styles/app.scss">
-    <script type="module" src="scripts/app.js" defer></script>
-    <script type="module" src="scripts/creerCompte.js"></script>
+  <link rel="stylesheet" href="/styles/app.scss">
+  <script type="module" src="scripts/app.js" defer></script>
+  <script type="module" src="scripts/creerCompte.js"></script>
 </head>
 
 <body>
-    <nav class="nav">
+  <nav class="nav">
     <div class="navBar__alwaysDisplay">
       <img src="/logo.png" alt="logo de Les secrets de la voiture" class="menu__logo">
       <button id="menu__btn">Menu</button>
@@ -57,51 +57,50 @@
       </a>
     </div>
   </nav>
-    <section>
-        <h1>Mon compte</h1>
-        <div class="div--flex">
-            <div class="creerCompte">
-                <div class="compteInfos">
-                    <div class="image__profil" id="imageProfilContainer">
-                        <img id="previewImage" src="" alt="Photo de profil" class="imageProfil">
+  <section>
+    <h1>Mon compte</h1>
+    <div class="div--flex">
+      <div class="creerCompte">
+        <form id="creerCompteForm" enctype="multipart/form-data">
+          <div class="compteInfos">
+            <div class="image__profil" id="imageProfilContainer">
+              <img id="previewImage" src="" alt="Photo de profil" class="imageProfil">
 
-                        <div class="bgImage"></div>
+              <div class="bgImage"></div>
 
-                        <img src="/imageProfil_modif.png" alt="Un crayon pour modifier la photo du profil" id="modifierImage">
-                        
-                        <input type="file" id="image" name="image" accept="image/*" hidden>
-                    </div>
-                    <h3 id="userName"></h3>
-                </div>
+              <img src="/imageProfil_modif.png" alt="Un crayon pour modifier la photo du profil" id="modifierImage">
 
-                <form id="creerCompteForm" enctype="multipart/form-data">
-                    <div class="NomPrenom">
-                        <div class="form__elements NomPrenomForm">
-                            <label for="nom">Nom</label>
-                            <input type="text" name="nom" id="nom" required>
-                        </div>
-
-                        <div class="form__elements NomPrenomForm">
-                            <label for="prenom">Prénom</label>
-                            <input type="text" name="prenom" id="prenom" required>
-                        </div>
-                    </div>
-
-                    <div class="form__elements">
-                        <label for="email">Email</label>
-                        <input type="email" name="email" id="email" required>
-                    </div>
-
-                    <div class="form__elements">
-                        <label for="mdp">Mot de passe</label>
-                        <input type="password" name="mdp" id="mdp" required autocomplete="new-password">
-                    </div>
-
-                    <button type="submit">Créer mon compte</button>
-                </form>
+              <input type="file" id="image" name="image" accept="image/*" hidden>
             </div>
-        </div>
-    </section>
+            <h3 id="userName"></h3>
+          </div>
+          <div class="NomPrenom">
+            <div class="form__elements NomPrenomForm">
+              <label for="nom">Nom</label>
+              <input type="text" name="nom" id="nom" required>
+            </div>
+
+            <div class="form__elements NomPrenomForm">
+              <label for="prenom">Prénom</label>
+              <input type="text" name="prenom" id="prenom" required>
+            </div>
+          </div>
+
+          <div class="form__elements">
+            <label for="email">Email</label>
+            <input type="email" name="email" id="email" required>
+          </div>
+
+          <div class="form__elements">
+            <label for="mdp">Mot de passe</label>
+            <input type="password" name="mdp" id="mdp" required autocomplete="new-password">
+          </div>
+
+          <button type="submit">Créer mon compte</button>
+        </form>
+      </div>
+    </div>
+  </section>
 </body>
 
 </html>
