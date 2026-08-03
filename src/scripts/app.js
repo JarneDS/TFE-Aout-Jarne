@@ -1,5 +1,23 @@
 "use strict";
 
+function updateProfilFilter() {
+    const imgProfil = document.querySelector('.img__profil');
+    const menuAccount = document.querySelector('.menu__account');
+
+    if (!imgProfil || !menuAccount) return;
+
+    const fileName = new URL(imgProfil.src).pathname.split('/').pop();
+
+    const isDefaultImage = fileName === "compte.png";
+    const isActivePage = menuAccount.classList.contains("actif");
+
+    if (isDefaultImage && !isActivePage) {
+        imgProfil.style.filter = "brightness(1000%)";
+    } else {
+        imgProfil.style.filter = "none";
+    }
+}
+
 document.addEventListener("DOMContentLoaded", () => {
   fetch('/projets/tfe-aout/api/moi.php')
     .then(res => res.json())
@@ -13,12 +31,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
       if (imgProfil) {
         imgProfil.src = user.image;
+        imgProfil.onload = updateProfilFilter;
       }
 
       if (titleProfil) {
         titleProfil.textContent = `${user.nom} ${user.prenom}`;
       }
     });
+    updateProfilFilter();
 });
 
 /* NAV */

@@ -19,7 +19,7 @@
 
     <link rel="stylesheet" href="/styles/app.scss">
     <script type="module" src="scripts/app.js" defer></script>
-    <script type="module" src="scripts/compte.js"></script>
+    <script type="module" src="scripts/creerCompte.js"></script>
 </head>
 
 <body>
@@ -52,7 +52,7 @@
         </a>
       </div>
       <a href="#" class="menu__element menu__account actif">
-        <img src="/rechercheIcone.png" alt="Photo de profil" class="img__profil">
+        <img src="/compte.png" alt="Photo de profil" class="img__profil">
         <h4 class="menu__user">Compte</h4>
       </a>
     </div>
@@ -94,7 +94,7 @@
 
                     <div class="form__elements">
                         <label for="mdp">Mot de passe</label>
-                        <input type="password" name="mdp" id="mdp" required>
+                        <input type="password" name="mdp" id="mdp" required autocomplete="new-password">
                     </div>
 
                     <button type="submit">Créer mon compte</button>

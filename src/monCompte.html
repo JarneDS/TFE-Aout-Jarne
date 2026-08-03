@@ -19,6 +19,7 @@
 
   <link rel="stylesheet" href="/styles/app.scss">
   <script type="module" src="scripts/app.js" defer></script>
+  <script type="module" src="scripts/compte.js"></script>
 </head>
 
 <body>
@@ -51,7 +52,7 @@
         </a>
       </div>
       <a href="#" class="menu__element menu__account actif">
-        <img src="/rechercheIcone.png" alt="Photo de profil" class="img__profil">
+        <img src="/compte.png" alt="Photo de profil" class="img__profil">
         <h4 class="menu__user">Compte</h4>
       </a>
     </div>
@@ -59,7 +60,68 @@
   <section>
     <h1>Mon compte</h1>
     <div class="div--flex">
-      
+      <div class="creerCompte">
+        <form id="modifierCompteForm" enctype="multipart/form-data">
+          <div class="compteInfos">
+            <div class="image__profil" id="imageProfilContainer">
+              <img id="previewImage" src="" alt="Photo de profil" class="imageProfilCompte">
+
+              <div class="bgImageCompte"></div>
+
+              <img src="/imageProfil_modif.png" alt="Un crayon pour modifier la photo du profil" id="modifierImage">
+
+              <input type="file" id="image" name="image" accept="image/*" hidden>
+            </div>
+            <h3 id="userName"></h3>
+          </div>
+          
+          <div class="NomPrenom">
+            <div class="form__elements NomPrenomForm">
+              <label for="nom">Nom</label>
+              <div class="changerInfosContainer">
+                <input type="text" name="nom" id="nom" required>
+                <button class="bgCrayon" type="button">
+                  <img src="/imageProfil_modif.png" alt="Crayon pour modifier le nom" class="changerInfos">
+                </button>
+              </div>
+            </div>
+
+            <div class="form__elements NomPrenomForm">
+              <label for="prenom">Prénom</label>
+              <div class="changerInfosContainer">
+                <input type="text" name="prenom" id="prenom" required>
+                <button class="bgCrayon" type="button">
+                  <img src="/imageProfil_modif.png" alt="Crayon pour modifier le nom" class="changerInfos">
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="form__elements">
+            <label for="email">Email</label>
+            <div class="changerInfosContainer">
+              <input type="email" name="email" id="email" required>
+              <button class="bgCrayon" type="button">
+                <img src="/imageProfil_modif.png" alt="Crayon pour modifier le nom" class="changerInfos">
+              </button>
+            </div>
+          </div>
+
+          <div class="form__elements">
+            <label for="mdp">Mot de passe</label>
+            <div class="changerInfosContainer">
+              <input type="password" name="mdp" id="mdp" required autocomplete="new-password">
+              <button class="bgCrayon" type="button">
+                <img src="/imageProfil_modif.png" alt="Crayon pour modifier le nom" class="changerInfos">
+              </button>
+            </div>
+          </div>
+
+          <button id="enregistrer" type="submit">Enregistrer les modfications</button>
+          <button id="deconnecter" type="button">Se déconnecter</button>
+          <button id="supprimerCompte" class="SupprimerCompte" type="button">Supprimer mon compte</button>
+        </form>
+      </div>
     </div>
   </section>
 </body>
