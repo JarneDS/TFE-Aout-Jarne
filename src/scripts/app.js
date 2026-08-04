@@ -70,120 +70,150 @@ document.addEventListener("DOMContentLoaded", () => {
 const fichier = location.pathname.split("/").pop();
 if (fichier === "mesVoitures.html") {
   const mesVoitures = document.getElementById('mesVoitures__Container');
-  const ajouterVoiture = document.getElementById('ajouterVoiture');
-  
-  ajouterVoiture.addEventListener('click', () => {
-    window.location.href = "ajouterVoiture.html";
-  });
 
   async function chargerVoitures(userId) {
 
-      const response = await fetch(`/projets/tfe-aout/api/voitures.php?userId=${userId}`);
-      const result = await response.json();
+    const response = await fetch(`/projets/tfe-aout/api/voitures.php?userId=${userId}`);
+    const result = await response.json();
 
-      // Vérification du succès
-      if (!result.success) {
-          mesVoitures.innerHTML = "<p>Erreur lors du chargement des voitures.</p>";
-          console.log(result);
-          return;
-      }
+    // Vérification du succès
+    if (!result.success) {
+      mesVoitures.innerHTML = "<p>Erreur lors du chargement des voitures.</p>";
+      console.log(result);
+      return;
+    }
 
-      const voitures = result.voitures;
+    const voitures = result.voitures;
 
-      if (voitures.length === 0) {
-          mesVoitures.innerHTML = "<p>Aucune voiture enregistrée.</p>";
-          return;
-      }
+    if (voitures.length === 0) {
+      mesVoitures.innerHTML = "<p>Aucune voiture enregistrée.</p>";
+      return;
+    }
 
-      function capitalize(str) {
-        return str.charAt(0).toUpperCase() + str.slice(1).toLowerCase();
-      }
+    function capitalize(str) {
+      return str.charAt(0).toUpperCase() + str.slice(1).toLowerCase();
+    }
 
-      mesVoitures.innerHTML = voitures
-          .map(v => `
+    function activerBoutons() {
+      // Boutons supprimer
+      document.querySelectorAll(".SupprimerVoiture").forEach(btn => {
+        btn.addEventListener("click", () => {
+          const id = btn.dataset.id;
+          supprimerVoiture(id);
+        });
+      });
+
+      // Boutons consulter
+      document.querySelectorAll(".ConsulterVoiture").forEach(btn => {
+        btn.addEventListener("click", () => {
+          const id = btn.dataset.id;
+          consulterVoiture(id);
+        });
+      });
+    }
+
+    mesVoitures.innerHTML = voitures
+      .map(v => `
               <div class="voiture">
-                  <img src="/projets/tfe-aout/optimized/${v.marque}.webp" alt="logo marque" class="logoMarque">
+                <img src="/projets/tfe-aout/optimized/${v.marque}.webp" alt="logo marque" class="logoMarque">
 
-                  <h4 class="marque">${capitalize(v.marque)} ${capitalize(v.modele)}</h4>
-                  <p class="legend NomMarque">${v.anneeConstruction} | ${v.kmParcourues}km</p>
+                <h4 class="marque">${capitalize(v.marque)} ${capitalize(v.modele)}</h4>
+                <p class="legend NomMarque">${v.anneeConstruction} | ${v.kmParcourues}km</p>
 
-                  <div class="boutonsVoiture">
-                      <button type="button" class="SupprimerVoiture" onclick="supprimerVoiture(${v.id})">
-                          Supprimer
-                      </button>
+                <div class="boutonsVoiture">
+                  <button type="button" class="SupprimerVoiture" data-id="${v.id}">Supprimer</button>
 
-                      <button type="button" onclick="consulterVoiture(${v.id})">
-                          Consulter
-                      </button>
-                  </div>
+                  <button type="button" class="ConsulterVoiture" data-id="${v.id}">Consulter</button>
+                </div>
               </div>
           `)
-          .join("");
+      .join("") +
+      `
+        <div class="voiture">
+          <img src="/projets/tfe-aout/ajouterVoiture.png" alt="icone pour ajouter une voiture à son garage virtuel" class="logoMarque">
+          <h4>Garage incomplet ?</h4>
+          <p class="legend">Cliquez ci-dessous pour le compléter !</p>
+          <button type="button" id="ajouterVoiture">Ajouter un véhicule</button>
+        </div>
+      `;
+    activerBoutons();
+
+    const ajouterVoiture = document.getElementById('ajouterVoiture');
+
+    ajouterVoiture.addEventListener('click', () => {
+      window.location.href = "ajouterVoiture.html";
+    });
   }
 
   async function supprimerVoiture(id) {
-      await fetch(`/projets/tfe-aout/api/voitures.php?id=${id}`, {
-          method: "DELETE"
-      });
+    const confirmation = confirm("Voulez-vous vraiment supprimer cette voiture ?");
 
-      const userId = localStorage.getItem("userId");
-      chargerVoitures(userId);
+    if (!confirmation) {
+      return;
+    }
+
+    await fetch(`/projets/tfe-aout/api/voitures.php?id=${id}`, {
+        method: "DELETE"
+    });
+
+    const userId = localStorage.getItem("userId");
+    chargerVoitures(userId);
   }
 
   function consulterVoiture(id) {
-      window.location.href = `/projets/tfe-aout/problemes.html?voitureId=${id}`;
+    window.location.href = `/projets/tfe-aout/problemes.html?voitureId=${id}`;
   }
 
   // Charger automatiquement à l’ouverture de la page
   document.addEventListener("DOMContentLoaded", () => {
-      const userId = localStorage.getItem("userId");
+    const userId = localStorage.getItem("userId");
 
-      if (!userId) {
-          mesVoitures.innerHTML = "<p>Erreur : utilisateur non connecté.</p>";
-          return;
-      }
+    if (!userId) {
+      mesVoitures.innerHTML = "<p>Erreur : utilisateur non connecté.</p>";
+      return;
+    }
 
-      chargerVoitures(userId);
+    chargerVoitures(userId);
   });
 }
 
 if (fichier === "ajouterVoiture.html") {
   /* Ajouter voiture */
-  document.getElementById("formAjouterVoiture").addEventListener("submit", async function(e) {
-      e.preventDefault();
+  document.getElementById("formAjouterVoiture").addEventListener("submit", async function (e) {
+    e.preventDefault();
 
-      const marque = document.getElementById("marque").value.trim();
-      const modele = document.getElementById("modele").value.trim();
-      const type = document.getElementById("type").value;
-      const kms = document.getElementById("kms").value;
-      const mois = document.getElementById("mois").value;
-      const annee = document.getElementById("annee").value;
+    const marque = document.getElementById("marque").value.trim().toLowerCase();
+    const modele = document.getElementById("modele").value.trim();
+    const type = document.getElementById("type").value;
+    const kms = document.getElementById("kms").value;
+    const mois = document.getElementById("mois").value;
+    const annee = document.getElementById("annee").value;
 
-      const userId = localStorage.getItem("userId");
+    const userId = localStorage.getItem("userId");
 
-      const data = {
-          userId,
-          marque,
-          modele,
-          type,
-          kmParcourues: kms,
-          moisConstruction: mois,
-          anneeConstruction: annee
-      };
+    const data = {
+      userId,
+      marque,
+      modele,
+      type,
+      kmParcourues: kms,
+      moisConstruction: mois,
+      anneeConstruction: annee
+    };
 
-      const response = await fetch("/projets/tfe-aout/api/voitures.php", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify(data)
-      });
+    const response = await fetch("/projets/tfe-aout/api/voitures.php", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(data)
+    });
 
-      const result = await response.json();
+    const result = await response.json();
 
-      if (result.success) {
-        window.location.href = "mesVoitures.html";
-      } else {
-        console.log(result);
-        alert("Erreur lors de l'ajout de la voiture.");
-      }
+    if (result.success) {
+      window.location.href = "mesVoitures.html";
+    } else {
+      console.log(result);
+      alert("Erreur lors de l'ajout de la voiture.");
+    }
   });
 }

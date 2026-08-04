@@ -519,6 +519,7 @@ input, select {
 
   #mesVoitures__Container, .mesVoituresAjouter__Container {
     flex-direction: row;
+    flex-wrap: wrap;
   }
 
   .voiture {
