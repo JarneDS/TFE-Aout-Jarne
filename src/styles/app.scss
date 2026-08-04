@@ -63,7 +63,7 @@ h1, h2, h3 {
   font-family: 'Oswald-Bold';
 }
 
-h4, p, .legend, label, input, button, select {
+h4, p, .legend, label, input, button, select, .inputKm::after, textarea {
   font-family: 'TitilliumWeb-SemiBold';
 }
 
@@ -91,7 +91,7 @@ h4, label {
   margin: 16px 0;
 }
 
-p, button {
+p, button, textarea {
   font-size: clamp(1rem, 0.123vw + 0.977rem, 1.125rem);
   margin: 13px 0;
 }
@@ -122,7 +122,7 @@ input, select {
 }
 
 .sectionButton {
-  margin-top: 60px;
+  margin-top: 40px;
 }
 
 .buttonAjouter {
@@ -235,23 +235,23 @@ input, select {
 }
 
 .inputKm {
-    position: relative;
-    width: 100%;
+  position: relative;
+  width: 100%;
 }
 
 .inputKm input {
-    padding-right: 45px;
+  padding-right: 45px;
 }
 
 .inputKm::after {
-    content: "km";
-    position: absolute;
-    right: 12px;
-    top: 77%;
-    transform: translateY(-50%);
-    color: #ccc;
-    font-size: 14px;
-    pointer-events: none; /* l'utilisateur ne peut pas cliquer dessus */
+  content: "km";
+  position: absolute;
+  right: 12px;
+  top: 75%;
+  transform: translateY(-50%);
+  color: #ccc;
+  font-size: 14px;
+  pointer-events: none; /* l'utilisateur ne peut pas cliquer dessus */
 }
 
 .inputAnnee {
@@ -398,6 +398,66 @@ input, select {
   align-self: center;
 }
 
+#survenance input[type="date"]::-webkit-calendar-picker-indicator {
+  opacity: 0;
+  cursor: pointer;
+}
+
+#survenance {
+  position: relative;
+}
+
+#survenance::after {
+  content: "";
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 20px;
+  height: 20px;
+  background-image: url("/projets/tfe-aout/calendar.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  pointer-events: none;
+}
+
+.boutonsVoiture {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}
+
+.fullWidth {
+  width: 100%;
+}
+
+/* Problemes */
+.headerProblemes, .headerProblemes__boutons {
+  display: flex;
+  flex-direction: column;
+}
+
+.headerProblemes__btn {
+  height: fit-content;
+}
+
+.problemes--flex {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+#description {
+  height: 128px;
+  resize: none;
+  padding: 13px;
+  box-sizing: border-box;
+  border-radius: 5px;
+  background-color: var(--color-form_Nav);
+  border: none;
+  color: var(--color-textWhite);
+}
+
 @media (min-width: 701px) {
   body {
     margin: 60px 60px 60px 131px;
@@ -413,7 +473,7 @@ input, select {
   }
 
   .sectionButton {
-    margin-top: 80px;
+    margin-top: 60px;
   }
 
   /* NAV */
@@ -533,6 +593,30 @@ input, select {
   #annee, #mois {
     width: 100%;
   }
+
+  /* Problemes */
+  .headerProblemes, .headerProblemes__boutons {
+    flex-direction: row;
+    gap: 20px;
+  }
+
+  .headerProblemes {
+    justify-content: space-between;
+  }
+
+  #formProblemes {
+    width: 34%;
+  }
+
+  .listeProblemes__Container {
+    width: 100%;
+  }
+
+  .problemes--flex {
+    flex-direction: row;
+    gap: 80px;
+  }
+
 }
 
 @media (min-width: 1050px) {

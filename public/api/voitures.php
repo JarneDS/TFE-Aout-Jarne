@@ -2,6 +2,22 @@
     require __DIR__ . '/database.php';
     header("Content-Type: application/json");
 
+    // Récupérer une voiture par son ID
+    if ($_SERVER['REQUEST_METHOD'] === 'GET' && isset($_GET['voitureId'])) {
+
+        $id = $_GET['voitureId'];
+
+        $stmt = $db->prepare("SELECT * FROM voitures WHERE id = ?");
+        $stmt->execute([$id]);
+        $voiture = $stmt->fetch(PDO::FETCH_ASSOC);
+
+        echo json_encode([
+            "success" => true,
+            "voiture" => $voiture
+        ]);
+        exit;
+    }
+
     // GET : récupérer les voitures d'un user
     if ($_SERVER['REQUEST_METHOD'] === 'GET') {
 

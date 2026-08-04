@@ -56,6 +56,45 @@
       </a>
     </div>
   </nav>
+  <button onclick="window.location.href = 'mesVoitures.html'">← Mon garage</button>
+  <section class="sectionButton">
+    <div class="headerProblemes">
+        <h1 id="titreVoiture"></h1>
+        <div class="headerProblemes__boutons">
+            <button type="button" class="headerProblemes__btn">Modifier les informations</button>
+            <button type="button" class="SupprimerVoiture headerProblemes__btn">Supprimer le véhicule</button>
+        </div>
+    </div>
+    <div class="problemes--flex">
+        <form id="formProblemes">
+            <h3>Problème rencontré</h3>
+            <div class="form__elements">
+                <select name="type" id="type" required>
+                    <option value="">Type de problème</option>
+                    <option value="Moteur">Problème moteur</option>
+                    <option value="Electrique">Problème électrique</option>
+                    <option value="Chassis">Problème châssis</option>
+                    <option value="Pneus">Problème pneus</option>
+                    <option value="Freins">Problème freins</option>
+                    <option value="Peinture">Problème peinture</option>
+                </select>
+            </div>
+            <div class="form__elements">
+                <label for="description">Description du problème</label>
+                <textarea name="description" id="description" placeholder="Description du problème"></textarea>
+            </div>
+            <div class="form__elements">
+                <label for="survenance">Date de survenance</label>
+                <input type="date" name="survenance" id="survenance">
+            </div>
+            <button type="submit">Ajouter ce problème</button>
+        </form>
+        <div class="listeProblemes__Container">
+            <h3>Liste des problèmes connus</h3>
+            <div id="listeProblemes"></div>
+        </div>
+    </div>
+  </section>
 </body>
 
 </html>
