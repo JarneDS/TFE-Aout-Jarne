@@ -95,13 +95,17 @@ if (fichier === "mesVoitures.html") {
           return;
       }
 
+      function capitalize(str) {
+        return str.charAt(0).toUpperCase() + str.slice(1).toLowerCase();
+      }
+
       mesVoitures.innerHTML = voitures
           .map(v => `
               <div class="voiture">
                   <img src="/projets/tfe-aout/optimized/${v.marque}.webp" alt="logo marque" class="logoMarque">
 
-                  <h4 class="marque">${v.marque}</h4>
-                  <p class="legend NomMarque">${v.modele} – ${v.type}</p>
+                  <h4 class="marque">${capitalize(v.marque)} ${capitalize(v.modele)}</h4>
+                  <p class="legend NomMarque">${v.anneeConstruction} | ${v.kmParcourues}km</p>
 
                   <div class="boutonsVoiture">
                       <button type="button" class="SupprimerVoiture" onclick="supprimerVoiture(${v.id})">

@@ -372,6 +372,12 @@ input, select {
   border: var(--color-secondary) 2px solid;
 }
 
+.SupprimerCompte:hover, .SupprimerVoiture:hover {
+  background-color: var(--color-secondary);
+  border: var(--color-secondary) 2px solid;
+  opacity: .5;
+}
+
 /* Mes voitures */
 #mesVoitures__Container, .mesVoituresAjouter__Container {
   display: flex;
