@@ -18,6 +18,7 @@ if (form) {
     .then(json => {
       console.log(json);
       if (json.message === 'Connexion réussie') {
+        localStorage.setItem("userId", json.userId);
         window.location.href = 'mesVoitures.html';
       }
     });

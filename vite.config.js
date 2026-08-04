@@ -25,7 +25,9 @@ export default defineConfig({
         rechercher: resolve(__dirname, 'src/rechercher.html'),
         monCompte: resolve(__dirname, 'src/monCompte.html'),
         creerCompte: resolve(__dirname, 'src/creerCompte.html'),
-        accueil: resolve(__dirname, 'src/accueil.html')
+        accueil: resolve(__dirname, 'src/accueil.html'),
+        ajouterVoiture: resolve(__dirname, 'src/ajouterVoiture.html'),
+        problemes: resolve(__dirname, 'src/problemes.html'),
       }
     }
   },

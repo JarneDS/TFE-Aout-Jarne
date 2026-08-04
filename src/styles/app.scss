@@ -63,7 +63,7 @@ h1, h2, h3 {
   font-family: 'Oswald-Bold';
 }
 
-h4, p, .legend, label, input, button {
+h4, p, .legend, label, input, button, select {
   font-family: 'TitilliumWeb-SemiBold';
 }
 
@@ -96,6 +96,11 @@ p, button {
   margin: 13px 0;
 }
 
+.legend {
+  font-size: clamp(0.813rem, 0.123vw + 0.789rem, 0.938rem);
+  margin: 11px 0;
+}
+
 button {
   background-color: var(--color-primary);
   color: var(--color-textWhite);
@@ -104,6 +109,26 @@ button {
   border: var(--color-primary) 2px solid;
   margin-top: 26px;
   cursor: pointer;
+  transition: all .3s;
+}
+
+button:hover {
+  background-color: var(--color-actif);
+}
+
+input, select {
+  font-size: clamp(1rem, 0.123vw + 0.977rem, 1.125rem);
+  cursor: pointer;
+}
+
+.sectionButton {
+  margin-top: 60px;
+}
+
+.buttonAjouter {
+  margin-bottom: 0;
+  height: fit-content;
+  align-self: end;
 }
 
 /* NAV */
@@ -201,12 +226,38 @@ form {
   flex-direction: column;
 }
 
-input {
+input, select {
   padding: 13px;
   background-color: var(--color-form_Nav);
   color: var(--color-textWhite);
-  border: none;
+  border: transparent 2px solid;
   border-radius: 5px;
+}
+
+.inputKm {
+    position: relative;
+    width: 100%;
+}
+
+.inputKm input {
+    padding-right: 45px;
+}
+
+.inputKm::after {
+    content: "km";
+    position: absolute;
+    right: 12px;
+    top: 77%;
+    transform: translateY(-50%);
+    color: #ccc;
+    font-size: 14px;
+    pointer-events: none; /* l'utilisateur ne peut pas cliquer dessus */
+}
+
+.inputAnnee {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
 }
 
 .button__creer {
@@ -316,9 +367,29 @@ input {
   width: 100%;
 }
 
-.SupprimerCompte {
+.SupprimerCompte, .SupprimerVoiture {
   background-color: var(--color-secondary);
   border: var(--color-secondary) 2px solid;
+}
+
+/* Mes voitures */
+#mesVoitures__Container, .mesVoituresAjouter__Container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.voiture {
+  display: flex;
+  flex-direction: column;
+  border-radius: 5px;
+  border: #FFFFFF 2px solid;
+  padding: 20px 20px 7px;
+}
+
+.logoMarque {
+  height: 132px;
+  align-self: center;
 }
 
 @media (min-width: 701px) {
@@ -333,6 +404,10 @@ input {
 
   form {
     width: 623px;
+  }
+
+  .sectionButton {
+    margin-top: 80px;
   }
 
   /* NAV */
@@ -402,10 +477,6 @@ input {
     opacity: 1;
   }
 
-  nav:hover .menu__user {
-    white-space: wrap;
-  }
-
   nav:hover .menu__links {
     margin-top: 32px;
   }
@@ -429,6 +500,31 @@ input {
 
   .NomPrenomForm {
     width: 48%;
+  }
+
+  /* Mes voitures */
+  #formAjouterVoiture {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px 40px;
+    width: 100%;
+    max-width: 1060px;
+  }
+
+  #mesVoitures__Container, .mesVoituresAjouter__Container {
+    flex-direction: row;
+  }
+
+  .voiture {
+    width: 256px;
+  }
+
+  .inputAnnee {
+    flex-direction: row;
+  }
+
+  #annee, #mois {
+    width: 100%;
   }
 }
 

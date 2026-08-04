@@ -1,5 +1,4 @@
 <?php
-
     session_start();
     require __DIR__ . '/database.php';
     require __DIR__ . '/classes/User.php';
@@ -18,10 +17,19 @@
 
     $logged = $user->login($email, $password);
 
-    echo json_encode([
-        'message' => $logged 
-            ? 'Connexion réussie'
-            : 'Email ou mot de passe incorrect'
-    ]);
+    if ($logged) {
+        echo json_encode([
+            'message' => 'Connexion réussie',
+            'userId' => $_SESSION['user']['id'],
+            'nom' => $_SESSION['user']['nom'],
+            'prenom' => $_SESSION['user']['prenom'],
+            'email' => $_SESSION['user']['email'],
+            'image' => $_SESSION['user']['image']
+        ]);
+    } else {
+        echo json_encode([
+            'message' => 'Email ou mot de passe incorrect'
+        ]);
+    }
 
 ?>
