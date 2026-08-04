@@ -128,7 +128,6 @@ input, select {
 .buttonAjouter {
   margin-bottom: 0;
   height: fit-content;
-  align-self: end;
 }
 
 /* NAV */
@@ -474,6 +473,10 @@ input, select {
 
   .sectionButton {
     margin-top: 60px;
+  }
+
+  .buttonAjouter {
+    align-self: end;
   }
 
   /* NAV */

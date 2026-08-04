@@ -1,6 +1,5 @@
 <?php
-    require_once 'database.php';
-
+    require __DIR__ . '/database.php';
     header("Content-Type: application/json");
 
     // Récupérer les problèmes d'une voiture
