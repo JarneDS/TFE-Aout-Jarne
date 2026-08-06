@@ -165,7 +165,7 @@ if (fichier === "mesVoitures.html") {
     }
 
     await fetch(`/projets/tfe-aout/api/voitures.php?id=${id}`, {
-        method: "DELETE"
+      method: "DELETE"
     });
 
     const userId = localStorage.getItem("userId");
@@ -257,6 +257,202 @@ if (fichier === "problemes.html") {
 
     if (voitureId) {
       chargerVoiture(voitureId);
+    }
+  });
+}
+
+if (fichier === "problemes.html") {
+  const voitureId = new URLSearchParams(window.location.search).get("voitureId");
+  chargerProblemes(voitureId);
+
+  const btnModifier = document.querySelector(".headerProblemes__btn");
+
+  btnModifier.addEventListener("click", () => {
+    const voitureId = new URLSearchParams(window.location.search).get("voitureId");
+    window.location.href = `modifierVoiture.html?voitureId=${voitureId}`;
+  });
+
+  document.getElementById("formProblemes").addEventListener("submit", async (e) => {
+    e.preventDefault();
+
+    const type = document.getElementById("type").value;
+    const description = document.getElementById("description").value;
+    const survenance = document.getElementById("survenance").value;
+
+    const res = await fetch("/projets/tfe-aout/api/problemes.php", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        voitureId: voitureId,
+        type_probleme: type,
+        description: description,
+        date_survenance: survenance
+      })
+    });
+
+    const data = await res.json();
+
+    if (data.success) {
+      chargerProblemes(voitureId);
+      e.target.reset();
+    }
+  });
+
+  function activerInteractions() {
+    document.querySelectorAll(".selectEtat").forEach(select => {
+      select.addEventListener("change", async () => {
+        const container = select.closest(".probleme__Container");
+        const id = container.dataset.id;
+
+        await fetch("/projets/tfe-aout/api/problemes.php?update=1", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            id,
+            statut: select.value === "enCours" ? "En cours" : "Réparé"
+          })
+        });
+      });
+    });
+
+    document.querySelectorAll(".btnSupprimer").forEach(btn => {
+      btn.addEventListener("click", async () => {
+        const container = btn.closest(".probleme__Container");
+        const id = container.dataset.id;
+
+        await fetch(`/projets/tfe-aout/api/problemes.php?id=${id}`, {
+          method: "DELETE"
+        });
+
+        container.remove();
+      });
+    });
+  }
+
+  async function chargerProblemes(voitureId) {
+    const res = await fetch(`/projets/tfe-aout/api/problemes.php?voitureId=${voitureId}`);
+    const problemes = await res.json();
+
+    const container = document.getElementById("listeProblemes");
+
+    if (problemes.length === 0) {
+      container.innerHTML = "<p>Aucun problème enregistré.</p>";
+      return;
+    }
+
+    container.innerHTML = problemes.map(p => `
+      <div class="probleme__Container" data-id="${p.id}">
+        <div class="problemeDescription__container">
+          <h3 class="probleme__title">${p.type_probleme}</h3>
+          <p class="probleme__description">${p.description}</p>
+          <div class="dateProbleme__container">
+            <img src="/projets/tfe-aout/calendar.svg" alt="icone d'un calendrier" class="calendarIcone">
+            <p class="legend">${p.date_survenance}</p>
+          </div>
+        </div>
+
+        <div class="problemeEtat__container">
+          <select name="problemeEtat" class="selectEtat">
+            <option value="enCours" ${p.statut === "En cours" ? "selected" : ""}>En cours</option>
+            <option value="repare" ${p.statut === "Réparé" ? "selected" : ""}>Réparé</option>
+          </select>
+
+          <img src="/projets/tfe-aout/corbeille.png" alt="icone d'une poubelle" class="btnSupprimer">
+        </div>
+      </div>
+    `).join("");
+
+    activerInteractions();
+    document.querySelectorAll(".selectEtat").forEach(select => {
+      if (select.value === "enCours") {
+        select.style.backgroundColor = "#FF0000";
+        select.style.color = "#FFF";
+      } else {
+        select.style.backgroundColor = "#00FF00";
+        select.style.color = "#000";
+      }
+
+      select.addEventListener("change", () => {
+        if (select.value === "enCours") {
+          select.style.backgroundColor = "#FF0000";
+          select.style.color = "#FFF";
+        } else {
+          select.style.backgroundColor = "#00FF00";
+          select.style.color = "#000";
+        }
+      });
+    });
+  }
+
+  document.querySelector(".SupprimerVoiture").addEventListener("click", supprimerVoiture);
+
+  async function supprimerVoiture() {
+    const voitureId = new URLSearchParams(window.location.search).get("voitureId");
+
+    if (!confirm("Voulez-vous vraiment supprimer ce véhicule ?")) return;
+
+    const res = await fetch(`/projets/tfe-aout/api/voitures.php?id=${voitureId}`, {
+      method: "DELETE"
+    });
+
+    const data = await res.json();
+
+    if (data.success) {
+      window.location.href = "mesVoitures.html";
+    } else {
+      alert("Erreur lors de la suppression.");
+    }
+  }
+}
+
+if (fichier === "modifierVoiture.html") {
+
+  const voitureId = new URLSearchParams(window.location.search).get("voitureId");
+
+  chargerInfosVoiture(voitureId);
+
+  async function chargerInfosVoiture(id) {
+    const res = await fetch(`/projets/tfe-aout/api/voitures.php?voitureId=${id}`);
+    const data = await res.json();
+    const v = data.voiture;
+
+    // Remplir le formulaire
+    document.getElementById("marque").value = v.marque;
+    document.getElementById("modele").value = v.modele;
+    document.getElementById("type").value = v.type;
+    document.getElementById("kms").value = v.kmParcourues;
+    document.getElementById("mois").value = v.moisConstruction;
+    document.getElementById("annee").value = v.anneeConstruction;
+
+    document.getElementById("titreVoiture").textContent = `Changer les informations de votre ${v.marque} ${v.modele} :`;
+  }
+
+  document.getElementById("formModifierVoiture").addEventListener("submit", async (e) => {
+    e.preventDefault();
+
+    const data = {
+      id: voitureId,
+      marque: document.getElementById("marque").value.trim(),
+      modele: document.getElementById("modele").value.trim(),
+      type: document.getElementById("type").value,
+      kmParcourues: document.getElementById("kms").value,
+      moisConstruction: document.getElementById("mois").value,
+      anneeConstruction: document.getElementById("annee").value
+    };
+
+    const res = await fetch("/projets/tfe-aout/api/voitures.php?update=1", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(data)
+    });
+
+    const result = await res.json();
+
+    if (result.success) {
+      alert("Voiture modifiée avec succès !");
+      window.location.href = "mesVoitures.html";
+    } else {
+      alert("Erreur lors de la modification.");
     }
   });
 }

@@ -2,23 +2,34 @@
     require __DIR__ . '/database.php';
     header("Content-Type: application/json");
 
-    // Récupérer les problèmes d'une voiture
+    ini_set('display_errors', 1);
+    error_reporting(E_ALL);
+
+    // GET : récupérer les problèmes
     if ($_SERVER['REQUEST_METHOD'] === 'GET') {
+
+        if (!isset($_GET['voitureId'])) {
+            echo json_encode(["success" => false, "error" => "voitureId manquant"]);
+            exit;
+        }
+
         $voitureId = $_GET['voitureId'];
 
-        $stmt = $pdo->prepare("SELECT * FROM problemes WHERE voiture_id = ? ORDER BY date_survenance DESC");
+        $stmt = $db->prepare("SELECT * FROM problemes WHERE voiture_id = ? ORDER BY date_survenance DESC");
         $stmt->execute([$voitureId]);
+
         echo json_encode($stmt->fetchAll(PDO::FETCH_ASSOC));
         exit;
     }
 
-    // Ajouter un problème
-    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    // POST : ajouter un problème
+    if ($_SERVER['REQUEST_METHOD'] === 'POST' && !isset($_GET['update'])) {
+
         $data = json_decode(file_get_contents("php://input"), true);
 
-        $stmt = $pdo->prepare("
-            INSERT INTO problemes (voiture_id, type_probleme, description, date_survenance)
-            VALUES (?, ?, ?, ?)
+        $stmt = $db->prepare("
+            INSERT INTO problemes (voiture_id, type_probleme, description, date_survenance, statut)
+            VALUES (?, ?, ?, ?, 'En cours')
         ");
 
         $stmt->execute([
@@ -32,26 +43,32 @@
         exit;
     }
 
-    // Modifier le statut
-    if ($_SERVER['REQUEST_METHOD'] === 'PATCH') {
+    // POST update : modifier statut
+    if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_GET['update'])) {
+
         $data = json_decode(file_get_contents("php://input"), true);
 
-        $stmt = $pdo->prepare("UPDATE problemes SET statut = ? WHERE id = ?");
+        $stmt = $db->prepare("UPDATE problemes SET statut = ? WHERE id = ?");
         $stmt->execute([$data['statut'], $data['id']]);
 
         echo json_encode(["success" => true]);
         exit;
     }
 
-    // Supprimer un problème
+    // DELETE : supprimer un problème
     if ($_SERVER['REQUEST_METHOD'] === 'DELETE') {
+
+        if (!isset($_GET['id'])) {
+            echo json_encode(["success" => false, "error" => "id manquant"]);
+            exit;
+        }
+
         $id = $_GET['id'];
 
-        $stmt = $pdo->prepare("DELETE FROM problemes WHERE id = ?");
+        $stmt = $db->prepare("DELETE FROM problemes WHERE id = ?");
         $stmt->execute([$id]);
 
         echo json_encode(["success" => true]);
         exit;
     }
-    
 ?>

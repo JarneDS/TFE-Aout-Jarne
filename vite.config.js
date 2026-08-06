@@ -28,6 +28,7 @@ export default defineConfig({
         accueil: resolve(__dirname, 'src/accueil.html'),
         ajouterVoiture: resolve(__dirname, 'src/ajouterVoiture.html'),
         problemes: resolve(__dirname, 'src/problemes.html'),
+        modifierVoiture: resolve(__dirname, 'src/modifierVoiture.html')
       }
     }
   },

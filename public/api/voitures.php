@@ -39,6 +39,35 @@
         exit;
     }
 
+    // UPDATE : modifier une voiture
+    if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_GET['update'])) {
+
+        $data = json_decode(file_get_contents("php://input"), true);
+
+        if (!$data || !isset($data['id'])) {
+            echo json_encode(["success" => false, "error" => "id manquant"]);
+            exit;
+        }
+
+        $stmt = $db->prepare("
+            UPDATE voitures
+            SET marque = ?, modele = ?, type = ?, kmParcourues = ?, moisConstruction = ?, anneeConstruction = ?
+            WHERE id = ?
+        ");
+
+        $stmt->execute([
+            $data['marque'],
+            $data['modele'],
+            $data['type'],
+            $data['kmParcourues'],
+            $data['moisConstruction'],
+            $data['anneeConstruction'],
+            $data['id']
+        ]);
+
+        echo json_encode(["success" => true]);
+        exit;
+    }
 
     // POST : ajouter une voiture
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -68,7 +97,6 @@
         echo json_encode(["success" => true]);
         exit;
     }
-
 
     // DELETE : supprimer une voiture
     if ($_SERVER['REQUEST_METHOD'] === 'DELETE') {

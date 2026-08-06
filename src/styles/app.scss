@@ -457,6 +457,60 @@ input, select {
   color: var(--color-textWhite);
 }
 
+#listeProblemes {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+.probleme__Container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  background-color: var(--color-form_Nav);
+  border: 2px solid #FFF;
+  border-radius: 5px;
+  padding: 0 20px 20px;
+}
+
+.probleme__title {
+  margin-top: 20px;
+}
+
+.calendarIcone {
+  height: 22px;
+}
+
+.problemeEtat__container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+}
+
+.dateProbleme__container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 5px;
+}
+
+.selectEtat {
+  width: 110px;
+}
+
+.btnSupprimer {
+  width: 19px;
+  height: 25px;
+  cursor: pointer;
+  transition: all .3s;
+}
+
+.btnSupprimer:hover {
+  opacity: .5;
+}
+
 @media (min-width: 701px) {
   body {
     margin: 60px 60px 60px 131px;
@@ -596,7 +650,9 @@ input, select {
   #annee, #mois {
     width: 100%;
   }
+}
 
+@media (min-width: 900px) {
   /* Problemes */
   .headerProblemes, .headerProblemes__boutons {
     flex-direction: row;
@@ -620,6 +676,15 @@ input, select {
     gap: 80px;
   }
 
+  .probleme__Container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .problemeEtat__container {
+    margin-top: 20px;
+  }
 }
 
 @media (min-width: 1050px) {
