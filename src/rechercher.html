@@ -19,6 +19,7 @@
 
     <link rel="stylesheet" href="/styles/app.scss">
     <script type="module" src="scripts/app.js" defer></script>
+    <script type="module" src="scripts/rechercher.js"></script>
 </head>
 
 <body>
@@ -57,50 +58,24 @@
     </div>
   </nav>
 
-    <!--
-        https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Global_Objects/Array/filter
-        https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Global_Objects/String/includes
-        https://developer.mozilla.org/fr/docs/Web/API/Element/input_event
-        https://developer.mozilla.org/fr/docs/Web/JavaScript
-    -->
+  <!--
+    https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Global_Objects/Array/filter
+    https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Global_Objects/String/includes
+    https://developer.mozilla.org/fr/docs/Web/API/Element/input_event
+    https://developer.mozilla.org/fr/docs/Web/JavaScript
+  -->
+  
+  <h1>Rechercher</h1>
 
-    <!-- Formulaire de recherche -->
-    <input type="text" id="recherche-input" placeholder="Rechercher une page...">
+  <!-- Formulaire de recherche -->
+  <div class="recherche__container">
+    <input type="text" id="recherche__input" placeholder="Rechercher une page">
+  </div>
 
-    <!-- Zone d'affichage des résultats -->
-    <ul id="recherche-results"></ul>
+  <h2>Résultats :</h2>
 
-    <!-- Chargement de l'index et du script de recherche -->
-    <script type="module" src="scripts/rechercher.js"></script>
-    <script>
-        const rechercheInput = document.getElementById('recherche-input');
-        const rechercheResults = document.getElementById('recherche-results');
-
-        rechercheInput.addEventListener('input', function () {
-            const query = this.value.toLowerCase().trim();
-            rechercheResults.innerHTML = ''; // Vide les anciens résultats
-
-            // Si la recherche fait moins de 2 caractères, on n'affiche rien
-            if (query.length < 2) return;
-
-            // Filtration de l'index
-            const matches = rechercheIndex.filter(page => {
-                return page.title.toLowerCase().includes(query) ||
-                    page.content.toLowerCase().includes(query);
-            });
-
-            // Affichage des résultats
-            if (matches.length > 0) {
-                matches.forEach(page => {
-                    const li = document.createElement('li');
-                    li.innerHTML = `<a href="${page.url}"><strong>${page.title}</strong></a>`;
-                    rechercheResults.appendChild(li);
-                });
-            } else {
-                rechercheResults.innerHTML = '<li>Aucun résultat trouvé</li>';
-            }
-        });
-    </script>
+  <!-- Zone d'affichage des résultats -->
+  <ul id="recherche__results"></ul>
 </body>
 
 </html>
