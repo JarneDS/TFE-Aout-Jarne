@@ -239,6 +239,7 @@ nav.actif .menu__allLinks {
 .menu__img,
 .img__profil {
   height: 29px;
+  width: auto;
 }
 
 .menu__img {
@@ -746,7 +747,6 @@ select {
   overflow-y: scroll;
   background-color: var(--color-bgInfos);
   padding: 30px;
-  width: 100%;
   max-width: 1080px;
 }
 
@@ -1174,6 +1174,7 @@ select {
   .infos {
     top: 0;
     padding: 60px;
+    margin-left: 71px;
   }
 
   .boutonMoteurA,
