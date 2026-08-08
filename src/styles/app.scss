@@ -738,7 +738,7 @@ select {
 }
 
 /* MOTEUR */
-.moteur, .freins {
+.moteur, .freins, .temoins {
   padding-top: 40px;
 }
 
@@ -764,7 +764,10 @@ select {
 .boutonMoteurF,
 .boutonFreinA,
 .boutonFreinB,
-.boutonFreinC {
+.boutonFreinC,
+.boutonTemoinA,
+.boutonTemoinB,
+.boutonTemoinC {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -787,7 +790,10 @@ select {
 .boutonMoteurF:hover,
 .boutonFreinA:hover,
 .boutonFreinB:hover,
-.boutonFreinC:hover {
+.boutonFreinC:hover,
+.boutonTemoinA:hover,
+.boutonTemoinB:hover,
+.boutonTemoinC:hover {
   background-color: var(--color-textWhite);
 }
 
@@ -799,7 +805,10 @@ select {
 .boutonMoteurF:hover .boutonInfo__svg,
 .boutonFreinA:hover .boutonInfo__svg,
 .boutonFreinB:hover .boutonInfo__svg,
-.boutonFreinC:hover .boutonInfo__svg {
+.boutonFreinC:hover .boutonInfo__svg,
+.boutonTemoinA:hover .boutonInfo__svg,
+.boutonTemoinB:hover .boutonInfo__svg,
+.boutonTemoinC:hover .boutonInfo__svg {
   transform: rotate(0deg);
 }
 
@@ -1205,7 +1214,10 @@ select {
   .boutonMoteurF,
   .boutonFreinA,
   .boutonFreinB,
-  .boutonFreinC {
+  .boutonFreinC,
+  .boutonTemoinA,
+  .boutonTemoinB,
+  .boutonTemoinC {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -1233,7 +1245,10 @@ select {
   .boutonMoteurF:hover .boutonInfo__txt,
   .boutonFreinA:hover .boutonInfo__txt,
   .boutonFreinB:hover .boutonInfo__txt,
-  .boutonFreinC:hover .boutonInfo__txt {
+  .boutonFreinC:hover .boutonInfo__txt,
+  .boutonTemoinA:hover .boutonInfo__txt,
+  .boutonTemoinB:hover .boutonInfo__txt,
+  .boutonTemoinC:hover .boutonInfo__txt {
     opacity: 1;
     visibility: visible;
   }
@@ -1317,6 +1332,33 @@ select {
 
   .boutonFreinC:hover {
     width: 216px;
+  }
+
+  .boutonTemoinA {
+    top: 0%;
+    left: 47%;
+  }
+
+  .boutonTemoinB {
+    top: 35%;
+    left: 73%;
+  }
+
+  .boutonTemoinC {
+    top: 67%;
+    left: 100%;
+  }
+
+  .boutonTemoinA:hover {
+    width: 264px;
+  }
+
+  .boutonTemoinB:hover {
+    width: 232px;
+  }
+
+  .boutonTemoinC:hover {
+    width: 220px;
   }
 
   .image__bidon {
