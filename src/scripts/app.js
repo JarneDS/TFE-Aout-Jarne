@@ -456,3 +456,17 @@ if (fichier === "modifierVoiture.html") {
     }
   });
 }
+
+fetch("/projets/tfe-aout/api/moi.php")
+  .then(res => res.json())
+  .then(data => {
+    if (data.logged) {
+      const user = data.user;
+
+      if (fichier.includes("accueil")) {
+        const bienvenue = document.getElementById("bienvenue");
+        bienvenue.textContent = `Bienvenue ${user.nom} ${user.prenom},`;
+      }
+    }
+  });
+

@@ -4,7 +4,7 @@
   src: url('../fonts/Oswald-Bold.eot?#iefix') format('embedded-opentype'),
     url('../fonts/Oswald-Bold.woff2') format('woff2'),
     url('../fonts/Oswald-Bold.woff') format('woff'),
-    url('../fonts/Oswald-Bold.ttf')  format('truetype'),
+    url('../fonts/Oswald-Bold.ttf') format('truetype'),
     url('../fonts/Oswald-Bold.svg#FontName') format('svg');
 }
 
@@ -14,7 +14,7 @@
   src: url('../fonts/TitilliumWeb-SemiBold.eot?#iefix') format('embedded-opentype'),
     url('../fonts/TitilliumWeb-SemiBold.woff2') format('woff2'),
     url('../fonts/TitilliumWeb-SemiBold.woff') format('woff'),
-    url('../fonts/TitilliumWeb-SemiBold.ttf')  format('truetype'),
+    url('../fonts/TitilliumWeb-SemiBold.ttf') format('truetype'),
     url('../fonts/TitilliumWeb-SemiBold.svg#FontName') format('svg');
 }
 
@@ -24,7 +24,7 @@
   src: url('../fonts/TitilliumWeb-Bold.eot?#iefix') format('embedded-opentype'),
     url('../fonts/TitilliumWeb-Bold.woff2') format('woff2'),
     url('../fonts/TitilliumWeb-Bold.woff') format('woff'),
-    url('../fonts/TitilliumWeb-Bold.ttf')  format('truetype'),
+    url('../fonts/TitilliumWeb-Bold.ttf') format('truetype'),
     url('../fonts/TitilliumWeb-Bold.svg#FontName') format('svg');
 }
 
@@ -39,9 +39,11 @@
   --color-aVenir: #AFAFAF;
   --color-form_Nav: #1E2023;
   --color-actif: #5E8BFF;
+  --color-nonActif: #666666;
 }
 
-html, body {
+html,
+body {
   padding: 0;
   overflow-x: hidden;
   background-color: var(--color-bg);
@@ -55,19 +57,39 @@ body {
   margin: 90px 20px 20px;
 }
 
-h1, h2, h3, h4, p, label, li {
+h1,
+h2,
+h3,
+h4,
+p,
+label,
+li {
   color: var(--color-textWhite);
+  max-width: 700px;
 }
 
-h1, h2, h3, .h3 {
+h1,
+h2,
+h3,
+.h3 {
   font-family: 'Oswald-Bold';
 }
 
-h4, p, .legend, label, input, button, select, .inputKm::after, textarea, li {
+h4,
+p,
+.legend,
+label,
+input,
+button,
+select,
+.inputKm::after,
+textarea,
+li {
   font-family: 'TitilliumWeb-SemiBold';
 }
 
-strong, b {
+strong,
+b {
   font-family: 'TitilliumWeb-Bold';
 }
 
@@ -86,12 +108,15 @@ h3 {
   margin: 44px 0 22px;
 }
 
-h4, label {
+h4,
+label {
   font-size: clamp(1.188rem, 0.185vw + 1.153rem, 1.375rem);
   margin: 16px 0;
 }
 
-p, button, textarea {
+p,
+button,
+textarea {
   font-size: clamp(1rem, 0.123vw + 0.977rem, 1.125rem);
   margin: 13px 0;
 }
@@ -116,7 +141,8 @@ button:hover {
   background-color: var(--color-actif);
 }
 
-input, select {
+input,
+select {
   font-size: clamp(1rem, 0.123vw + 0.977rem, 1.125rem);
   cursor: pointer;
 }
@@ -130,7 +156,8 @@ input, select {
   height: fit-content;
 }
 
-ul, ol {
+ul,
+ol {
   padding: 0;
 }
 
@@ -198,7 +225,8 @@ nav.actif .menu__allLinks {
   color: var(--color-actif);
 }
 
-.menu__img, .img__profil {
+.menu__img,
+.img__profil {
   height: 29px;
 }
 
@@ -211,7 +239,8 @@ nav.actif .menu__allLinks {
   bottom: 20px;
 }
 
-.menu__element:hover .menu__title, .menu__element:hover .menu__user {
+.menu__element:hover .menu__title,
+.menu__element:hover .menu__user {
   color: var(--color-actif);
 }
 
@@ -219,7 +248,8 @@ nav.actif .menu__allLinks {
   filter: brightness(100%);
 }
 
-.menu__element.actif .menu__title, .menu__element.actif .menu__user {
+.menu__element.actif .menu__title,
+.menu__element.actif .menu__user {
   color: var(--color-actif);
 }
 
@@ -238,7 +268,8 @@ form {
   flex-direction: column;
 }
 
-input, select {
+input,
+select {
   padding: 13px;
   background-color: var(--color-form_Nav);
   color: var(--color-textWhite);
@@ -263,7 +294,8 @@ input, select {
   transform: translateY(-50%);
   color: #ccc;
   font-size: 14px;
-  pointer-events: none; /* l'utilisateur ne peut pas cliquer dessus */
+  pointer-events: none;
+  /* l'utilisateur ne peut pas cliquer dessus */
 }
 
 .inputAnnee {
@@ -343,11 +375,13 @@ input, select {
   transition: 0.3s;
 }
 
-.image__profil:hover #modifierImage, .image__profil:hover .bgImageCompte {
+.image__profil:hover #modifierImage,
+.image__profil:hover .bgImageCompte {
   opacity: 1;
 }
 
-.image__profil.no-image #modifierImage, .image__profil.no-image .bgImageCompte {
+.image__profil.no-image #modifierImage,
+.image__profil.no-image .bgImageCompte {
   opacity: 1;
 }
 
@@ -375,23 +409,29 @@ input, select {
   margin: 0;
 }
 
-.changerInfosContainer #nom, .changerInfosContainer #prenom, .changerInfosContainer #email, .changerInfosContainer #mdp {
+.changerInfosContainer #nom,
+.changerInfosContainer #prenom,
+.changerInfosContainer #email,
+.changerInfosContainer #mdp {
   width: 100%;
 }
 
-.SupprimerCompte, .SupprimerVoiture {
+.SupprimerCompte,
+.SupprimerVoiture {
   background-color: var(--color-secondary);
   border: var(--color-secondary) 2px solid;
 }
 
-.SupprimerCompte:hover, .SupprimerVoiture:hover {
+.SupprimerCompte:hover,
+.SupprimerVoiture:hover {
   background-color: var(--color-secondary);
   border: var(--color-secondary) 2px solid;
   opacity: .5;
 }
 
 /* Mes voitures */
-#mesVoitures__Container, .mesVoituresAjouter__Container {
+#mesVoitures__Container,
+.mesVoituresAjouter__Container {
   display: flex;
   flex-direction: column;
   gap: 20px;
@@ -444,7 +484,8 @@ input, select {
 }
 
 /* Problemes */
-.headerProblemes, .headerProblemes__boutons {
+.headerProblemes,
+.headerProblemes__boutons {
   display: flex;
   flex-direction: column;
 }
@@ -566,6 +607,61 @@ input, select {
   width: calc(100% - 30px);
 }
 
+/* Accueil */
+.choix__types {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 30px;
+  padding: 0;
+}
+
+.choix__option {
+  background-color: #FFF;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 10px 10px 0;
+  border: var(--color-text-btn) 2px solid;
+  border-radius: 10px;
+  text-decoration: none;
+  margin: 0;
+  transition: all .3s ease-in-out;
+}
+
+.choix__option:hover {
+  background-color: var(--color-actif);
+}
+
+.choix__optionImg {
+  width: auto;
+}
+
+.choix__option h4 {
+  color: var(--color-textBlack);
+}
+
+.non__actif {
+  pointer-events: none;
+  position: relative;
+}
+
+.non__actif h4 {
+  color: var(--color-nonActif);
+}
+
+.non__actif h3 {
+  color: var(--color-aVenir);
+  position: absolute;
+  transform: rotate(34deg);
+  margin: 22px 0;
+}
+
+.non__actif img {
+  filter: saturate(0);
+}
 
 @media (min-width: 701px) {
   body {
@@ -651,13 +747,15 @@ input, select {
     height: 29px;
   }
 
-  .menu__title, .menu__user {
+  .menu__title,
+  .menu__user {
     opacity: 0;
     transition: all .3s;
     white-space: nowrap;
   }
 
-  nav:hover .menu__title, nav:hover .menu__user {
+  nav:hover .menu__title,
+  nav:hover .menu__user {
     opacity: 1;
   }
 
@@ -695,7 +793,8 @@ input, select {
     max-width: 1060px;
   }
 
-  #mesVoitures__Container, .mesVoituresAjouter__Container {
+  #mesVoitures__Container,
+  .mesVoituresAjouter__Container {
     flex-direction: row;
     flex-wrap: wrap;
   }
@@ -708,7 +807,8 @@ input, select {
     flex-direction: row;
   }
 
-  #annee, #mois {
+  #annee,
+  #mois {
     width: 100%;
   }
 
@@ -719,11 +819,19 @@ input, select {
     align-items: center;
     gap: 30px;
   }
+
+  /* Accueil */
+  .choix__option {
+    width: 75%;
+    max-width: 198px;
+  }
 }
 
 @media (min-width: 900px) {
+
   /* Problemes */
-  .headerProblemes, .headerProblemes__boutons {
+  .headerProblemes,
+  .headerProblemes__boutons {
     flex-direction: row;
     gap: 20px;
   }
@@ -756,6 +864,4 @@ input, select {
   }
 }
 
-@media (min-width: 1050px) {
-
-}
+@media (min-width: 1050px) {}
