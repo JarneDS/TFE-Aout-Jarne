@@ -470,3 +470,45 @@ fetch("/projets/tfe-aout/api/moi.php")
     }
   });
 
+if (fichier === "moteur.html") {
+  const boutonsMoteur = document.querySelectorAll(
+    ".boutonMoteurA, .boutonMoteurB, .boutonMoteurC, .boutonMoteurD, .boutonMoteurE, .boutonMoteurF, .boutonMoteurG"
+  );
+
+  boutonsMoteur.forEach(btn => {
+    btn.addEventListener("click", () => {
+      afficherPartie(btn.dataset.value);
+    });
+  });
+
+  function afficherPartie(id) {
+    const sections = document.querySelectorAll('.part');
+    const intro = document.getElementById('Intro');
+    const cible = document.getElementById(id);
+
+    sections.forEach(section => section.classList.remove("active"));
+
+    if (cible) {
+      cible.classList.add("active");
+    }
+
+    document.querySelector(".infos").style.display = "block";
+
+    intro.classList.add("no-scroll");
+  }
+
+  document.querySelectorAll(".fermerPart").forEach(btn => {
+    btn.addEventListener("click", () => {
+      const part = btn.closest(".part");
+      const intro = document.getElementById('Intro');
+
+      if (part) {
+        part.classList.remove("active");
+      }
+
+      document.querySelector(".infos").style.display = "none";
+
+      intro.classList.remove("no-scroll");
+    });
+  });
+}
