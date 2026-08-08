@@ -585,6 +585,10 @@ select {
   padding-bottom: 7px;
 }
 
+#recherche__results li {
+  max-width: 100%;
+}
+
 .recherche__lien {
   color: var(--color-textWhite);
   text-decoration: none;
