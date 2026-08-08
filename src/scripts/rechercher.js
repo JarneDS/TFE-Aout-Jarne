@@ -22,7 +22,7 @@ rechercheInput.addEventListener('input', function () {
       const li = document.createElement('li');
       li.innerHTML = `
         <div class="recherche__result">
-          <a href="${page.url}" class="recherche__lien"><span class="h3">${page.content}</span><span><strong>Page&nbsp;${page.title}&nbsp;→</strong></span></a>
+          <a href="${page.url}" class="recherche__lien"><span class="h3">${page.content}</span><span class="bold">Page&nbsp;${page.title}&nbsp;→</span></a>
         </div
       `;
       rechercheResults.appendChild(li);

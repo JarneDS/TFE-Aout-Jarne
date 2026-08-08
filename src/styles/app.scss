@@ -71,7 +71,8 @@ li {
 h1,
 h2,
 h3,
-.h3 {
+.h3,
+.bold {
   font-family: 'Oswald-Bold';
 }
 
@@ -460,6 +461,7 @@ select {
 .logoMarque {
   height: 132px;
   align-self: center;
+  width: auto;
 }
 
 #survenance input[type="date"]::-webkit-calendar-picker-indicator {
