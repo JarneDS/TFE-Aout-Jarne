@@ -170,6 +170,10 @@ span {
   display: block
 }
 
+.btnRetour {
+  margin: 0 0 13px;
+}
+
 /* NAV */
 nav {
   position: fixed;
@@ -663,6 +667,61 @@ select {
   filter: saturate(0);
 }
 
+/* Page parties */
+.modeleInteractif {
+  width: 100%;
+}
+
+.btnsModel {
+  position: relative;
+  width: fit-content;
+  margin: 0;
+  padding-top: 0;
+  display: flex !important;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.boutonInfoA,
+.boutonInfoB,
+.boutonInfoC,
+.boutonInfoD,
+.boutonInfoE,
+.boutonInfoF,
+.boutonInfoG {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  background-color: var(--color-textWhite);
+  border-radius: 10px;
+  padding: 0;
+  cursor: pointer;
+  border: none;
+  gap: 15px;
+  text-decoration: none;
+}
+
+.boutonInfo__txt {
+  white-space: nowrap;
+  color: var(--color-textBlack);
+}
+
+.boutonInfo__svg {
+  display: none;
+}
+
+.boutonInfoA:hover .boutonInfo__svg,
+.boutonInfoB:hover .boutonInfo__svg,
+.boutonInfoC:hover .boutonInfo__svg,
+.boutonInfoD:hover .boutonInfo__svg,
+.boutonInfoE:hover .boutonInfo__svg,
+.boutonInfoF:hover .boutonInfo__svg,
+.boutonInfoG:hover .boutonInfo__svg {
+  transform: rotate(0deg);
+}
+
 @media (min-width: 701px) {
   body {
     margin: 60px 60px 60px 131px;
@@ -824,6 +883,129 @@ select {
   .choix__option {
     width: 75%;
     max-width: 198px;
+  }
+
+  /* Page parties */
+  .btnsModel {
+    position: relative;
+    width: fit-content;
+    margin: 0 auto;
+  }
+
+  .boutonInfoA,
+  .boutonInfoB,
+  .boutonInfoC,
+  .boutonInfoD,
+  .boutonInfoE,
+  .boutonInfoF,
+  .boutonInfoG {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    height: 70px;
+    width: 43px;
+    background-color: var(--color-textWhite);
+    border-radius: 35px;
+    padding: 0 0 0 27px;
+    cursor: pointer;
+    border: none;
+    gap: 15px;
+    transition: width 0.3s ease;
+    overflow: hidden;
+    position: absolute;
+    z-index: 10;
+    text-decoration: none;
+  }
+
+  .boutonInfoA {
+    top: 46%;
+    left: 22%;
+  }
+
+  .boutonInfoB {
+    top: 75%;
+    left: 41%;
+  }
+
+  .boutonInfoC {
+    top: 52%;
+    left: 60%;
+  }
+
+  .boutonInfoD {
+    top: 71%;
+    left: 62%;
+  }
+
+  .boutonInfoE {
+    top: 68%;
+    left: 83%;
+  }
+
+  .boutonInfoF {
+    top: 52%;
+    left: 85%;
+  }
+
+  .boutonInfoG {
+    top: 32%;
+    left: 45%;
+  }
+
+  .boutonInfoA:hover {
+    width: 152px;
+  }
+
+  .boutonInfoB:hover {
+    width: 146px;
+  }
+
+  .boutonInfoC:hover {
+    width: 162px;
+  }
+
+  .boutonInfoD:hover {
+    width: 150px;
+  }
+
+  .boutonInfoE:hover {
+    width: 145px;
+  }
+
+  .boutonInfoF:hover {
+    width: 186px;
+  }
+
+  .boutonInfoG:hover {
+    width: 260px;
+  }
+
+  .boutonInfo__txt {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease;
+    white-space: nowrap;
+  }
+
+  .boutonInfoA:hover .boutonInfo__txt,
+  .boutonInfoB:hover .boutonInfo__txt,
+  .boutonInfoC:hover .boutonInfo__txt,
+  .boutonInfoD:hover .boutonInfo__txt,
+  .boutonInfoE:hover .boutonInfo__txt,
+  .boutonInfoF:hover .boutonInfo__txt,
+  .boutonInfoG:hover .boutonInfo__txt {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .boutonInfo__svg {
+    display: block;
+    flex-shrink: 0;
+    width: 16px;
+    height: 16px;
+    transform: rotate(45deg);
+    transition: transform 0.3s ease;
   }
 }
 
