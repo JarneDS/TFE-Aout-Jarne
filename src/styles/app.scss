@@ -547,6 +547,7 @@ select {
 
 .calendarIcone {
   height: 22px;
+  width: auto;
 }
 
 .problemeEtat__container {
@@ -891,9 +892,15 @@ select {
   margin-top: 0;
 }
 
+#Intro {
+  opacity: 1;
+  transition: all .2s ease-in-out;
+}
+
 #Intro.no-scroll {
   overflow: hidden;
   height: calc(100vh - 280px);
+  opacity: .05;
 }
 
 .image__bidon {
