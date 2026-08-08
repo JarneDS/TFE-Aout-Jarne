@@ -470,12 +470,22 @@ fetch("/projets/tfe-aout/api/moi.php")
     }
   });
 
-if (fichier === "moteur.html") {
+if (fichier === "moteur.html" || fichier === "freins.html") {
   const boutonsMoteur = document.querySelectorAll(
     ".boutonMoteurA, .boutonMoteurB, .boutonMoteurC, .boutonMoteurD, .boutonMoteurE, .boutonMoteurF, .boutonMoteurG"
   );
 
+  const boutonsFrein = document.querySelectorAll(
+    ".boutonFreinA, .boutonFreinB, .boutonFreinC"
+  );
+
   boutonsMoteur.forEach(btn => {
+    btn.addEventListener("click", () => {
+      afficherPartie(btn.dataset.value);
+    });
+  });
+
+  boutonsFrein.forEach(btn => {
     btn.addEventListener("click", () => {
       afficherPartie(btn.dataset.value);
     });

@@ -761,7 +761,10 @@ select {
 .boutonMoteurC,
 .boutonMoteurD,
 .boutonMoteurE,
-.boutonMoteurF {
+.boutonMoteurF,
+.boutonFreinA,
+.boutonFreinB,
+.boutonFreinC {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -781,7 +784,10 @@ select {
 .boutonMoteurC:hover,
 .boutonMoteurD:hover,
 .boutonMoteurE:hover,
-.boutonMoteurF:hover {
+.boutonMoteurF:hover,
+.boutonFreinA:hover,
+.boutonFreinB:hover,
+.boutonFreinC:hover {
   background-color: var(--color-textWhite);
 }
 
@@ -790,7 +796,10 @@ select {
 .boutonMoteurC:hover .boutonInfo__svg,
 .boutonMoteurD:hover .boutonInfo__svg,
 .boutonMoteurE:hover .boutonInfo__svg,
-.boutonMoteurF:hover .boutonInfo__svg {
+.boutonMoteurF:hover .boutonInfo__svg,
+.boutonFreinA:hover .boutonInfo__svg,
+.boutonFreinB:hover .boutonInfo__svg,
+.boutonFreinC:hover .boutonInfo__svg {
   transform: rotate(0deg);
 }
 
@@ -1188,7 +1197,10 @@ select {
   .boutonMoteurC,
   .boutonMoteurD,
   .boutonMoteurE,
-  .boutonMoteurF {
+  .boutonMoteurF,
+  .boutonFreinA,
+  .boutonFreinB,
+  .boutonFreinC {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -1213,7 +1225,10 @@ select {
   .boutonMoteurC:hover .boutonInfo__txt,
   .boutonMoteurD:hover .boutonInfo__txt,
   .boutonMoteurE:hover .boutonInfo__txt,
-  .boutonMoteurF:hover .boutonInfo__txt {
+  .boutonMoteurF:hover .boutonInfo__txt,
+  .boutonFreinA:hover .boutonInfo__txt,
+  .boutonFreinB:hover .boutonInfo__txt,
+  .boutonFreinC:hover .boutonInfo__txt {
     opacity: 1;
     visibility: visible;
   }
@@ -1270,6 +1285,33 @@ select {
 
   .boutonMoteurF:hover {
     width: 235px;
+  }
+
+  .boutonFreinA {
+    top: 66%;
+    left: 2%;
+  }
+
+  .boutonFreinB {
+    top: 35%;
+    left: 98%;
+  }
+
+  .boutonFreinC {
+    top: 7%;
+    left: 5%;
+  }
+
+  .boutonFreinA:hover {
+    width: 237px;
+  }
+
+  .boutonFreinB:hover {
+    width: 385px;
+  }
+
+  .boutonFreinC:hover {
+    width: 216px;
   }
 
   .image__bidon {
