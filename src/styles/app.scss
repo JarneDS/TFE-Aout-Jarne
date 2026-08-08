@@ -738,7 +738,7 @@ select {
 }
 
 /* MOTEUR */
-.moteur {
+.moteur, .freins {
   padding-top: 40px;
 }
 
@@ -825,6 +825,10 @@ select {
   margin: 32px 0;
 }
 
+.h2--noMarginTop {
+  margin-top: 0;
+}
+
 .h3--margin {
   margin-left: -29px;
 }
@@ -875,6 +879,7 @@ select {
   padding: 13px 21.5px;
   border-radius: 100%;
   align-self: end;
+  margin-top: 0;
 }
 
 #Intro.no-scroll {
@@ -1389,7 +1394,6 @@ select {
     display: grid;
     grid-template-columns: repeat(7, 1fr);
     gap: 20px;
-    margin-bottom: 40px;
   }
 
   /* GRID */
