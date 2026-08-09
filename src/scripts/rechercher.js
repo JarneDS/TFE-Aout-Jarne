@@ -158,4 +158,49 @@ const rechercheIndex = [
     url: "roues.html",
     content: "Comment lire un pneu ? Que veulent dire les chiffres sur le flanc du pneu ?"
   },
+  {
+    title: "Diagnostiques",
+    url: "diagnostiques.html",
+    content: "Problème avec le lave glace qui ne fonctionne pas"
+  },
+  {
+    title: "Diagnostiques",
+    url: "diagnostiques.html",
+    content: "Problème avec la batterie ? Comment savoir si c'est la batterie ?"
+  },
+  {
+    title: "Diagnostiques",
+    url: "diagnostiques.html",
+    content: "Problème avec une fusible ? Comment savoir si c'est une fusible qui a grillée ?"
+  },
+  {
+    title: "Diagnostiques",
+    url: "diagnostiques.html",
+    content: "Comment voir si un pneu est usé ?"
+  },
+  {
+    title: "Entretien",
+    url: "entretien.html",
+    content: "Comment remplir le lave-glace sans se tromper de bouchon ?"
+  },
+  {
+    title: "Entretien",
+    url: "entretien.html",
+    content: "Comment changer la batterie de sa voiture de manière sécurisée ?"
+  },
+  {
+    title: "Entretien",
+    url: "entretien.html",
+    content: "Comment vérifier l'état de ces pneus et quand sont-ils HS ?"
+  },
+  {
+    title: "Entretien",
+    url: "entretien.html",
+    content: "Comment changer une fusible de sa voiture de manière sécurisée ?"
+  },
+  {
+    title: "Entretien",
+    url: "entretien.html",
+    content: "Comment lavez sa voiture de manière professionnelle ?"
+  },
 ];
