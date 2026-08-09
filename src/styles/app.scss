@@ -1724,6 +1724,18 @@ select {
     opacity: 1;
     max-height: 200px;
   }
+
+  .buttonLink {
+    grid-column: 6 / 8;
+    grid-row: 1 / 2;
+    align-self: end;
+    justify-self: end;
+  }
+
+  .buttonLinkBottom {
+    grid-column:  1 / -1;
+    justify-self: center;
+  }
 }
 
 @media (min-width: 900px) {

@@ -65,8 +65,8 @@
                 <img src="laveGlaceDiagno.webp" alt="Image d'un filtre à air" class="Entretien__img">
                 <p class="fondDiagno"></p>
                 <div class="Entretien__txtContainer">
-                    <h3 class="Entretien__h3">Le lave glace</h3>
-                    <p class="Entretien__p"><span>Vous voulez remplir votre lave glace mais vous ne savez pas&nbsp;comment&nbsp;?</span><span>C’est par ici !</span></p>
+                    <h3 class="Entretien__h3">Le lave-glace</h3>
+                    <p class="Entretien__p"><span>Vous voulez remplir votre lave-glace mais vous ne savez pas&nbsp;comment&nbsp;?</span><span>C’est par ici !</span></p>
                 </div>
             </button>
             <button class="Diagno__cart" data-value="batterie">
@@ -97,8 +97,9 @@
     </section>
     <section class="Entretienpart__container section__btnRetour">
         <button class="btnEntretien" style="margin-bottom: 46px;">←&nbsp;Retour</button>
-        <div class="Entretienpart" id="filtre">
-            <h2 class="col--full row--title col--center">Comment savoir si le filtre à air est&nbsp;sale&nbsp;?</h2>
+        <div class="Entretienpart" id="laveGlace">
+            <h2 class="col--full row--title">Le lave-glace ne fonctionne pas&nbsp;?</h2>
+            <button class="buttonLink" onclick="window.location.href='entretien.html'">Comment remplir le liquide lave-glace&nbsp;?</button>
             <img src="filtreSale.webp" alt="Un filtre à air sale" class="col__img--right row--top row--center col--end">
             <div class="col--left row--double">
                 <h3>Symptôme 1 : Accélérations molles</h3>
@@ -113,47 +114,11 @@
                 <p><span>Tu ouvres le boîtier…</span><span>Et tu trouves un filtre tellement sale qu’il pourrait passer pour un tapis Ikea.</span></p>
             </div>
             <img src="filtreSalePropre.webp" alt="Un filtre à air propre et sale" class="height--100 col__img--right row2 row--center col--end">
-        </div>
-        <div class="Entretienpart" id="fumees">
-            <h2 class="col--full row--title col--center">Les couleurs de fumée d’échappement&nbsp;:</h2>
-            <div class="col--left row--top">
-                <h3>Fumée noire : votre voiture fait un barbecue sous le capot</h3>
-                <p><span>Si ça fume noir, c’est que le moteur brûle trop de carburant.</span><span>Souvent, c’est parce que le filtre à air est tellement sale que le moteur n’arrive plus à&nbsp;respirer.</span><span>En gros, il roule en mode :</span><span>« J’étouffe… alors j’ai mis beaucoup trop d’essence pour compenser. Désolé pour la&nbsp;fumée. »</span></p>
-            </div>
-            <img src="fumeeNoir.webp" alt="Voiture qui rejette de la fumée noire" class="col__img--right row--top row--center col--end">
-            <div class="col--right row2">
-                <h3>Fumée bleue : votre voiture boit son propre huile</h3>
-                <p><span>Si ça fume bleu, c’est que le moteur brûle de l’huile.</span><span>En gros, il fait de l’auto‑cannibalisme.</span><span>«J’avais faim, j’ai pris un peu d’huile.»</span></p>
-            </div>
-            <img src="fumeeBleu.webp" alt="Voiture qui rejette de la fumée bleue" class="col__img--left row2 row--end">
-            <div class="col--left row3">
-                <h3>Fumée blanche : votre voiture fait un cappuccino au liquide de refroidissement</h3>
-                <p><span>Si ça fume blanc, c’est souvent que du liquide de refroidissement entre dans le&nbsp;moteur.</span><span>En gros, il essaie de faire un sauna sous le&nbsp;capot.</span><span>Votre voiture est en mode :</span><span>« J’ai mis un peu d’eau dans la combustion… c’est rafraîchissant, non ? »</span></p>
-            </div>
-            <img src="fumeeBlanc.webp" alt="Voiture qui rejette de la fumée blanche" class="col__img--right row3 row--center col--end">
-        </div>
-        <div class="Entretienpart" id="huile">
-            <h2 class="col--full row--title col--center">Comment vérifier le niveau d’huile moteur et comment le changer ?</h2>
-            <img src="jaugeHuile.webp" alt="Image montrant le niveau min et max sur la jauge" class="height--100 col__img--right row--top row--center col--end">
-            <ol class="col--left row--double">
-                <li class="h3">Vérifier le niveau : la méthode «prise de sang»</li>
-                <p><span>Tu tires la jauge (la petite poignée jaune/orange/rouge qui crie «regarde-moi»).</span><span>Tu l’essuies, tu replonges, tu ressors.</span><span>Si l’huile est entre <strong>MIN et MAX</strong>, tout va&nbsp;bien.</span><span>Si c’est <strong>en dessous du MIN</strong>, ta voiture est en mode «je manque de sang, aide-moi».</span></p>
-                <h3>ATTENTION : moteur froid + sol plat</h3>
-                <p><span>Sinon tu risques :</span></p>
-                <ul>
-                    <li>une mauvaise lecture,</li>
-                    <li>une brûlure,</li>
-                    <li>et un juron gratuit.</li>
-                </ul>
-                <li class="h3">Ajouter de l’huile : la transfusion</li>
-                <p><span>Tu ouvres le bouchon de remplissage, tu verses doucement.</span><span>Pas trop, sinon tu fais un overdose d’huile → mousse, fumée, drame.</span></p>
-                <li class="h3">Le filtre à huile : le rein du moteur</li>
-                <p><span>À chaque vidange, tu changes le filtre.</span><span>Toujours.</span><span>C’est lui qui retient toute la crasse.</span><span>Le laisser, c’est comme prendre une douche et remettre des chaussettes sales.</span></p>
-            </ol>
-            <img src="bouchonHuile.webp" alt="Image montrant un bouchon typique par où l'huile entre" class="height--100 col__img--right row2 row--center col--end">
+            <button class="buttonLinkBottom" onclick="window.location.href='entretien.html'">Comment remplir le liquide lave-glace&nbsp;?</button>
         </div>
         <div class="Entretienpart" id="batterie">
-            <h2 class="col--full row--title col--center">Comment savoir si la charge de la batterie est faible&nbsp;?</h2>
+            <h2 class="col--full row--title">Problèmes de batterie&nbsp;?</h2>
+            <button class="buttonLink" onclick="window.location.href='entretien.html'">Comment changer la batterie&nbsp;?</button>
             <img src="voyantBatterieAllume.webp" alt="Image montrant le témoin de batterie allumée sur le tableau de bord" class="height--100 col__img--right row--top row--center col--end">
             <ol class="col--left row--top">
                 <li class="h3">Démarrage lent</li>
@@ -165,12 +130,16 @@
                 <li class="h3">Lumières faibles</li>
                 <p><span>Les phares éclairent à peine le trottoir.</span><span>On dirait qu’ils chuchotent :</span><span>«Désolé, j’ai pas la force aujourd’hui.»</span></p>
             </ol>
-            <h2 class="col--full row2 col--center">Comment savoir si une fusible est&nbsp;grillée&nbsp;?</h2>
-            <div class="col__img--right row3 row--center col--end">
-                <img src="fusibleCasse.webp" alt="Image montrant une fusible grillée et une bonne fusible">
-                <p><span class="legende">Fusible grillée et une bonne fusible</span></p>
+            <button class="buttonLinkBottom" onclick="window.location.href='entretien.html'">Comment changer la batterie&nbsp;?</button>
+        </div>
+        <div class="Entretienpart" id="fusible">
+            <h2 class="col--full row--title">Problèmes liés à un fusible ?</h2>
+            <button class="buttonLink" onclick="window.location.href='entretien.html'">Comment changer un fusible&nbsp;?</button>
+            <div class="col__img--right row--top row--center col--end">
+                <img src="fusibleCasse.webp" alt="Image montrant un fusible grillé et un bon fusible">
+                <p><span class="legende">Fusible grillé et un bon fusible</span></p>
             </div>
-            <ol class="col--left row3">
+            <ol class="col--left row--top">
                 <li class="h3">Un seul truc ne marche plus</li>
                 <p><span>Radio morte, essuie‑glaces en vacances, phares en RTT…</span><span>Quand un seul élément arrête de bosser, c’est souvent un fusible qui dit :</span><span>«Sans moi, rien ne fonctionne, bisous.»</span></p>
                 <li class="h3">Inspection visuelle</li>
@@ -182,9 +151,11 @@
                     <li><strong>Silence total</strong> → fusible décédé, minute de&nbsp;silence.</li>
                 </ul>
             </ol>
+            <button class="buttonLinkBottom" onclick="window.location.href='entretien.html'">Comment changer un fusible&nbsp;?</button>
         </div>
-        <div class="Entretienpart" id="rouesTest">
-            <h2 class="col--full row--title col--center">Comment voir si un pneu est usé ?</h2>
+        <div class="Entretienpart" id="pneus">
+            <h2 class="col--full row--title">Comment voir si un pneu est usé ?</h2>
+            <button class="buttonLink" onclick="window.location.href='entretien.html'">Comment vérifier ces pneus&nbsp;?</button>
             <div class="col--left row--top">
                 <h3 class="h3--margin">1. Inspection visuelle : le test du «pneu chauve»</h3>
                 <p><span>Dans les rainures du pneu, tu as de petits pavés de gomme de 1,6 mm.</span><span>Si la bande de roulement arrive <strong>au même niveau</strong> que ces pavés…</span><span>→ Ton pneu est officiellement en train de perdre ses cheveux.</span></p>
@@ -201,43 +172,7 @@
                 <p><span>Les petits pavés sont placés <strong>tout autour du&nbsp;pneu.</strong></span><span>Donc si tu en vois un au même niveau, pas besoin de faire le tour complet :</span><span>→ C’est foutu pour tout le pneu.</span></p>
             </div>
             <img src="indicatUsure.webp" alt="Image montrant les différents indicateurs de profondeur sur le pneu" class="col__img--right row2 row--center col--end">
-        </div>
-        <div class="Entretienpart" id="freinsTest">
-            <h2 class="col--full row--title col--center">Comment vérifier si les freins sont&nbsp;usés&nbsp;?</h2>
-            <img src="vieuxDisque.webp" alt="Image montrant un disque de frein en mauvais état" class="height--100 col__img--right row--top row--center col--end">
-            <div class="col--left row--top">
-                <h3 class="h3--margin">1. Les bruits suspects : la voiture qui parle en ASMR mécanique</h3>
-                <h4>Couinement aigu</h4>
-                <p><span>Les plaquettes sont usées ou pleines de&nbsp;poussière.</span><span>Le frein te dit : «Je souffre mais je reste&nbsp;poli.»</span></p>
-                <h4>Grincement métallique (DANGER)</h4>
-                <p><span>Là, c’est le métal contre le métal.</span><span>Ta voiture hurle : «JE N’AI PLUS DE PLAQUETTES, ARRÊTE DE FREINER SUR&nbsp;MOI.»</span></p>
-                <h4>Claquement</h4>
-                <p><span>Un étrier desserré ou une plaquette mal&nbsp;placée.</span><span>En gros : «Quelqu’un a mal remonté un truc, je te préviens.»</span></p>
-                <h4>Vibration sourde</h4>
-                <p><span>Le disque est voilé.</span><span>Ta pédale fait du beatbox sans ton accord.</span></p>
-            </div>
-            <div class="col__img--right row2 row--center col--end">
-                <img src="vieuxNouvellesPlaq.webp" alt="Image montrant une plaquette usée et une nouvelle" class="height--100">
-                <p><span class="legende">Une plaquette usée et une nouvelle</span></p>
-            </div>
-            <div class="col--left row2">
-                <h3 class="h3--margin">2. Vérification visuelle : le contrôle parental des freins</h3>
-                <h4>Plaquettes</h4>
-                <p><span>Elles doivent avoir au moins 3 mm de&nbsp;garniture.</span><span>Moins que ça → elles sont aussi fines qu’une feuille A4.</span></p>
-                <h4>Disques</h4>
-                <p><span>À vérifier :</span></p>
-                <ul>
-                    <li>fissures,</li>
-                    <li>couleur bleue (surchauffe),</li>
-                    <li>rouille excessive,</li>
-                    <li>rayures profondes (test à l’ongle).</li>
-                </ul>
-                <p><span>Si ton ongle accroche → ton disque a vécu une vie difficile.</span></p>
-                <h4>ATTENTION</h4>
-                <p><span>Ne touche jamais un disque chaud.</span><span>Ça peut monter à 700°C.</span><span>C’est littéralement un mini‑four à pizza.</span></p>
-                <h3 class="h3--margin">3. Liquide de frein : le niveau de panique</h3>
-                <p><span>Le niveau ne doit jamais passer sous le&nbsp;MIN.</span><span>Si c’est le cas → «DANGER, tu n’as plus de pression, ni dans les freins, ni dans ta vie.»</span></p>
-            </div>
+            <button class="buttonLinkBottom" onclick="window.location.href='entretien.html'">Comment vérifier ces pneus&nbsp;?</button>
         </div>
     </section>
 </body>

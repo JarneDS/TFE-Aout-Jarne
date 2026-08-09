@@ -161,7 +161,7 @@ const rechercheIndex = [
   {
     title: "Diagnostiques",
     url: "diagnostiques.html",
-    content: "Problème avec le lave glace qui ne fonctionne pas"
+    content: "Problème avec le lave-glace qui ne fonctionne pas"
   },
   {
     title: "Diagnostiques",
@@ -171,7 +171,7 @@ const rechercheIndex = [
   {
     title: "Diagnostiques",
     url: "diagnostiques.html",
-    content: "Problème avec une fusible ? Comment savoir si c'est une fusible qui a grillée ?"
+    content: "Problème avec un fusible ? Comment savoir si c'est un fusible qui a grillée ?"
   },
   {
     title: "Diagnostiques",
@@ -196,7 +196,7 @@ const rechercheIndex = [
   {
     title: "Entretien",
     url: "entretien.html",
-    content: "Comment changer une fusible de sa voiture de manière sécurisée ?"
+    content: "Comment changer un fusible de sa voiture de manière sécurisée ?"
   },
   {
     title: "Entretien",
