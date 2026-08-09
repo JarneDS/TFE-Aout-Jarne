@@ -163,6 +163,12 @@ ol {
   padding: 0;
 }
 
+ul li::marker,
+ol li::marker {
+  font-size: 1em;
+  color: var(--color-textWhite);
+}
+
 .h3--margin {
   margin-left: -32px;
 }
@@ -686,6 +692,7 @@ select {
 .modeleInteractif {
   width: 100%;
   max-width: 1100px;
+  border-radius: 5px;
 }
 
 .btnsModel {
@@ -768,7 +775,9 @@ select {
 .boutonFreinC,
 .boutonTemoinA,
 .boutonTemoinB,
-.boutonTemoinC {
+.boutonTemoinC,
+.boutonPeintureA,
+.boutonPeintureB {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -794,7 +803,9 @@ select {
 .boutonFreinC:hover,
 .boutonTemoinA:hover,
 .boutonTemoinB:hover,
-.boutonTemoinC:hover {
+.boutonTemoinC:hover,
+.boutonPeintureA:hover,
+.boutonPeintureB:hover {
   background-color: var(--color-textWhite);
 }
 
@@ -809,7 +820,9 @@ select {
 .boutonFreinC:hover .boutonInfo__svg,
 .boutonTemoinA:hover .boutonInfo__svg,
 .boutonTemoinB:hover .boutonInfo__svg,
-.boutonTemoinC:hover .boutonInfo__svg {
+.boutonTemoinC:hover .boutonInfo__svg,
+.boutonPeintureA:hover .boutonInfo__svg,
+.boutonPeintureB:hover .boutonInfo__svg {
   transform: rotate(0deg);
 }
 
@@ -1224,7 +1237,9 @@ select {
   .boutonFreinC,
   .boutonTemoinA,
   .boutonTemoinB,
-  .boutonTemoinC {
+  .boutonTemoinC,
+  .boutonPeintureA,
+  .boutonPeintureB {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -1255,7 +1270,9 @@ select {
   .boutonFreinC:hover .boutonInfo__txt,
   .boutonTemoinA:hover .boutonInfo__txt,
   .boutonTemoinB:hover .boutonInfo__txt,
-  .boutonTemoinC:hover .boutonInfo__txt {
+  .boutonTemoinC:hover .boutonInfo__txt,
+  .boutonPeintureA:hover .boutonInfo__txt,
+  .boutonPeintureB:hover .boutonInfo__txt {
     opacity: 1;
     visibility: visible;
   }
@@ -1366,6 +1383,24 @@ select {
 
   .boutonTemoinC:hover {
     width: 220px;
+  }
+
+  .boutonPeintureA {
+    top: 20%;
+    left: 20%;
+  }
+
+  .boutonPeintureB {
+    top: 80%;
+    left: 30%;
+  }
+
+  .boutonPeintureA:hover {
+    width: 306px;
+  }
+
+  .boutonPeintureB:hover {
+    width: 196px;
   }
 
   .image__bidon {
