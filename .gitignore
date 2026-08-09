@@ -26,3 +26,5 @@ car-logos-dataset
 
 /vendor/
 api/database.php
+
+db.env
