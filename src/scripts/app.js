@@ -495,6 +495,10 @@ if (fichier === "moteur.html" || fichier === "freins.html" || fichier === "temoi
     ".boutonRouesA, .boutonRouesB, .boutonRouesC"
   );
 
+  const boutonsSuspension = document.querySelectorAll(
+    ".boutonSuspensionA, .boutonSuspensionB"
+  );
+
   boutonsMoteur.forEach(btn => {
     btn.addEventListener("click", () => {
       afficherPartie(btn.dataset.value);
@@ -526,6 +530,12 @@ if (fichier === "moteur.html" || fichier === "freins.html" || fichier === "temoi
   });
 
   boutonsRoues.forEach(btn => {
+    btn.addEventListener("click", () => {
+      afficherPartie(btn.dataset.value);
+    });
+  });
+
+  boutonsSuspension.forEach(btn => {
     btn.addEventListener("click", () => {
       afficherPartie(btn.dataset.value);
     });

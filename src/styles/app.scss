@@ -784,7 +784,9 @@ select {
 .boutonChassisB,
 .boutonRouesA,
 .boutonRouesB,
-.boutonRouesC {
+.boutonRouesC,
+.boutonSuspensionA,
+.boutonSuspensionB {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -817,7 +819,9 @@ select {
 .boutonChassisB:hover,
 .boutonRouesA:hover,
 .boutonRouesB:hover,
-.boutonRouesC:hover {
+.boutonRouesC:hover,
+.boutonSuspensionA:hover,
+.boutonSuspensionB:hover {
   background-color: var(--color-textWhite);
 }
 
@@ -839,7 +843,9 @@ select {
 .boutonChassisB:hover .boutonInfo__svg,
 .boutonRouesA:hover .boutonInfo__svg,
 .boutonRouesB:hover .boutonInfo__svg,
-.boutonRouesC:hover .boutonInfo__svg {
+.boutonRouesC:hover .boutonInfo__svg,
+.boutonSuspensionA:hover .boutonInfo__svg,
+.boutonSuspensionB:hover .boutonInfo__svg {
   transform: rotate(0deg);
 }
 
@@ -1261,7 +1267,9 @@ select {
   .boutonChassisB,
   .boutonRouesA,
   .boutonRouesB,
-  .boutonRouesC {
+  .boutonRouesC,
+  .boutonSuspensionA,
+  .boutonSuspensionB {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -1299,7 +1307,9 @@ select {
   .boutonChassisB:hover .boutonInfo__txt,
   .boutonRouesA:hover .boutonInfo__txt,
   .boutonRouesB:hover .boutonInfo__txt,
-  .boutonRouesC:hover .boutonInfo__txt {
+  .boutonRouesC:hover .boutonInfo__txt,
+  .boutonSuspensionA:hover .boutonInfo__txt,
+  .boutonSuspensionB:hover .boutonInfo__txt {
     opacity: 1;
     visibility: visible;
   }
@@ -1473,6 +1483,24 @@ select {
 
   .boutonChassisB:hover {
     width: 292px;
+  }
+
+  .boutonSuspensionA {
+    top: 15%;
+    left: 17%;
+  }
+
+  .boutonSuspensionB {
+    top: 77%;
+    left: 14%;
+  }
+
+  .boutonSuspensionA:hover {
+    width: 295px;
+  }
+
+  .boutonSuspensionB:hover {
+    width: 360px;
   }
 
   .image__bidon {
