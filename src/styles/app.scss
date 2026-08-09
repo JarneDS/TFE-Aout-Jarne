@@ -1066,7 +1066,7 @@ select {
 }
 
 .filter {
-  filter: brightness(0);
+  filter: brightness(1000%);
   max-width: 163px;
   left: 50%;
   transform: translateX(-50%);
