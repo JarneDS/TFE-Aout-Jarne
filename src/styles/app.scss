@@ -746,7 +746,7 @@ select {
 }
 
 /* MOTEUR */
-.moteur, .freins, .temoins {
+.moteur, .freins, .temoins, .peinture, .chassis {
   padding-top: 40px;
 }
 
@@ -777,7 +777,9 @@ select {
 .boutonTemoinB,
 .boutonTemoinC,
 .boutonPeintureA,
-.boutonPeintureB {
+.boutonPeintureB,
+.boutonChassisA,
+.boutonChassisB {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -805,7 +807,9 @@ select {
 .boutonTemoinB:hover,
 .boutonTemoinC:hover,
 .boutonPeintureA:hover,
-.boutonPeintureB:hover {
+.boutonPeintureB:hover,
+.boutonChassisA:hover,
+.boutonChassisB:hover {
   background-color: var(--color-textWhite);
 }
 
@@ -822,7 +826,9 @@ select {
 .boutonTemoinB:hover .boutonInfo__svg,
 .boutonTemoinC:hover .boutonInfo__svg,
 .boutonPeintureA:hover .boutonInfo__svg,
-.boutonPeintureB:hover .boutonInfo__svg {
+.boutonPeintureB:hover .boutonInfo__svg,
+.boutonChassisA:hover .boutonInfo__svg,
+.boutonChassisB:hover .boutonInfo__svg {
   transform: rotate(0deg);
 }
 
@@ -1239,7 +1245,9 @@ select {
   .boutonTemoinB,
   .boutonTemoinC,
   .boutonPeintureA,
-  .boutonPeintureB {
+  .boutonPeintureB,
+  .boutonChassisA,
+  .boutonChassisB {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -1272,7 +1280,9 @@ select {
   .boutonTemoinB:hover .boutonInfo__txt,
   .boutonTemoinC:hover .boutonInfo__txt,
   .boutonPeintureA:hover .boutonInfo__txt,
-  .boutonPeintureB:hover .boutonInfo__txt {
+  .boutonPeintureB:hover .boutonInfo__txt,
+  .boutonChassisA:hover .boutonInfo__txt,
+  .boutonChassisB:hover .boutonInfo__txt {
     opacity: 1;
     visibility: visible;
   }
@@ -1401,6 +1411,24 @@ select {
 
   .boutonPeintureB:hover {
     width: 196px;
+  }
+
+  .boutonChassisA {
+    top: 20%;
+    left: 20%;
+  }
+
+  .boutonChassisB {
+    top: 60%;
+    left: 30%;
+  }
+
+  .boutonChassisA:hover {
+    width: 212px;
+  }
+
+  .boutonChassisB:hover {
+    width: 292px;
   }
 
   .image__bidon {
