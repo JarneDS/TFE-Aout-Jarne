@@ -748,7 +748,13 @@ select {
 }
 
 /* MOTEUR */
-.moteur, .freins, .temoins, .peinture, .chassis, .roues, .suspension {
+.moteur,
+.freins,
+.temoins,
+.peinture,
+.chassis,
+.roues,
+.suspension {
   padding-top: 40px;
 }
 
@@ -954,6 +960,116 @@ select {
   flex-direction: row;
   gap: 10px;
   margin: 26px 0;
+}
+
+/* ENTRETIEN */
+.Entretien__container,
+.Diagno__container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.Entretien__cart,
+.Diagno__cart {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  margin: 0;
+  padding: 0;
+  background: transparent;
+  cursor: pointer;
+}
+
+.Entretien__txtContainer {
+  position: absolute;
+  z-index: 20;
+  padding: 0 10px;
+}
+
+.Entretien__img {
+  position: relative;
+  z-index: 10;
+  border-radius: 5px;
+}
+
+.Entretien__h3 {
+  transition: opacity .3s ease-in-out;
+}
+
+.Entretien__p {
+  display: block;
+}
+
+.fondEntretien, .fondDiagno {
+  background-color: var(--color-bgInfos);
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: 15;
+  border-radius: 5px;
+  margin: 0;
+  padding: 0;
+}
+
+.Entretienpart__container {
+  display: none;
+}
+
+.Entretienpart {
+  display: none;
+}
+
+.Entretienpart.active {
+  display: block;
+}
+
+.entretien__card {
+  padding: 0;
+  margin: 0;
+  border-radius: 10px;
+  filter: drop-shadow(4px 4px 4px #216DFF);
+  background-color: var(--color-form_Nav);
+  position: relative;
+  min-width: 260px;
+  width: 100%;
+  height: 309px;
+}
+
+.entretien__itemNumero {
+  width: 50px;
+  height: 50px;
+  text-align: center;
+  background-color: var(--color-form_Nav);
+  color: var(--color-textWhite);
+  border-radius: 25px;
+  position: absolute;
+  z-index: 2;
+  margin: 5px 0 0 5px;
+}
+
+.entretien__itemImg {
+  border-radius: 0;
+  position: absolute;
+  z-index: 1;
+  width: 100%;
+  max-width: 374px;
+  max-height: 235px;
+  border-radius: 10px 10px 0 0;
+}
+
+.entretien__itemTxt {
+  color: var(--color-textWhite);
+  margin: 176px 20px 0;
+}
+
+.filter {
+  filter: brightness(0);
+  max-width: 163px;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 @media (min-width: 701px) {
@@ -1372,7 +1488,7 @@ select {
     top: 15%;
     left: 20%;
   }
-  
+
   .boutonRouesB {
     top: 45%;
     left: 8%;
@@ -1386,7 +1502,7 @@ select {
   .boutonRouesA:hover {
     width: 304px;
   }
-  
+
   .boutonRouesB:hover {
     width: 228px;
   }
@@ -1521,10 +1637,96 @@ select {
     align-items: center;
     padding: 6px 32px;
   }
+
+  /* ENTRETIEN */
+  .Entretien__container,
+  .Diagno__container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .Entretien__cart,
+  .Diagno__cart {
+    width: fit-content;
+  }
+
+  .Entretien__img {
+    max-width: 374px;
+    max-height: 250px;
+    width: 374px;
+  }
+
+  .fondEntretien,
+  .fondDiagno {
+    position: absolute;
+    inset: 0;
+    z-index: 15;
+    background: linear-gradient(rgba(217, 217, 217, 0), #000000);
+    transition: opacity .35s ease;
+    opacity: 1;
+  }
+
+  .entretien__card {
+    min-width: 374px;
+    width: 100%;
+    height: 342px;
+  }
+
+  .entretien__itemTxt {
+    margin: 247px 20px 0;
+  }
+
+  .filter {
+    max-width: 235px;
+  }
+
+  /* Calque hover par-dessus */
+  .Entretien__cart::after, .Diagno__cart::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-color: var(--color-bgInfos);
+    opacity: 0;
+    transition: opacity .35s ease;
+    z-index: 16;
+    border-radius: 5px;
+  }
+
+  .Entretien__cart:hover::after,
+  .Diagno__cart:hover::after {
+    opacity: 1;
+  }
+
+  .Entretien__h3 {
+    opacity: 1;
+    transform: translateY(86px);
+    transition: all .35s ease;
+  }
+
+  .Entretien__cart:hover .Entretien__h3,
+  .Diagno__cart:hover .Entretien__h3 {
+    opacity: 0;
+    transform: translateY(-36px);
+  }
+
+  .Entretien__p {
+    opacity: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: opacity .3s ease, max-height .3s ease;
+    transform: translateY(-50px);
+  }
+
+  .Entretien__cart:hover .Entretien__p,
+  .Diagno__cart:hover .Entretien__p {
+    opacity: 1;
+    max-height: 200px;
+  }
 }
 
 @media (min-width: 900px) {
-
   /* Problemes */
   .headerProblemes,
   .headerProblemes__boutons {
@@ -1561,7 +1763,6 @@ select {
 }
 
 @media (min-width: 1250px) {
-
   .Entretien__container,
   .Diagno__container {
     display: grid;
