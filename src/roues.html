@@ -59,6 +59,138 @@
     <section>
         <button onclick="history.back()" class="btnRetour">←&nbsp;Retour vers&nbsp;sélection</button>
     </section>
+    <section class="roues">
+        <div id="Intro">
+            <div class="grid--full">
+                <h1 class="col--full row--title">Les roues</h1>
+                <div class="col--left row--top">
+                    <p><span><b>Elles sont super importantes.</b> À quoi servent les roues ? Elles
+                            assurent&nbsp;:</span>
+                    </p>
+                    <ul>
+                        <li>L’adhérence</li>
+                        <li>La stabilité</li>
+                        <li>La direction</li>
+                        <li>Le freinage</li>
+                        <li>Le confort de conduite</li>
+                    </ul>
+                    <p><span><b>Sans roues en bon état, votre vie et celle des autres automobilistes est en
+                                danger.</b></span></p>
+                </div>
+            </div>
+            <div class="btnsModel grid--full2">
+                <img src="pneu.webp" alt="1992 Volkswagen Golf GTI Mk2 by Ddiaz Design - Tire" class="modeleInteractif">
+                <button class="boutonRouesA" data-value="CompositionPneus">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none"
+                        class="boutonInfo__svg">
+                        <path d="M17 17L1 1M17 1L1 17" stroke="black" stroke-width="2" stroke-linecap="round" />
+                    </svg>
+                    <h4 class="boutonInfo__txt NAV">Composition&nbsp;d'une&nbsp;roue</h4>
+                </button>
+                <button class="boutonRouesB" data-value="TypesPneus">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none"
+                        class="boutonInfo__svg">
+                        <path d="M17 17L1 1M17 1L1 17" stroke="black" stroke-width="2" stroke-linecap="round" />
+                    </svg>
+                    <h4 class="boutonInfo__txt NAV">Types&nbsp;de&nbsp;pneus</h4>
+                </button>
+                <button class="boutonRouesC" data-value="LecturePneu">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none"
+                        class="boutonInfo__svg">
+                        <path d="M17 17L1 1M17 1L1 17" stroke="black" stroke-width="2" stroke-linecap="round" />
+                    </svg>
+                    <h4 class="boutonInfo__txt NAV">Lecture&nbsp;du&nbsp;flanc</h4>
+                </button>
+            </div>
+        </div>
+        <div class="infos">
+            <div class="part" id="CompositionPneus">
+                <button class="fermerPart">X</button>
+                <h2 class="col--full row--title h2--noMarginTop">De quoi est fait une roue&nbsp;?</h2>
+                <ol class="row--top col--left">
+                    <li>Le pneu est composé de&nbsp;:</li>
+                    <ul>
+                        <li>La bande de roulement, c’est la partie qui touche le sol et sur lequel on peut voir le
+                            dessin/la sculpture du pneu.</li>
+                        <li>Les flancs</li>
+                        <li>La structure interne (ceinture + structure)</li>
+                    </ul>
+                    <li>La jante qui peut être faite de 2 composants différents :</li>
+                    <ul>
+                        <li>L’acier</li>
+                        <li>L’aluminium / alliage</li>
+                    </ul>
+                    <li>Les boulons / écrous, ils fixent la roue au&nbsp;moyeu</li>
+                    <li>Le moyeu, c’est la pièce centrale qui relie la roue à la suspension et au&nbsp;frein</li>
+                </ol>
+                <img src="/pneuCoupe.webp" alt="coupe d'un pneu de voiture Off-Road" class="col__img--right row--top col--end row--center">
+            </div>
+            <div class="part" id="TypesPneus">
+                <button class="fermerPart">X</button>
+                <h2 class="col--full row--title h2--noMarginTop">Il existe 4 types de pneus&nbsp;:</h2>
+                <img src="pneus_types.webp" alt="image représentant les 4 types de pneus côte à côte"
+                    class="col__img--right row--top row--center col--end">
+                <div class="col--left row--top">
+                    <ol>
+                        <li>Les pneus hiver&nbsp;:</li>
+                        <ul>
+                            <li>Meilleure adhérence sous 7°C</li>
+                            <li>Sculpture plus profonde</li>
+                            <li>Caoutchouc plus souple</li>
+                        </ul>
+                        <li>Les pneus été&nbsp;:</li>
+                        <ul>
+                            <li>Optimisés pour les températures chaudes</li>
+                            <li>Meilleure tenue de route et freinage</li>
+                        </ul>
+                        <li>Les pneus 4 saisons&nbsp;:</li>
+                        <ul>
+                            <li>Compromis entre été et hiver</li>
+                            <li>Pratiques mais moins performantes dans les extrêmes</li>
+                            <li>Souvent accompagné par l’indication M+S (Mud + Snow) sur les flancs</li>
+                        </ul>
+                        <li>Les pneus Off-Road&nbsp;:</li>
+                        <ul>
+                            <li>Sculpture très agressive</li>
+                            <li>Flancs renforcés</li>
+                            <li>Gomme plus résistantes</li>
+                            <li>Idéales pour 4x4, pick-up, véhicules&nbsp;d’aventure</li>
+                            <li>Reconnaissable à par l’indication M/T (Mud Terrain) ou A/T (All Terrain) sur les flancs
+                            </li>
+                        </ul>
+                    </ol>
+                </div>
+            </div>
+            <div class="part" id="LecturePneu">
+                <button class="fermerPart">X</button>
+                <h2 class="col--full row--title h2--noMarginTop">Comment lire un&nbsp;pneu&nbsp;?</h2>
+                <img src="lecture_pneu.webp" alt="image représentant un pneu avec les lettres visibles"
+                    class="col__img--left row--top row--center">
+                <div class="col--right row--top">
+                    <p><span><b>Lire un pneu est moins difficile que ça en a&nbsp;l'air.</b></span><span>Par exemple que
+                            veut dire 205/55&nbsp;R16&nbsp;91V&nbsp;:</span></p>
+                    <ul>
+                        <li>205 → largeur du pneu en mm</li>
+                        <li>55 → hauteur du flanc du pneu (% de la&nbsp;largeur)</li>
+                        <li>R → Radial les fils de la carcasse sont disposés de manière perpendiculaire à la direction
+                            de roulement (99% des pneus). Il existe aussi D et B, ici les fils de la carcasse se
+                            croisent en&nbsp;diagonale.</li>
+                        <li>16 → diamètre de la jante</li>
+                        <li>91 → indice de charge</li>
+                        <li>V → indice de vitesse</li>
+                    </ul>
+                    <p><span><strong>Quand faut-il changer un pneu ?</strong></span></p>
+                    <ul>
+                        <li>Profondeur de sculpture &#60; 1,6mm (limite&nbsp;légale)</li>
+                        <li>Pneu âgé de plus de 5 à 7 ans</li>
+                        <li>Déformation visible</li>
+                        <li>Coupure ou hernie</li>
+                        <li>Perte de pression régulière</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
 </body>
 
 </html>

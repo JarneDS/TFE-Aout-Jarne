@@ -470,7 +470,7 @@ fetch("/projets/tfe-aout/api/moi.php")
     }
   });
 
-if (fichier === "moteur.html" || fichier === "freins.html" || fichier === "temoins.html" || fichier === "peinture.html" || fichier === "chassis.html") {
+if (fichier === "moteur.html" || fichier === "freins.html" || fichier === "temoins.html" || fichier === "peinture.html" || fichier === "chassis.html" || fichier === "roues.html" || fichier === "suspension.html") {
   const boutonsMoteur = document.querySelectorAll(
     ".boutonMoteurA, .boutonMoteurB, .boutonMoteurC, .boutonMoteurD, .boutonMoteurE, .boutonMoteurF, .boutonMoteurG"
   );
@@ -489,6 +489,10 @@ if (fichier === "moteur.html" || fichier === "freins.html" || fichier === "temoi
 
   const boutonsChassis = document.querySelectorAll(
     ".boutonChassisA, .boutonChassisB"
+  );
+
+  const boutonsRoues = document.querySelectorAll(
+    ".boutonRouesA, .boutonRouesB, .boutonRouesC"
   );
 
   boutonsMoteur.forEach(btn => {
@@ -516,6 +520,12 @@ if (fichier === "moteur.html" || fichier === "freins.html" || fichier === "temoi
   });
 
   boutonsChassis.forEach(btn => {
+    btn.addEventListener("click", () => {
+      afficherPartie(btn.dataset.value);
+    });
+  });
+
+  boutonsRoues.forEach(btn => {
     btn.addEventListener("click", () => {
       afficherPartie(btn.dataset.value);
     });

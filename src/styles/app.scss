@@ -118,7 +118,9 @@ label {
 
 p,
 button,
-textarea {
+textarea,
+ul,
+ol {
   font-size: clamp(1rem, 0.123vw + 0.977rem, 1.125rem);
   margin: 13px 0;
 }
@@ -746,7 +748,7 @@ select {
 }
 
 /* MOTEUR */
-.moteur, .freins, .temoins, .peinture, .chassis {
+.moteur, .freins, .temoins, .peinture, .chassis, .roues, .suspension {
   padding-top: 40px;
 }
 
@@ -779,7 +781,10 @@ select {
 .boutonPeintureA,
 .boutonPeintureB,
 .boutonChassisA,
-.boutonChassisB {
+.boutonChassisB,
+.boutonRouesA,
+.boutonRouesB,
+.boutonRouesC {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -809,7 +814,10 @@ select {
 .boutonPeintureA:hover,
 .boutonPeintureB:hover,
 .boutonChassisA:hover,
-.boutonChassisB:hover {
+.boutonChassisB:hover,
+.boutonRouesA:hover,
+.boutonRouesB:hover,
+.boutonRouesC:hover {
   background-color: var(--color-textWhite);
 }
 
@@ -828,7 +836,10 @@ select {
 .boutonPeintureA:hover .boutonInfo__svg,
 .boutonPeintureB:hover .boutonInfo__svg,
 .boutonChassisA:hover .boutonInfo__svg,
-.boutonChassisB:hover .boutonInfo__svg {
+.boutonChassisB:hover .boutonInfo__svg,
+.boutonRouesA:hover .boutonInfo__svg,
+.boutonRouesB:hover .boutonInfo__svg,
+.boutonRouesC:hover .boutonInfo__svg {
   transform: rotate(0deg);
 }
 
@@ -1247,7 +1258,10 @@ select {
   .boutonPeintureA,
   .boutonPeintureB,
   .boutonChassisA,
-  .boutonChassisB {
+  .boutonChassisB,
+  .boutonRouesA,
+  .boutonRouesB,
+  .boutonRouesC {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -1282,7 +1296,10 @@ select {
   .boutonPeintureA:hover .boutonInfo__txt,
   .boutonPeintureB:hover .boutonInfo__txt,
   .boutonChassisA:hover .boutonInfo__txt,
-  .boutonChassisB:hover .boutonInfo__txt {
+  .boutonChassisB:hover .boutonInfo__txt,
+  .boutonRouesA:hover .boutonInfo__txt,
+  .boutonRouesB:hover .boutonInfo__txt,
+  .boutonRouesC:hover .boutonInfo__txt {
     opacity: 1;
     visibility: visible;
   }
@@ -1339,6 +1356,33 @@ select {
 
   .boutonMoteurF:hover {
     width: 235px;
+  }
+
+  .boutonRouesA {
+    top: 15%;
+    left: 20%;
+  }
+  
+  .boutonRouesB {
+    top: 45%;
+    left: 8%;
+  }
+
+  .boutonRouesC {
+    top: 75%;
+    left: 42%;
+  }
+
+  .boutonRouesA:hover {
+    width: 304px;
+  }
+  
+  .boutonRouesB:hover {
+    width: 228px;
+  }
+
+  .boutonRouesC:hover {
+    width: 232px;
   }
 
   .boutonFreinA {
