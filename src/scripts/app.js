@@ -572,3 +572,57 @@ if (fichier === "moteur.html" || fichier === "freins.html" || fichier === "temoi
     });
   });
 }
+
+if (fichier === "entretien.html" || fichier === "diagnostiques.html") {
+
+  const sectionEntretien = document.querySelector('.Entretien');
+  const sectionPart = document.querySelector('.Entretienpart__container');
+  const btnRetourEntretien = document.querySelector('.btnEntretien');
+
+  // fonction afficherPart
+  function afficherPart(value) {
+
+    sectionEntretien.style.display = "none";
+    sectionPart.style.display = "block";
+
+    document.querySelectorAll('.Entretienpart').forEach(p => {
+      p.classList.remove('active');
+    });
+
+    const target = document.getElementById(value);
+    if (target) {
+      target.classList.add('active');
+
+      window.scrollTo({ top: 0, behavior: "smooth" });
+
+      initGSAPAnimations();
+    }
+  }
+
+  // 1. Clic sur une carte
+  document.querySelectorAll('.Entretien__cart').forEach(cart => {
+    cart.addEventListener('click', () => {
+      afficherPart(cart.dataset.value);
+    });
+  });
+
+  document.querySelectorAll('.Diagno__cart').forEach(cart => {
+    cart.addEventListener('click', () => {
+      afficherPart(cart.dataset.value);
+    });
+  });
+
+  // 2. Clic sur le bouton Retour (btnEntretien)
+  if (btnRetourEntretien) {
+    btnRetourEntretien.addEventListener('click', () => {
+      sectionPart.style.display = "none";
+      sectionEntretien.style.display = "block";
+
+      document.querySelectorAll('.Entretienpart').forEach(p => {
+        p.classList.remove('active');
+      });
+
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+  }
+};
