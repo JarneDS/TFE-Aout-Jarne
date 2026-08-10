@@ -981,6 +981,7 @@ select {
   padding: 0;
   background: transparent;
   cursor: pointer;
+  height: 246px;
 }
 
 .Entretien__txtContainer {
@@ -1033,8 +1034,7 @@ select {
   filter: drop-shadow(4px 4px 4px #216DFF);
   background-color: var(--color-form_Nav);
   position: relative;
-  min-width: 260px;
-  width: 100%;
+  width: 280px;
   height: 309px;
 }
 
@@ -1062,7 +1062,7 @@ select {
 
 .entretien__itemTxt {
   color: var(--color-textWhite);
-  margin: 176px 20px 0;
+  margin: 189px 20px 0;
 }
 
 .filter {
@@ -1076,6 +1076,8 @@ select {
   display: flex;
   flex-direction: column;
   gap: 30px;
+  margin-top: 30px;
+  justify-self: center;
 }
 
 .temps {
@@ -1096,6 +1098,23 @@ select {
   border-top: 1px solid var(--color-primary);
   border-bottom: 1px solid var(--color-primary);
   padding: 3px 0;
+}
+
+.entretien__conseil {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  margin-top: 30px;
+  background-color: var(--color-form_Nav);
+  border-radius: 10px;
+  border: 2px solid var(--color-primary);
+  padding: 20px;
+}
+
+.iconeConseil {
+  width: 25px;
+  height: 25px;
 }
 
 @media (min-width: 701px) {
@@ -1676,6 +1695,7 @@ select {
   .Entretien__cart,
   .Diagno__cart {
     width: fit-content;
+    overflow: hidden;
   }
 
   .Entretien__img {
@@ -1764,10 +1784,8 @@ select {
 
   .entretienCard__container {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    width: 1250px;
-    justify-self: center;
-    gap: 63px;
+    grid-template-columns: repeat(1, 1fr);
+    max-width: 1250px;
   }
 
   .entretien__card {
@@ -1777,6 +1795,17 @@ select {
   .tempsBesoins {
     flex-direction: row;
     justify-content: space-between;
+  }
+
+  .entretien__conseil {
+    flex-direction: row;
+    max-width: 1250px;
+    width: calc(100% - 44px);
+    justify-self: center;
+  }
+
+  .conseil__txt {
+    max-width: 100%;
   }
 }
 
@@ -1813,6 +1842,22 @@ select {
 
   .problemeEtat__container {
     margin-top: 20px;
+  }
+}
+
+@media (min-width: 990px) {
+  .entretienCard__container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 1250px;
+    justify-self: center;
+    gap: 20px;
+  }
+}
+
+@media (min-width: 1020px) {
+  .entretienCard__container {
+    gap: 50px;
   }
 }
 
@@ -1937,5 +1982,12 @@ select {
     grid-row: 1 / 2;
     justify-self: end;
     align-self: start;
+  }
+}
+
+@media (min-width: 1450px) {
+  /* Entretien */
+  .entretienCard__container {
+    grid-template-columns: repeat(3, 1fr);
   }
 }

@@ -99,26 +99,28 @@
         <button class="btnEntretien" style="margin-bottom: 46px;">←&nbsp;Retour</button>
         <div class="Entretienpart" id="laveGlace">
             <h2 class="col--full row--title">Le lave-glace ne fonctionne pas&nbsp;?</h2>
-            <button class="buttonLink" onclick="window.location.href='entretien.html'">Comment remplir le liquide lave-glace&nbsp;?</button>
-            <img src="filtreSale.webp" alt="Un filtre à air sale" class="col__img--right row--top row--center col--end">
+            <button class="buttonLink" onclick="window.location.href='entretien.html?part=laveGlace'">Comment remplir le liquide lave-glace&nbsp;?</button>
+            <img src="lave-glace.webp" alt="Une bouteille de lave-glace" class="col__img--right row--top row--center col--end">
             <div class="col--left row--double">
-                <h3>Symptôme 1 : Accélérations molles</h3>
-                <p><span>Ta voiture respire mal. Elle accélère comme si elle montait les escaliers avec une&nbsp;bronchite.</span></p>
-                <h3>Symptôme 2 : Surconsommation (+10 à +20%)</h3>
-                <p><span>Elle boit plus d’essence pour compenser.</span><span>En gros : “Si je manque d’air, je carbure au&nbsp;carburant.”</span></p>
-                <h3>Symptôme 3 : Fumée noire</h3>
-                <p><span>Elle tousse.</span><span>Littéralement.</span><span>Ton échappement devient plus sombre que ton historique Google.</span></p>
-                <h3>Symptôme 4 : Démarrage difficile / ralenti instable</h3>
-                <p><span>Le moteur broute, tremble, hésite.</span><span>On dirait qu’il n’a pas dormi de la nuit.</span></p>
-                <h3>Symptôme 5 : Inspection visuelle</h3>
-                <p><span>Tu ouvres le boîtier…</span><span>Et tu trouves un filtre tellement sale qu’il pourrait passer pour un tapis Ikea.</span></p>
+                <h3 class="h3--margin">1. Vérifier le niveau de liquide</h3>
+                <button onclick="window.location.href='entretien.html?part=laveGlace'">Comment remplir le liquide lave-glace&nbsp;?</button>
+                <h3 class="h3--margin">2. Vérifier si les buses sont bouchées</h3>
+                <p><span>Les petites buses sur le capot peuvent se boucher avec des poussières, du calcaire, de la cire de lavage ou encore des insectes.</span><span>Essayez de nettoyer avec une aiguille fine les buses.</span></p>
+                <h3 class="h3--margin">3. Écouter la pompe de lave‑glace</h3>
+                <p><span>La pompe est un petit moteur électrique situé près du réservoir.</span><span>Actionner le levier pour le lave-glace dans l'habitacle et écouter pour un <i>bzzzz</i>.</span></p>
+                <h4><b>Si vous n’entendez rien du tout, deux possibilités :</b></h4>
+                <ul>
+                    <li>Pompe HS</li>
+                    <li>Pas d’alimentation électrique</li>
+                </ul>
+                <h3 class="h3--margin">4. Vérifier le fusible du lave‑glace</h3>
+                <button onclick="window.location.href='entretien.html?part=changerFusible'">Comment changer un fusible ?</button>
             </div>
-            <img src="filtreSalePropre.webp" alt="Un filtre à air propre et sale" class="height--100 col__img--right row2 row--center col--end">
-            <button class="buttonLinkBottom" onclick="window.location.href='entretien.html'">Comment remplir le liquide lave-glace&nbsp;?</button>
+            <img src="electrique_voiture.webp" alt="Une image montrant un multimètre et une boite à fusibles" class="height--100 col__img--right row2 row--center col--end">
         </div>
         <div class="Entretienpart" id="batterie">
             <h2 class="col--full row--title">Problèmes de batterie&nbsp;?</h2>
-            <button class="buttonLink" onclick="window.location.href='entretien.html'">Comment changer la batterie&nbsp;?</button>
+            <button class="buttonLink" onclick="window.location.href='entretien.html?part=changerBatterie'">Comment changer la batterie&nbsp;?</button>
             <img src="voyantBatterieAllume.webp" alt="Image montrant le témoin de batterie allumée sur le tableau de bord" class="height--100 col__img--right row--top row--center col--end">
             <ol class="col--left row--top">
                 <li class="h3">Démarrage lent</li>
@@ -130,11 +132,11 @@
                 <li class="h3">Lumières faibles</li>
                 <p><span>Les phares éclairent à peine le trottoir.</span><span>On dirait qu’ils chuchotent :</span><span>«Désolé, j’ai pas la force aujourd’hui.»</span></p>
             </ol>
-            <button class="buttonLinkBottom" onclick="window.location.href='entretien.html'">Comment changer la batterie&nbsp;?</button>
+            <button class="buttonLinkBottom" onclick="window.location.href='entretien.html?part=changerBatterie'">Comment changer la batterie&nbsp;?</button>
         </div>
         <div class="Entretienpart" id="fusible">
             <h2 class="col--full row--title">Problèmes liés à un fusible ?</h2>
-            <button class="buttonLink" onclick="window.location.href='entretien.html'">Comment changer un fusible&nbsp;?</button>
+            <button class="buttonLink" onclick="window.location.href='entretien.html?part=changerFusible'">Comment changer un fusible&nbsp;?</button>
             <div class="col__img--right row--top row--center col--end">
                 <img src="fusibleCasse.webp" alt="Image montrant un fusible grillé et un bon fusible">
                 <p><span class="legende">Fusible grillé et un bon fusible</span></p>
@@ -151,11 +153,11 @@
                     <li><strong>Silence total</strong> → fusible décédé, minute de&nbsp;silence.</li>
                 </ul>
             </ol>
-            <button class="buttonLinkBottom" onclick="window.location.href='entretien.html'">Comment changer un fusible&nbsp;?</button>
+            <button class="buttonLinkBottom" onclick="window.location.href='entretien.html?part=changerFusible'">Comment changer un fusible&nbsp;?</button>
         </div>
         <div class="Entretienpart" id="pneus">
             <h2 class="col--full row--title">Comment voir si un pneu est usé ?</h2>
-            <button class="buttonLink" onclick="window.location.href='entretien.html'">Comment vérifier ces pneus&nbsp;?</button>
+            <button class="buttonLink" onclick="window.location.href='entretien.html?part=etatPneus'">Comment vérifier ces pneus&nbsp;?</button>
             <div class="col--left row--top">
                 <h3 class="h3--margin">1. Inspection visuelle : le test du «pneu chauve»</h3>
                 <p><span>Dans les rainures du pneu, tu as de petits pavés de gomme de 1,6 mm.</span><span>Si la bande de roulement arrive <strong>au même niveau</strong> que ces pavés…</span><span>→ Ton pneu est officiellement en train de perdre ses cheveux.</span></p>
@@ -172,7 +174,7 @@
                 <p><span>Les petits pavés sont placés <strong>tout autour du&nbsp;pneu.</strong></span><span>Donc si tu en vois un au même niveau, pas besoin de faire le tour complet :</span><span>→ C’est foutu pour tout le pneu.</span></p>
             </div>
             <img src="indicatUsure.webp" alt="Image montrant les différents indicateurs de profondeur sur le pneu" class="col__img--right row2 row--center col--end">
-            <button class="buttonLinkBottom" onclick="window.location.href='entretien.html'">Comment vérifier ces pneus&nbsp;?</button>
+            <button class="buttonLinkBottom" onclick="window.location.href='entretien.html?part=etatPneus'">Comment vérifier ces pneus&nbsp;?</button>
         </div>
     </section>
 </body>

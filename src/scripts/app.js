@@ -594,8 +594,6 @@ if (fichier === "entretien.html" || fichier === "diagnostiques.html") {
       target.classList.add('active');
 
       window.scrollTo({ top: 0, behavior: "smooth" });
-
-      initGSAPAnimations();
     }
   }
 
@@ -624,5 +622,31 @@ if (fichier === "entretien.html" || fichier === "diagnostiques.html") {
 
       window.scrollTo({ top: 0, behavior: "smooth" });
     });
+  }
+
+  // Récupère le paramètre "part" dans l'URL
+  const params = new URLSearchParams(window.location.search);
+  const partToShow = params.get("part");
+
+  if (partToShow) {
+
+    // Masquer la section principale
+    sectionEntretien.style.display = "none";
+
+    // Afficher le container des parties
+    sectionPart.style.display = "block";
+
+    // Retirer toutes les classes active
+    document.querySelectorAll('.Entretienpart').forEach(part => {
+      part.classList.remove('active');
+    });
+
+    // Activer uniquement la partie demandée
+    const target = document.getElementById(partToShow);
+    if (target) {
+      target.classList.add('active');
+
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
   }
 };
