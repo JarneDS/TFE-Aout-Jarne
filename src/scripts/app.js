@@ -19,7 +19,7 @@ function updateProfilFilter() {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-  fetch('/projets/tfe-aout/api/moi.php')
+  fetch('/projets/tfe-aout/api/getUser.php')
     .then(res => res.json())
     .then(json => {
       if (!json.logged) return;
@@ -54,7 +54,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   if (!menuAccount) return;
 
-  fetch('/projets/tfe-aout/api/moi.php')
+  fetch('/projets/tfe-aout/api/getUser.php')
     .then(res => res.json())
     .then(json => {
 
@@ -457,7 +457,7 @@ if (fichier === "modifierVoiture.html") {
   });
 }
 
-fetch("/projets/tfe-aout/api/moi.php")
+fetch("/projets/tfe-aout/api/getUser.php")
   .then(res => res.json())
   .then(data => {
     if (data.logged) {

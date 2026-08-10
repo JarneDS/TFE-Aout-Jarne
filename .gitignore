@@ -25,6 +25,7 @@ car-logos-dataset
 *.sw?
 
 /vendor/
-api/database.php
 
 db.env
+/public/api/database.env
+/public/api/database.php

@@ -1,7 +1,6 @@
 <?php
-
-$dsn  = getenv('DB_DSN')  ?: 'mysql:host=jarnedl561.mysql.db;dbname=jarnedl561;charset=utf8';
-$user = getenv('DB_USER') ?: 'jarnedl561';
+$dsn  = getenv('DB_DSN')  ?: 'mysql:host=localhost;dbname=tfe;charset=utf8';
+$user = getenv('DB_USER') ?: 'root';
 $pass = getenv('DB_PASS') ?: '';
 
 $db = new PDO($dsn, $user, $pass, [

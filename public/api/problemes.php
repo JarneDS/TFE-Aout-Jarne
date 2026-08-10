@@ -1,12 +1,26 @@
 <?php
+    session_start();
     require __DIR__ . '/database.php';
     header("Content-Type: application/json");
 
-    ini_set('display_errors', 1);
-    error_reporting(E_ALL);
+    if (getenv('APP_ENV') === 'dev') {
+        ini_set('display_errors', 1);
+        error_reporting(E_ALL);
+    }
+
+    // AUTHENTIFICATION OBLIGATOIRE
+    if (!isset($_SESSION['user'])) {
+        http_response_code(401);
+        echo json_encode(['success' => false, 'error' => 'Non connecté']);
+        exit;
+    }
+
+    $userId = $_SESSION['user']['id'];
 
     // GET : récupérer les problèmes
     if ($_SERVER['REQUEST_METHOD'] === 'GET') {
+        $stmt = $db->prepare("SELECT * FROM voitures WHERE user_id = ?");
+        $stmt->execute([$userId]);
 
         if (!isset($_GET['voitureId'])) {
             echo json_encode(["success" => false, "error" => "voitureId manquant"]);
@@ -57,6 +71,8 @@
 
     // DELETE : supprimer un problème
     if ($_SERVER['REQUEST_METHOD'] === 'DELETE') {
+        $stmt = $db->prepare("DELETE FROM voitures WHERE id = ? AND user_id = ?");
+        $stmt->execute([$id, $userId]);
 
         if (!isset($_GET['id'])) {
             echo json_encode(["success" => false, "error" => "id manquant"]);

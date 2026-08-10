@@ -1,6 +1,16 @@
 <?php
+    session_start();
     require __DIR__ . '/database.php';
     header("Content-Type: application/json");
+
+    // AUTHENTIFICATION OBLIGATOIRE
+    if (!isset($_SESSION['user'])) {
+        http_response_code(401);
+        echo json_encode(['success' => false, 'error' => 'Non connecté']);
+        exit;
+    }
+
+    $userId = $_SESSION['user']['id'];
 
     // Récupérer une voiture par son ID
     if ($_SERVER['REQUEST_METHOD'] === 'GET' && isset($_GET['voitureId'])) {
@@ -20,8 +30,8 @@
 
     // GET : récupérer les voitures d'un user
     if ($_SERVER['REQUEST_METHOD'] === 'GET') {
-
-        $userId = $_GET['userId'] ?? null;
+        $stmt = $db->prepare("SELECT * FROM voitures WHERE user_id = ?");
+        $stmt->execute([$userId]);
 
         if (!$userId) {
             echo json_encode(["success" => false, "error" => "userId manquant"]);
@@ -100,8 +110,8 @@
 
     // DELETE : supprimer une voiture
     if ($_SERVER['REQUEST_METHOD'] === 'DELETE') {
-
-        $id = $_GET['id'] ?? null;
+        $stmt = $db->prepare("DELETE FROM voitures WHERE id = ? AND user_id = ?");
+        $stmt->execute([$id, $userId]);
 
         if (!$id) {
             echo json_encode(["success" => false, "error" => "id manquant"]);

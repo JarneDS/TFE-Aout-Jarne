@@ -5,6 +5,8 @@
 
     header('Content-Type: application/json');
 
+    error_reporting(E_ALL);
+
     $user = new User($db);
 
     $email = $_POST['email'] ?? null;
@@ -31,5 +33,4 @@
             'message' => 'Email ou mot de passe incorrect'
         ]);
     }
-
 ?>
