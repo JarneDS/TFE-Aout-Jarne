@@ -2,27 +2,27 @@
 <html lang="fr">
 
 <head>
-    <title>TFE - De Scheerder Jarne</title>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta property="og:site_name" content="TFE De Scheerder Jarne">
-    <meta property="og:title" content="Les secrets de la voiture">
-    <meta property="og:description" content="TFE De Scheerder Jarne">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://jarnedescheerder.be/projets/tfe">
-    <meta property="og:image" content="https://jarnedescheerder.be/projets/tfe/public/favico.ico">
-    <meta property="og:image:width" content="1800">
-    <meta property="og:image:height" content="945">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>TFE - De Scheerder Jarne</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta property="og:site_name" content="TFE De Scheerder Jarne">
+  <meta property="og:title" content="Les secrets de la voiture">
+  <meta property="og:description" content="TFE De Scheerder Jarne">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://jarnedescheerder.be/projets/tfe">
+  <meta property="og:image" content="https://jarnedescheerder.be/projets/tfe/public/favico.ico">
+  <meta property="og:image:width" content="1800">
+  <meta property="og:image:height" content="945">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
 
-    <link rel="stylesheet" href="/styles/app.scss">
-    <script type="module" src="scripts/app.js" defer></script>
+  <link rel="stylesheet" href="/styles/app.scss">
+  <script type="module" src="scripts/app.js" defer></script>
 </head>
 
 <body>
-    <nav class="nav">
+  <nav class="nav">
     <div class="navBar__alwaysDisplay">
       <img src="/logo.png" alt="logo de Les secrets de la voiture" class="menu__logo">
       <button id="menu__btn">Menu</button>
@@ -59,40 +59,48 @@
   <button onclick="window.location.href = 'mesVoitures.html'">← Mon garage</button>
   <section class="sectionButton">
     <div class="headerProblemes">
-        <h1 id="titreVoiture"></h1>
-        <div class="headerProblemes__boutons">
-            <button type="button" class="headerProblemes__btn">Modifier les informations</button>
-            <button type="button" class="SupprimerVoiture headerProblemes__btn">Supprimer le véhicule</button>
-        </div>
+      <h1 id="titreVoiture"></h1>
+      <div class="headerProblemes__boutons">
+        <button type="button" class="headerProblemes__btn">Modifier les informations</button>
+        <button type="button" class="SupprimerVoiture headerProblemes__btn">Supprimer le véhicule</button>
+      </div>
     </div>
     <div class="problemes--flex">
-        <form id="formProblemes">
-            <h3>Problème rencontré</h3>
-            <div class="form__elements">
-                <select name="type" id="type" required>
-                    <option value="">Type de problème</option>
-                    <option value="Moteur">Problème moteur</option>
-                    <option value="Electrique">Problème électrique</option>
-                    <option value="Chassis">Problème châssis</option>
-                    <option value="Pneus">Problème pneus</option>
-                    <option value="Freins">Problème freins</option>
-                    <option value="Peinture">Problème peinture</option>
-                </select>
-            </div>
-            <div class="form__elements">
-                <label for="description">Description du problème</label>
-                <textarea name="description" id="description" placeholder="Description du problème"></textarea>
-            </div>
-            <div class="form__elements">
-                <label for="survenance">Date de survenance</label>
-                <input type="date" name="survenance" id="survenance">
-            </div>
-            <button type="submit">Ajouter ce problème</button>
-        </form>
-        <div class="listeProblemes__Container">
-            <h3>Liste des problèmes connus</h3>
-            <div id="listeProblemes"></div>
+      <form id="formProblemes">
+        <h3>Problème rencontré</h3>
+        <div class="form__elements">
+          <select name="type" id="type" required>
+            <option value="">Type de problème</option>
+            <option value="Moteur">Problème moteur</option>
+            <option value="Electrique">Problème électrique</option>
+            <option value="Chassis">Problème châssis</option>
+            <option value="Pneus">Problème pneus</option>
+            <option value="Freins">Problème freins</option>
+            <option value="Peinture">Problème peinture</option>
+          </select>
         </div>
+        <div class="form__elements">
+          <label for="description">Description du problème</label>
+          <textarea name="description" id="description" placeholder="Description du problème"></textarea>
+        </div>
+        <div class="form__elements">
+          <label for="survenance">Date de survenance</label>
+          <input type="date" name="survenance" id="survenance">
+        </div>
+        <button type="submit">Ajouter ce problème</button>
+      </form>
+      <div class="listeProblemes__Container">
+        <div class="problemesFiltre">
+          <h3>Liste des problèmes connus</h3>
+          <div id="filtreContainerProblemes">
+            <button id="btnFiltreProblemes">Filtres</button>
+            <select id="selectFiltreProblemes" style="display:none;">
+              <option value="">Tous les problèmes</option>
+            </select>
+          </div>
+        </div>
+        <div id="listeProblemes"></div>
+      </div>
     </div>
   </section>
 </body>

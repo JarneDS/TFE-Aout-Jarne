@@ -72,7 +72,9 @@ h1,
 h2,
 h3,
 .h3,
-.bold {
+.bold,
+#btnFiltreVoitures,
+#btnFiltreProblemes {
   font-family: 'Oswald-Bold';
 }
 
@@ -507,6 +509,40 @@ select {
 
 .fullWidth {
   width: 100%;
+}
+
+.monGarageFiltre, .problemesFiltre {
+  display: flex;
+  flex-direction: column;
+}
+
+#filtreContainerVoitures, #filtreContainerProblemes {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+#filtreContainerVoitures {
+  margin-bottom: 46px;
+}
+
+#filtreContainerProblemes {
+  margin-bottom: 22px;
+}
+
+#selectFiltreVoitures, #selectFiltreProblemes {
+  height: fit-content;
+}
+
+#btnFiltreVoitures, #btnFiltreProblemes {
+  margin: 0;
+  background-color: transparent;
+  border: none;
+  width: fit-content;
+}
+
+#btnFiltreProblemes {
+  justify-self: end;
 }
 
 /* Problemes */
@@ -1268,6 +1304,22 @@ select {
   #annee,
   #mois {
     width: 100%;
+  }
+
+  .monGarageFiltre {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .problemesFiltre {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: end;
+  }
+
+  #filtreContainerVoitures, #filtreContainerProblemes {
+    flex-direction: row;
   }
 
   /* Recherche */

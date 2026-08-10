@@ -85,6 +85,39 @@ if (fichier === "mesVoitures.html") {
 
     const voitures = result.voitures;
 
+    // FILTRE DES MARQUES
+    const btnFiltre = document.getElementById("btnFiltreVoitures");
+    const selectFiltre = document.getElementById("selectFiltreVoitures");
+
+    // Remplir le select avec les marques uniques
+    btnFiltre.addEventListener("click", () => {
+      selectFiltre.style.display = "block";
+
+      const marques = [...new Set(voitures.map(v => v.marque))];
+
+      selectFiltre.innerHTML = `<option value="">Toutes les marques</option>`;
+
+      marques.forEach(marque => {
+        const opt = document.createElement("option");
+        opt.value = marque;
+        opt.textContent = capitalize(marque);
+        selectFiltre.appendChild(opt);
+      });
+    });
+
+    // Filtrer l'affichage
+    selectFiltre.addEventListener("change", () => {
+      const marqueChoisie = selectFiltre.value;
+
+      let voituresFiltrees = voitures;
+
+      if (marqueChoisie !== "") {
+        voituresFiltrees = voitures.filter(v => v.marque === marqueChoisie);
+      }
+
+      afficherVoituresFiltrees(voituresFiltrees);
+    });
+
     function capitalize(str) {
       return str.charAt(0).toUpperCase() + str.slice(1).toLowerCase();
     }
@@ -105,6 +138,15 @@ if (fichier === "mesVoitures.html") {
           consulterVoiture(id);
         });
       });
+    }
+
+    function activerBoutonAjouter() {
+      const ajouterVoitureBtn = document.getElementById("ajouterVoiture");
+      if (ajouterVoitureBtn) {
+        ajouterVoitureBtn.addEventListener("click", () => {
+          window.location.href = "ajouterVoiture.html";
+        });
+      }
     }
 
     if (voitures.length === 0) {
@@ -145,16 +187,42 @@ if (fichier === "mesVoitures.html") {
         `;
     }
 
+    function afficherVoituresFiltrees(listeVoitures) {
+
+      mesVoitures.innerHTML = listeVoitures
+        .map(v => `
+          <div class="voiture">
+            <img src="/projets/tfe-aout/optimized/${v.marque}.webp" alt="logo marque" class="logoMarque">
+
+            <h4 class="marque">${capitalize(v.marque)} ${capitalize(v.modele)}</h4>
+            <p class="legend NomMarque">${v.anneeConstruction} | ${v.kmParcourues}km</p>
+
+            <div class="boutonsVoiture">
+              <button type="button" class="SupprimerVoiture fullWidth" data-id="${v.id}">Supprimer</button>
+              <button type="button" class="ConsulterVoiture fullWidth" data-id="${v.id}">Consulter</button>
+            </div>
+          </div>
+        `)
+        .join("") +
+        `
+          <div class="voiture">
+            <img src="/projets/tfe-aout/ajouterVoiture.png" alt="icone pour ajouter une voiture à son garage virtuel" class="logoMarque">
+            <h4>Garage incomplet ?</h4>
+            <p class="legend">Cliquez ci-dessous pour le compléter !</p>
+            <button type="button" id="ajouterVoiture">Ajouter un véhicule</button>
+          </div>
+        `;
+
+      activerBoutons();
+      activerBoutonAjouter();
+    }
+
+
     // Activer les boutons supprimer/consulter (si voitures > 0)
     activerBoutons();
 
     // Activer le bouton ajouter (toujours)
-    const ajouterVoitureBtn = document.getElementById("ajouterVoiture");
-    if (ajouterVoitureBtn) {
-      ajouterVoitureBtn.addEventListener("click", () => {
-        window.location.href = "ajouterVoiture.html";
-      });
-    }
+    activerBoutonAjouter();
   }
 
   async function supprimerVoiture(id) {
@@ -265,6 +333,9 @@ if (fichier === "problemes.html") {
   const voitureId = new URLSearchParams(window.location.search).get("voitureId");
   chargerProblemes(voitureId);
 
+  const btnFiltreProblemes = document.getElementById("btnFiltreProblemes");
+  const selectFiltreProblemes = document.getElementById("selectFiltreProblemes");
+
   const btnModifier = document.querySelector(".headerProblemes__btn");
 
   btnModifier.addEventListener("click", () => {
@@ -329,9 +400,13 @@ if (fichier === "problemes.html") {
     });
   }
 
+  let problemesGlobal = [];
+
   async function chargerProblemes(voitureId) {
     const res = await fetch(`/projets/tfe-aout/api/problemes.php?voitureId=${voitureId}`);
     const problemes = await res.json();
+
+    problemesGlobal = problemes;
 
     const container = document.getElementById("listeProblemes");
 
@@ -383,6 +458,87 @@ if (fichier === "problemes.html") {
       });
     });
   }
+
+  function afficherProblemesFiltres(liste) {
+    const container = document.getElementById("listeProblemes");
+
+    if (liste.length === 0) {
+      container.innerHTML = "<p>Aucun problème trouvé pour ce type.</p>";
+      return;
+    }
+
+    container.innerHTML = liste.map(p => `
+      <div class="probleme__Container" data-id="${p.id}">
+        <div class="problemeDescription__container">
+          <h3 class="probleme__title">${p.type_probleme}</h3>
+          <p class="probleme__description">${p.description}</p>
+          <div class="dateProbleme__container">
+            <img src="/projets/tfe-aout/calendar.svg" alt="icone d'un calendrier" class="calendarIcone">
+            <p class="legend">${p.date_survenance}</p>
+          </div>
+        </div>
+
+        <div class="problemeEtat__container">
+          <select name="problemeEtat" class="selectEtat">
+            <option value="enCours" ${p.statut === "En cours" ? "selected" : ""}>En cours</option>
+            <option value="repare" ${p.statut === "Réparé" ? "selected" : ""}>Réparé</option>
+          </select>
+
+          <img src="/projets/tfe-aout/corbeille.png" alt="icone d'une poubelle" class="btnSupprimer">
+        </div>
+      </div>
+    `).join("");
+
+    activerInteractions();
+
+    // couleurs des selects
+    document.querySelectorAll(".selectEtat").forEach(select => {
+      if (select.value === "enCours") {
+        select.style.backgroundColor = "#FF0000";
+        select.style.color = "#FFF";
+      } else {
+        select.style.backgroundColor = "#00FF00";
+        select.style.color = "#000";
+      }
+
+      select.addEventListener("change", () => {
+        if (select.value === "enCours") {
+          select.style.backgroundColor = "#FF0000";
+          select.style.color = "#FFF";
+        } else {
+          select.style.backgroundColor = "#00FF00";
+          select.style.color = "#000";
+        }
+      });
+    });
+  }
+
+  btnFiltreProblemes.addEventListener("click", () => {
+    selectFiltreProblemes.style.display = "block";
+
+    const types = [...new Set(problemesGlobal.map(p => p.type_probleme))];
+
+    selectFiltreProblemes.innerHTML = `<option value="">Tous les types</option>`;
+
+    types.forEach(type => {
+      const opt = document.createElement("option");
+      opt.value = type;
+      opt.textContent = type.charAt(0).toUpperCase() + type.slice(1);
+      selectFiltreProblemes.appendChild(opt);
+    });
+  });
+
+  selectFiltreProblemes.addEventListener("change", () => {
+    const typeChoisi = selectFiltreProblemes.value;
+
+    let listeFiltre = problemesGlobal;
+
+    if (typeChoisi !== "") {
+      listeFiltre = problemesGlobal.filter(p => p.type_probleme === typeChoisi);
+    }
+
+    afficherProblemesFiltres(listeFiltre);
+  });
 
   document.querySelector(".SupprimerVoiture").addEventListener("click", supprimerVoiture);
 
