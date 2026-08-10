@@ -17,7 +17,7 @@ async function loadUserData() {
   const response = await fetch('/projets/tfe-aout/api/getUser.php');
   const data = await response.json();
 
-  if (!data.success) return;
+  if (!data.logged) return;
 
   const user = data.user;
 

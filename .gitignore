@@ -27,5 +27,4 @@ car-logos-dataset
 /vendor/
 
 db.env
-/public/api/database.env
 /public/api/database.php

@@ -3,13 +3,12 @@
     header('Content-Type: application/json');
 
     if (!isset($_SESSION['user'])) {
-        echo json_encode(['success' => false, 'message' => 'Non connecté']);
+        echo json_encode(['logged' => false]);
         exit;
     }
 
     echo json_encode([
-        'success' => true,
+        'logged' => true,
         'user' => $_SESSION['user']
     ]);
-
 ?>
