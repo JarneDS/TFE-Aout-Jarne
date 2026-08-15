@@ -110,8 +110,12 @@
 
     // DELETE : supprimer une voiture
     if ($_SERVER['REQUEST_METHOD'] === 'DELETE') {
-        $stmt = $db->prepare("DELETE FROM voitures WHERE id = ? AND user_id = ?");
-        $stmt->execute([$id, $userId]);
+        $id = null;
+
+        if (isset($_SERVER['QUERY_STRING'])) {
+            parse_str($_SERVER['QUERY_STRING'], $params);
+            $id = $params['id'] ?? null;
+        }
 
         if (!$id) {
             echo json_encode(["success" => false, "error" => "id manquant"]);
