@@ -78,8 +78,7 @@ if (fichier === "mesVoitures.html") {
 
     // Vérification du succès
     if (!result.success) {
-      mesVoitures.innerHTML = "<p>Erreur lors du chargement des voitures.</p>";
-      console.log(result);
+      mesVoitures.innerHTML = "<p>Utilisateur non connecté.</p>";
       return;
     }
 
@@ -805,4 +804,457 @@ if (fichier === "entretien.html" || fichier === "diagnostiques.html") {
       window.scrollTo({ top: 0, behavior: "smooth" });
     }
   }
+};
+
+if (fichier === "index.html") {
+  const form = document.getElementById('loginForm');
+  const btnCreer = document.querySelector('.button__creer');
+  const btnGuest = document.querySelector('.button__sansCompte');
+
+  if (form) {
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+
+      const data = new FormData(form);
+
+      fetch('/projets/tfe-aout/api/login.php', {
+        method: 'POST',
+        body: data
+      })
+      .then(res => res.json())
+      .then(json => {
+        console.log(json);
+        if (json.message === 'Connexion réussie') {
+          window.location.href = 'mesVoitures.html';
+        }
+      });
+    });
+  }
+
+  if (btnCreer) {
+    btnCreer.addEventListener('click', () => {
+      window.location.href = 'creerCompte.html';
+    });
+  }
+
+  if (btnGuest) {
+    btnGuest.addEventListener('click', () => {
+      window.location.href = 'accueil.html';
+    });
+  }
+};
+
+if (fichier === "creerCompte.html") {
+  const imgInput = document.getElementById('image');
+  const previewImage = document.getElementById('previewImage');
+  const nomInput = document.getElementById('nom');
+  const prenomInput = document.getElementById('prenom');
+  const userName = document.getElementById('userName');
+  const form2 = document.getElementById('creerCompteForm');
+  const container = document.getElementById('imageProfilContainer');
+  const crayonImage = document.getElementById('modifierImage');
+
+  if (!imgInput.files.length) {
+    previewImage.style.display = "none";
+    container.classList.add("no-image");
+  }
+
+  if (imgInput) {
+    imgInput.addEventListener('change', () => {
+      const file = imgInput.files[0];
+      if (file) {
+        previewImage.src = URL.createObjectURL(file);
+        previewImage.style.display = "block";
+        container.classList.remove("no-image");
+      }
+    });
+  }
+
+  if (container && imgInput) {
+    container.addEventListener('click', () => {
+      imgInput.click();
+    });
+  }
+
+  if (nomInput && prenomInput && userName) {
+    function updateName() {
+      userName.textContent = `${nomInput.value} ${prenomInput.value}`.trim();
+    }
+
+    nomInput.addEventListener('input', updateName);
+    prenomInput.addEventListener('input', updateName);
+  }
+
+  if (form2) {
+    form2.addEventListener('submit', async (e) => {
+      e.preventDefault();
+
+      const data = new FormData(form2);
+
+      const response = await fetch('/projets/tfe-aout/api/register.php', {
+        method: 'POST',
+        body: data
+      });
+
+      const json = await response.json();
+      console.log(json);
+
+      if (json.success) {
+        window.location.href = 'mesVoitures.html';
+      }
+    });
+  }
+};
+
+if (fichier === "monCompte.html") {
+  const imgInput2 = document.getElementById('image');
+  const previewImage2 = document.getElementById('previewImage');
+  const nomInput2 = document.getElementById('nom');
+  const prenomInput2 = document.getElementById('prenom');
+  const userName2 = document.getElementById('userName');
+  const emailInput = document.getElementById('email');
+  const mdpInput = document.getElementById('mdp');
+  const formModifier = document.getElementById('modifierCompteForm');
+  const container2 = document.getElementById('imageProfilContainer');
+  const crayonImage2 = document.getElementById('modifierImage');
+
+  // Charger les infos du compte
+  async function loadUserData() {
+    const response = await fetch('/projets/tfe-aout/api/getUser.php');
+    const data = await response.json();
+
+    if (!data.logged) return;
+
+    const user = data.user;
+
+    nomInput2.value = user.nom;
+    prenomInput2.value = user.prenom;
+    emailInput.value = user.email;
+
+    userName2.textContent = `${user.nom} ${user.prenom}`;
+
+    if (user.image) {
+      previewImage2.src = user.image;
+      previewImage2.style.display = "block";
+      container2.classList.remove("no-image");
+    } else {
+      previewImage2.style.display = "none";
+      container2.classList.add("no-image");
+    }
+  }
+
+  loadUserData();
+
+  // Modifier la photo
+  imgInput2.addEventListener('change', () => {
+    const file = imgInput.files[0];
+    if (file) {
+      previewImage2.src = URL.createObjectURL(file);
+      previewImage2.style.display = "block";
+      container2.classList.remove("no-image");
+    }
+  });
+
+  container2.addEventListener('click', () => imgInput2.click());
+
+  // Modifier nom/prénom affiché
+  function updateName() {
+    userName2.textContent = `${nomInput2.value} ${prenomInput2.value}`.trim();
+  }
+
+  nomInput2.addEventListener('input', updateName);
+  prenomInput2.addEventListener('input', updateName);
+
+  // Désactiver le bouton au départ
+  const btnEnregistrer = document.getElementById("enregistrer");
+  btnEnregistrer.disabled = true;
+  btnEnregistrer.style.cursor = "default";
+  btnEnregistrer.style.opacity = .5;
+
+  // Stocker les valeurs initiales après chargement
+  let initialData = {};
+
+  document.addEventListener("DOMContentLoaded", () => {
+    initialData = {
+      nom: nomInput2.value,
+      prenom: prenomInput2.value,
+      email: emailInput.value,
+      mdp: "",
+      image: null
+    };
+  });
+
+  // Vérifier si quelque chose a changé
+  function checkChanges() {
+    const hasChanged =
+      nomInput2.value !== initialData.nom ||
+      prenomInput2.value !== initialData.prenom ||
+      emailInput.value !== initialData.email ||
+      mdpInput.value.length > 0 ||
+      imgInput2.files.length > 0;
+
+    btnEnregistrer.disabled = !hasChanged;
+    btnEnregistrer.style.cursor = "pointer";
+    btnEnregistrer.style.opacity = 1;
+  }
+
+  // Écouter les changements
+  nomInput2.addEventListener("input", checkChanges);
+  prenomInput2.addEventListener("input", checkChanges);
+  emailInput.addEventListener("input", checkChanges);
+  mdpInput.addEventListener("input", checkChanges);
+  imgInput2.addEventListener("change", checkChanges);
+
+  // Enregistrer les modifications
+  document.getElementById("enregistrer").addEventListener('click', async (e) => {
+    e.preventDefault();
+
+    const data = new FormData(formModifier);
+
+    const response = await fetch('/projets/tfe-aout/api/updateUser.php', {
+      method: 'POST',
+      body: data
+    });
+
+    const json = await response.json();
+
+    if (json.success) {
+      alert("Compte mis à jour !");
+    }
+  });
+
+
+  // Se déconnecter
+  document.getElementById("deconnecter").addEventListener("click", async (e) => {
+    e.preventDefault();
+    await fetch('/projets/tfe-aout/api/logout.php');
+    window.location.href = "index.html";
+  });
+
+  // Supprimer mon compte
+  document.getElementById("supprimerCompte").addEventListener("click", async (e) => {
+    e.preventDefault();
+
+    if (!confirm("Supprimer ton compte ?")) return;
+
+    await fetch('/projets/tfe-aout/api/deleteUser.php');
+    window.location.href = "index.html";
+  });
+
+  // Focus sur l'input quand on clique sur le crayon
+  document.querySelectorAll('.changerInfosContainer').forEach(container => {
+    const input = container.querySelector('input');
+    const button = container.querySelector('.bgCrayon');
+
+    button.addEventListener('click', () => {
+      input.focus();
+    });
+  });
+};
+
+if (fichier === "rechercher.html") {
+  const rechercheInput = document.getElementById('recherche__input');
+  const rechercheResults = document.getElementById('recherche__results');
+
+  rechercheInput.addEventListener('input', function () {
+    const query = this.value.toLowerCase().trim();
+    rechercheResults.innerHTML = ''; // Vide les anciens résultats
+
+    // Si la recherche fait moins de 2 caractères, on n'affiche rien
+    if (query.length < 2) return;
+
+    // Filtration de l'index
+    const matches = rechercheIndex.filter(page => {
+      return page.title.toLowerCase().includes(query) ||
+        page.content.toLowerCase().includes(query);
+    });
+
+    // Affichage des résultats
+    if (matches.length > 0) {
+      matches.forEach(page => {
+        const li = document.createElement('li');
+        li.innerHTML = `
+          <div class="recherche__result">
+            <a href="${page.url}" class="recherche__lien"><span class="h3">${page.content}</span><span class="bold">Page&nbsp;${page.title}&nbsp;→</span></a>
+          </div
+        `;
+        rechercheResults.appendChild(li);
+      });
+    } else {
+      rechercheResults.innerHTML = '<li>Aucun résultat trouvé</li>';
+    }
+  });
+
+  const rechercheIndex = [
+    {
+      title: "Accueil",
+      url: "accueil.html",
+      content: "Bienvenue, sélectionnez le type de véhicule pour en apprendre plus sur celui-ci"
+    },
+    {
+      title: "Moteur",
+      url: "moteur.html",
+      content: "Le système de refroidissement"
+    },
+    {
+      title: "Moteur",
+      url: "moteur.html",
+      content: "L'alimentation en air, filtre à air"
+    },
+    {
+      title: "Moteur",
+      url: "moteur.html",
+      content: "Les liquides : huile moteur, liquide de refroidissement, liquide de frein, liquide de direction assistée, liquide lave-glace."
+    },
+    {
+      title: "Moteur",
+      url: "moteur.html",
+      content: "Le système électrique :  Batterie, Alternateur, Fusibles"
+    },
+    {
+      title: "Moteur",
+      url: "moteur.html",
+      content: "La transmission : L'embrayage, boite de vitesses, arbre de transmission, différentiel, cardans"
+    },
+    {
+      title: "Moteur",
+      url: "moteur.html",
+      content: "Fonctionnement, besoins d'un moteur, types de motricités (Traction, Propulsion, 4x4)"
+    },
+    {
+      title: "Témoins lumineux",
+      url: "temoins.html",
+      content: "Différents couleurs de témoins lumineux : vert/bleu, orange/ambre, rouge"
+    },
+    {
+      title: "Témoins lumineux",
+      url: "temoins.html",
+      content: "Les principaux témoins verts / bleus :"
+    },
+    {
+      title: "Témoins lumineux",
+      url: "temoins.html",
+      content: "Les principaux témoins orange / ambre :"
+    },
+    {
+      title: "Témoins lumineux",
+      url: "temoins.html",
+      content: "Les principaux témoins rouge :"
+    },
+    {
+      title: "Freins",
+      url: "freins.html",
+      content: "Introduction, que doit être un système de freinage ?"
+    },
+    {
+      title: "Freins",
+      url: "freins.html",
+      content: "Fonctionnement"
+    },
+    {
+      title: "Freins",
+      url: "freins.html",
+      content: "Éléments principaux : Disques de frein, Plaquettes de frein, Étriers, Liquide de frein, Maître-cylindre, ABS, Freins à tambour"
+    },
+    {
+      title: "Freins",
+      url: "freins.html",
+      content: "Le frein à main : frein à main mécanique, frein à main électrique (bouton P ou AUTO HOLD). Sur quoi agit le frein à main ?"
+    },
+    {
+      title: "Peinture",
+      url: "peinture.html",
+      content: "Les différentes couches : tôle, anticorrosion, apprêt, bas colorée, vernis"
+    },
+    {
+      title: "Peinture",
+      url: "peinture.html",
+      content: "Finitions de la peinture : unie, métalisée, nacrée, matte, tricouche"
+    },
+    {
+      title: "Chassis",
+      url: "chassis.html",
+      content: "Les rôles du chassis"
+    },
+    {
+      title: "Chassis",
+      url: "chassis.html",
+      content: "Qu'est-ce qui est fixé sur le châssis ?"
+    },
+    {
+      title: "Chassis",
+      url: "chassis.html",
+      content: "Importance et vérifications"
+    },
+    {
+      title: "Suspension",
+      url: "suspension.html",
+      content: "Les rôles de la suspension sur une voiture"
+    },
+    {
+      title: "Suspension",
+      url: "suspension.html",
+      content: "Composants de la suspension : amortisseurs, ressorts, triangles, silentblocs, barre stabilisatrice, rotules"
+    },
+    {
+      title: "Roues",
+      url: "roues.html",
+      content: "Pourquoi les roues sont importantes ?"
+    },
+    {
+      title: "Roues",
+      url: "roues.html",
+      content: "Les différents types de pneus"
+    },
+    {
+      title: "Roues",
+      url: "roues.html",
+      content: "Comment lire un pneu ? Que veulent dire les chiffres sur le flanc du pneu ?"
+    },
+    {
+      title: "Diagnostiques",
+      url: "diagnostiques.html",
+      content: "Problème avec le lave-glace qui ne fonctionne pas"
+    },
+    {
+      title: "Diagnostiques",
+      url: "diagnostiques.html",
+      content: "Problème avec la batterie ? Comment savoir si c'est la batterie ?"
+    },
+    {
+      title: "Diagnostiques",
+      url: "diagnostiques.html",
+      content: "Problème avec un fusible ? Comment savoir si c'est un fusible qui a grillée ?"
+    },
+    {
+      title: "Diagnostiques",
+      url: "diagnostiques.html",
+      content: "Comment voir si un pneu est usé ?"
+    },
+    {
+      title: "Entretien",
+      url: "entretien.html",
+      content: "Comment remplir le lave-glace sans se tromper de bouchon ?"
+    },
+    {
+      title: "Entretien",
+      url: "entretien.html",
+      content: "Comment changer la batterie de sa voiture de manière sécurisée ?"
+    },
+    {
+      title: "Entretien",
+      url: "entretien.html",
+      content: "Comment vérifier l'état de ces pneus et quand sont-ils HS ?"
+    },
+    {
+      title: "Entretien",
+      url: "entretien.html",
+      content: "Comment changer un fusible de sa voiture de manière sécurisée ?"
+    },
+    {
+      title: "Entretien",
+      url: "entretien.html",
+      content: "Comment lavez sa voiture de manière professionnelle ?"
+    },
+  ];
 };
