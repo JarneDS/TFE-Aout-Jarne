@@ -806,7 +806,7 @@ if (fichier === "entretien.html" || fichier === "diagnostiques.html") {
   }
 };
 
-if (fichier === "index.html") {
+if (fichier === "index.html" || fichier === "") {
   const form = document.getElementById('loginForm');
   const btnCreer = document.querySelector('.button__creer');
   const btnGuest = document.querySelector('.button__sansCompte');
