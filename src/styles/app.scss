@@ -203,6 +203,18 @@ img {
   max-width: 100%;
 }
 
+.vert {
+  color: #00FF00;
+}
+
+.orange {
+  color: #ff9900;
+}
+
+.rouge {
+  color: #FF0000;
+}
+
 /* NAV */
 nav {
   position: fixed;
@@ -689,6 +701,7 @@ select {
   flex-wrap: wrap;
   gap: 30px;
   padding: 0;
+  justify-content: center;
 }
 
 .choix__option {
@@ -1336,7 +1349,7 @@ select {
   /* Accueil */
   .choix__option {
     width: 75%;
-    max-width: 198px;
+    max-width: 290px;
   }
 
   /* Page parties */
